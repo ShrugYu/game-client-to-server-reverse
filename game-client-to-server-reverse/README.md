@@ -6,6 +6,8 @@
 > [x] 本包自带的服务端已**实测跑通**：握手 → 登录 → 建角 → 选角 → 进场景 → 移动 → 心跳，
 > 并验证 XOR 加密 + zlib 压缩 + 充值/邮件发放。
 >
+> 服务端参考实现（GitHub）：https://github.com/ShrugYu/game-client-to-server-reverse/tree/main/game-client-to-server-reverse/server
+>
 >  **2026-09-22 更新（v2.0）** —— 本版主题：原理层 + 四阶段路线 + **换服务端（重定向）**：
 > ⓪ **版本升至 2.0**：整合 1.x 全部成果 + 以下 ①~⑪；
 > ① **原理层** `references/primer.md`：三要素（配置=数值 / 协议=格式 / 代码=用法）、
@@ -250,6 +252,7 @@ docs/status/support-matrix ← 三轴状态：实现 / 自动测试 / 客户端�
 │   ├── bots.md             服务端人机（假玩家）
 │   └── bot-reverse.md      反推人机机制再复刻
 └── server/                 参考实现：长连接二进制协议服务端（Python）
+                               （GitHub: https://github.com/ShrugYu/game-client-to-server-reverse/tree/main/game-client-to-server-reverse/server）
 ```
 
 ## 端游 / 手游怎么跑
