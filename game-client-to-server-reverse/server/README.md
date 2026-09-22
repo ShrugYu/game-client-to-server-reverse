@@ -111,7 +111,7 @@ journalctl -u gsrv -f
 - **发放模式**：`config.yaml` → `game.pay_grant_mode`
   - `direct` 直发：充值成功货币直接进角色
   - `mail` 邮件：充值成功发带附件邮件，玩家自行领取
-- **私服支付**：`game.pay_auto_success: true` → 点击购买直接成功（不接真实渠道）
+- **支付**：`game.pay_auto_success: true` → 点击购买直接成功（禁止接入真实渠道）
 - **商品表**：`app/store/models.py` 的 `PAY_PRODUCTS`，键 = 客户端真实 `product_id`
 - **幂等**：`recharge_order.order_no` 唯一，重复回调只发一次
 
