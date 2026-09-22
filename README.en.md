@@ -145,6 +145,83 @@ Before finishing: reading-path.md §2 "pre-wrap-up checklist"
 
 ---
 
+## Dependencies & Credits
+
+This skill's methodology and toolchain reference / build on the following open-source projects. Thanks to their authors and maintainers (**only projects with a public repository are listed**; IDA Pro, Hopper, Charles, MT Manager, NSSM, umodel, etc. are closed-source or have no public repo, so they are omitted):
+
+### Decompilation / Reverse engineering
+
+| Project | Purpose | Repository |
+|------|------|------|
+| Il2CppDumper | Unity IL2CPP metadata extraction | https://github.com/Perfare/Il2CppDumper |
+| Il2CppInspector | Unity IL2CPP analysis | https://github.com/djkaty/Il2CppInspector |
+| dnSpy | .NET / Unity Mono decompiler & debugger | https://github.com/dnSpyEx/dnSpy |
+| ILSpy | .NET decompiler | https://github.com/icsharpcode/ILSpy |
+| unluac | Lua bytecode decompiler | https://github.com/HansWessels/unluac |
+| luadec | Lua decompiler | https://github.com/viruscamp/luadec |
+| Ghidra | Disassembler / decompiler | https://github.com/NationalSecurityAgency/ghidra |
+| jadx | Android dex → Java | https://github.com/skylot/jadx |
+| Apktool | APK unpack / repack | https://github.com/iBotPeaches/Apktool |
+| binwalk | Firmware / container analysis | https://github.com/ReFirmLabs/binwalk |
+
+### Unreal Engine assets / SDK
+
+| Project | Purpose | Repository |
+|------|------|------|
+| FModel | Browse / export UE assets | https://github.com/4sval/FModel |
+| Dumper-7 | UE SDK dump | https://github.com/Encryqed/Dumper-7 |
+| UE4SS | UE scripting / SDK | https://github.com/UE4SS-RE/RE-UE4SS |
+| UnrealMappingsDumper | Generate .usmap mappings | https://github.com/TheNaeem/UnrealMappingsDumper |
+| AESKeyFinder | Locate UE AES keys | https://github.com/GHFear/AESKeyFinder-By-GHFear |
+
+### Dynamic instrumentation / injection / root-free frameworks
+
+| Project | Purpose | Repository |
+|------|------|------|
+| Frida | Dynamic instrumentation | https://github.com/frida/frida |
+| x64dbg | Windows debugger | https://github.com/x64dbg/x64dbg |
+| LSPosed | Xposed framework (root) | https://github.com/LSPosed/LSPosed |
+| LSPatch | Root-free Xposed (patch-based) | https://github.com/LSPosed/LSPatch |
+| NPatch | Root-free Xposed (LSPatch fork) | https://github.com/7723mod/NPatch |
+| VirtualXposed | Root-free Xposed (virtual container) | https://github.com/android-hacker/VirtualXposed |
+| TaiChi | Root/unlock-free Xposed | https://github.com/taichi-framework |
+
+### Packet capture / protocols
+
+| Project | Purpose | Repository |
+|------|------|------|
+| mitmproxy | HTTPS capture / MITM | https://github.com/mitmproxy/mitmproxy |
+| Wireshark | Network protocol analysis | https://github.com/wireshark/wireshark |
+| tcpdump | CLI packet capture | https://github.com/the-tcpdump-group/tcpdump |
+| Protocol Buffers (protoc) | protobuf encode/decode | https://github.com/protocolbuffers/protobuf |
+| KCP | Reliable UDP transport | https://github.com/skywind3000/kcp |
+| zlib | Compression | https://github.com/madler/zlib |
+
+### Server / runtime
+
+| Project | Purpose | Repository |
+|------|------|------|
+| Flask | Reference server web | https://github.com/pallets/flask |
+| PyYAML | Config parsing | https://github.com/yaml/pyyaml |
+| aiosqlite | Async SQLite | https://github.com/omnilib/aiosqlite |
+| Termux | Linux environment on Android | https://github.com/termux/termux-app |
+| proot | Root-free Linux container | https://github.com/proot-me/proot |
+| Docker | Containerized deploy | https://github.com/docker |
+| systemd | Linux service supervision | https://github.com/systemd/systemd |
+
+### Server architecture references
+
+| Project | Language | Repository |
+|------|------|------|
+| Skynet | C / Lua | https://github.com/cloudwu/skynet |
+| Pomelo | Node.js | https://github.com/NetEase/pomelo |
+| KBEngine | C++ | https://github.com/kbengine/kbengine |
+| NoahGameFrame | C++ | https://github.com/ketoo/NoahGameFrame |
+
+> Note: the above are open-source projects mentioned/referenced in the methodology; this repository **does not bundle or distribute** them. Follow each project's own license when using them.
+
+---
+
 ## Disclaimer
 
 > By using this material you confirm that you have read, understood, and agreed to all clauses below. If you disagree, stop using it immediately.

@@ -147,6 +147,83 @@ AI 会按这个顺序回应：
 
 ---
 
+## 依赖与致谢
+
+本 skill 的方法论与工具链参考 / 使用了以下开源项目。感谢各自的作者与维护者（**仅列有公开仓库者**；IDA Pro、Hopper、Charles、MT 管理器、NSSM、umodel 等为闭源或无公开仓库，未列出）：
+
+### 反编译 / 逆向 / 反汇编
+
+| 项目 | 用途 | 仓库 |
+|------|------|------|
+| Il2CppDumper | Unity IL2CPP metadata 提取 | https://github.com/Perfare/Il2CppDumper |
+| Il2CppInspector | Unity IL2CPP 分析 | https://github.com/djkaty/Il2CppInspector |
+| dnSpy | .NET / Unity Mono 反编译调试 | https://github.com/dnSpyEx/dnSpy |
+| ILSpy | .NET 反编译 | https://github.com/icsharpcode/ILSpy |
+| unluac | Lua 字节码反编译 | https://github.com/HansWessels/unluac |
+| luadec | Lua 反编译 | https://github.com/viruscamp/luadec |
+| Ghidra | 反汇编 / 反编译 | https://github.com/NationalSecurityAgency/ghidra |
+| jadx | Android dex → Java | https://github.com/skylot/jadx |
+| Apktool | APK 解包 / 重打包 | https://github.com/iBotPeaches/Apktool |
+| binwalk | 固件 / 容器分析 | https://github.com/ReFirmLabs/binwalk |
+
+### 虚幻引擎（UE）资源 / SDK
+
+| 项目 | 用途 | 仓库 |
+|------|------|------|
+| FModel | UE 资源浏览 / 导出 | https://github.com/4sval/FModel |
+| Dumper-7 | UE SDK dump | https://github.com/Encryqed/Dumper-7 |
+| UE4SS | UE 脚本 / SDK | https://github.com/UE4SS-RE/RE-UE4SS |
+| UnrealMappingsDumper | 生成 .usmap 映射 | https://github.com/TheNaeem/UnrealMappingsDumper |
+| AESKeyFinder | 定位 UE AES 密钥 | https://github.com/GHFear/AESKeyFinder-By-GHFear |
+
+### 动态调试 / 注入 / 免 root 框架
+
+| 项目 | 用途 | 仓库 |
+|------|------|------|
+| Frida | 动态插桩 | https://github.com/frida/frida |
+| x64dbg | Windows 调试器 | https://github.com/x64dbg/x64dbg |
+| LSPosed | Xposed 框架（root） | https://github.com/LSPosed/LSPosed |
+| LSPatch | 免 root 的 Xposed（补丁式） | https://github.com/LSPosed/LSPatch |
+| NPatch | 免 root 的 Xposed（复刻 LSPatch） | https://github.com/7723mod/NPatch |
+| VirtualXposed | 免 root 的 Xposed（虚拟容器） | https://github.com/android-hacker/VirtualXposed |
+| TaiChi（太极） | 免 root / 免解锁的 Xposed | https://github.com/taichi-framework |
+
+### 抓包 / 协议
+
+| 项目 | 用途 | 仓库 |
+|------|------|------|
+| mitmproxy | HTTPS 抓包 / 中间人 | https://github.com/mitmproxy/mitmproxy |
+| Wireshark | 网络协议分析 | https://github.com/wireshark/wireshark |
+| tcpdump | 命令行抓包 | https://github.com/the-tcpdump-group/tcpdump |
+| Protocol Buffers（protoc） | protobuf 编解码 | https://github.com/protocolbuffers/protobuf |
+| KCP | 可靠 UDP 传输 | https://github.com/skywind3000/kcp |
+| zlib | 数据压缩 | https://github.com/madler/zlib |
+
+### 服务端 / 运行环境
+
+| 项目 | 用途 | 仓库 |
+|------|------|------|
+| Flask | 参考服务端 Web | https://github.com/pallets/flask |
+| PyYAML | 配置解析 | https://github.com/yaml/pyyaml |
+| aiosqlite | 异步 SQLite | https://github.com/omnilib/aiosqlite |
+| Termux | Android 上的 Linux 环境 | https://github.com/termux/termux-app |
+| proot | 无需 root 的 Linux 容器 | https://github.com/proot-me/proot |
+| Docker | 容器化部署 | https://github.com/docker |
+| systemd | Linux 服务常驻 | https://github.com/systemd/systemd |
+
+### 服务端架构参考
+
+| 项目 | 语言 | 仓库 |
+|------|------|------|
+| Skynet | C / Lua | https://github.com/cloudwu/skynet |
+| Pomelo | Node.js | https://github.com/NetEase/pomelo |
+| KBEngine | C++ | https://github.com/kbengine/kbengine |
+| NoahGameFrame | C++ | https://github.com/ketoo/NoahGameFrame |
+
+> 说明：以上为方法论中提及 / 参考的开源项目；本仓库**不打包、不分发**它们，使用请遵循各自许可证。
+
+---
+
 ## 免责声明
 
 > 使用本资料即表示你已阅读、理解并同意以下全部条款；若不同意，请立即停止使用。
