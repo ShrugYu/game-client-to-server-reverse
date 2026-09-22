@@ -222,6 +222,8 @@ AI 会按这个顺序回应：
 |------|------|------|
 | peach-haven | 本地兼容服务端 + 客户端补丁工具链（Python：HTTP SDK + AsyncIO TCP）；本 skill `server/` 的实现参考 | https://github.com/Nanako660/peach-haven |
 | BlueRebirth | 已停运手游的本地离线复原工程（C#/.NET 本地服务端 + Mod 环境） | https://github.com/LunarConcerto/BlueRebirth |
+| enigma | 卡牌游戏的服务端（Rust） | https://github.com/yoncodes/enigma |
+| MikuSB | 本地协议与网络实验的开源 C#/.NET 服务端模拟器 | https://github.com/MikuLeaks/MikuSB |
 
 > 说明：以上为方法论中提及 / 参考的开源项目；本仓库**不打包、不分发**它们，使用请遵循各自许可证。
 
