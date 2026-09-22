@@ -163,7 +163,9 @@ Before finishing: reading-path.md §2 "pre-wrap-up checklist"
 
 7. **Rights claims**: If you are a rights holder and believe this material infringes your rights, contact us via a repository Issue; the authors will **correct or remove** it promptly after verification.
 
-8. **Changes**: This disclaimer may be updated at any time and takes effect upon publication, without further notice.
+8. **Platform rules**: Rights holders may file a DMCA takedown of this Skill; GitHub may act on violations of its Acceptable Use Policies.
+
+9. **Changes**: This disclaimer may be updated at any time and takes effect upon publication, without further notice.
 
 ### On reviving discontinued online games
 
@@ -173,19 +175,6 @@ This material is often used to archive, study, and locally revive **discontinued
 - This material supports **non-commercial research, archiving, and continuation for existing player communities or individuals**. Using it to impersonate the official operator, commercialize for profit, run paid services, or harm the rights holder or the original player community is **strictly prohibited**.
 - All **legal, financial, and reputational risks** from reviving, private-server deployment, and operation are **borne solely by the user**; the authors do not participate, endorse, or assume any responsibility.
 - If the original rights holder or their successor raises objections, the authors will **cooperate in removing** the relevant material promptly.
-
----
-
-## Legal Risk Notice (Important)
-
-This repository provides only **general reverse-engineering methodology**. It contains **no** specific game server implementation, cracking tool, or technical-protection bypass. Before use, you must understand:
-
-1. **Private servers / unauthorized operation**: Copying, hosting, and operating a game server without the copyright holder's permission may constitute **copyright infringement / criminal copyright offenses**, and can trigger **both criminal and civil liability**.
-2. **Providing tools / technical support**: Supplying programs, tools, or technical support for the above may constitute **aiding cybercrime** or **providing tools for unauthorized intrusion / control of computer systems**.
-3. **Anti-circumvention**: Circumventing, or providing ways to circumvent, copyright technological protection measures may be unlawful under **U.S. DMCA §1201** and can result in a **DMCA takedown** of this repository (GitHub has a dedicated review process for circumvention claims).
-4. **Platform rules**: Rights holders may file DMCA takedowns; GitHub may also act on violations of its Acceptable Use Policies.
-
-**This repository therefore expressly prohibits** any use for **unauthorized** game-server hosting / operation / profiteering, creating or distributing cracking tools, or circumventing or defeating others' technological protection measures / integrity checks. All consequences are borne by the user.
 
 ---
 
