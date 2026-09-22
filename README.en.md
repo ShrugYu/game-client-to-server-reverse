@@ -4,8 +4,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Server+Reverse&subtitle=From+a+client-only+game+to+a+running+self-hosted+server&mode=dark&align=center">
-    <img alt="Game Client → Server Reverse" src="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Server+Reverse&subtitle=From+a+client-only+game+to+a+running+self-hosted+server&mode=light&align=center">
+    <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Offline+Localization&subtitle=From+a+client-only+game+to+a+locally+runnable+client&mode=dark&align=center">
+    <img alt="Game Client → Offline Localization" src="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Offline+Localization&subtitle=From+a+client-only+game+to+a+locally+runnable+client&mode=light&align=center">
   </picture>
 </p>
 
@@ -20,6 +20,8 @@
 # Game Client → Offline Localization Skill
 
 > Reconstruct the **server protocol** and a **working server** from a "client-only" game, and make the **original client run successfully offline, locally**.
+>
+> Note: this skill has **not yet been battle-tested in practice**; its content is distilled and synthesized from related open-source GitHub projects and existing knowledge bases.
 
 A skill package following the [Agent Skills](https://agentskills.io) spec. The core skill is `game-client-to-server-reverse`: a navigation doc `SKILL.md` + 37 `references/` docs + `templates/` + `tools/` + a runnable `server/` reference implementation.
 
@@ -108,7 +110,7 @@ The AI responds in this order:
 4. server code + deploy + verification   <- derived from the spec
 ```
 
-### AI Reading order
+### AI Reading Order
 
 ```
 1. references/reading-path.md   <- pick 3-5 files by task type
@@ -135,7 +137,7 @@ Before finishing: reading-path.md §2 "pre-wrap-up checklist"
     ├── references/                  37 on-demand docs
     ├── schema/                      project-profile.yaml / protocol.spec.yaml templates
     ├── templates/                   docs & code templates (register site, ADR, e2e evidence, ...)
-    ├── tools/                       extract_interfaces.py / make_stub_so.py / repack_zip.py
+    ├── tools/                       extract_interfaces.py / repack_zip.py
     ├── examples/                    worked examples for different game types
     ├── extensions/                  optional (server bots / reverse-engineer bots)
     └── server/                      reference: long-connection binary protocol server (Python)
@@ -145,9 +147,8 @@ Before finishing: reading-path.md §2 "pre-wrap-up checklist"
 
 ## Dependencies & Credits
 
-This skill's methodology and toolchain reference / build on the following open-source projects. Thanks to their authors and maintainers (**only projects with a public repository are listed**):
+This skill's methodology and toolchain reference and build on the following open-source projects. Thanks to their authors and maintainers (**only projects with a public repository are listed**):
 
-###
 
 | Project | Purpose | Repository |
 |------|------|------|
@@ -172,7 +173,6 @@ This skill's methodology and toolchain reference / build on the following open-s
 | UnrealMappingsDumper | Generate .usmap mappings | https://github.com/TheNaeem/UnrealMappingsDumper |
 | AESKeyFinder | Locate UE AES keys | https://github.com/GHFear/AESKeyFinder-By-GHFear |
 
-###
 
 | Project | Purpose | Repository |
 |------|------|------|
@@ -184,7 +184,6 @@ This skill's methodology and toolchain reference / build on the following open-s
 | VirtualXposed | Root-free Xposed (virtual container) | https://github.com/android-hacker/VirtualXposed |
 | TaiChi | Root/unlock-free Xposed | https://github.com/taichi-framework |
 
-###
 
 | Project | Purpose | Repository |
 |------|------|------|
@@ -195,7 +194,6 @@ This skill's methodology and toolchain reference / build on the following open-s
 | KCP | Reliable UDP transport | https://github.com/skywind3000/kcp |
 | zlib | Compression | https://github.com/madler/zlib |
 
-###
 
 | Project | Purpose | Repository |
 |------|------|------|
@@ -207,7 +205,6 @@ This skill's methodology and toolchain reference / build on the following open-s
 | Docker | Containerized deploy | https://github.com/docker |
 | systemd | Linux service supervision | https://github.com/systemd/systemd |
 
-###
 
 | Project | Language | Repository |
 |------|------|------|

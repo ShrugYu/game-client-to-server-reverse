@@ -4,8 +4,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Server+Reverse&subtitle=From+a+client-only+game+to+a+running+self-hosted+server&mode=dark&align=center">
-    <img alt="Game Client → Server Reverse" src="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Server+Reverse&subtitle=From+a+client-only+game+to+a+running+self-hosted+server&mode=light&align=center">
+    <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Offline+Localization&subtitle=From+a+client-only+game+to+a+locally+runnable+client&mode=dark&align=center">
+    <img alt="Game Client → Offline Localization" src="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Offline+Localization&subtitle=From+a+client-only+game+to+a+locally+runnable+client&mode=light&align=center">
   </picture>
 </p>
 
@@ -20,6 +20,8 @@
 # 游戏客户端 → 离线本地化 Skill
 
 > 把「只有客户端」的游戏，还原出「服务端协议 + 可用服务端」，并让**原版客户端成功本地离线运行**。
+>
+> 说明：本 skill **暂无实战测试**，内容系根据开源的 GitHub 相关项目与现有知识库提炼、结合而成。
 
 
 这是一个遵循 [Agent Skills](https://agentskills.io) 规范的 skill 包。核心 skill 名为 `game-client-to-server-reverse`，
@@ -111,7 +113,7 @@ AI 会按这个顺序回应：
 4. 服务端代码 + 部署 + 验证 ← 由 Spec 派生
 ```
 
-### Ai阅读顺序
+### AI 阅读顺序
 
 ```
 1. references/reading-path.md   ← 按任务类型拿到 3~5 个文件的阅读路径
@@ -138,7 +140,7 @@ AI 会按这个顺序回应：
     ├── references/                  37 篇按需加载的正文
     ├── schema/                      project-profile.yaml / protocol.spec.yaml 模板
     ├── templates/                   文档与代码模板（注册站、ADR、e2e 证据…）
-    ├── tools/                       extract_interfaces.py / make_stub_so.py / repack_zip.py
+    ├── tools/                       extract_interfaces.py / repack_zip.py
     ├── examples/                    不同游戏类型的推演示例
     ├── extensions/                  可选拓展（服务端人机 / 反推人机机制）
     └── server/                      参考实现：长连接二进制协议服务端（Python）
@@ -150,7 +152,6 @@ AI 会按这个顺序回应：
 
 本 skill 的方法论与工具链参考 / 使用了以下开源项目。感谢各自的作者与维护者（**仅列有公开仓库者**）：
 
-###
 
 | 项目 | 用途 | 仓库 |
 |------|------|------|
@@ -175,7 +176,6 @@ AI 会按这个顺序回应：
 | UnrealMappingsDumper | 生成 .usmap 映射 | https://github.com/TheNaeem/UnrealMappingsDumper |
 | AESKeyFinder | 定位 UE AES 密钥 | https://github.com/GHFear/AESKeyFinder-By-GHFear |
 
-###
 
 | 项目 | 用途 | 仓库 |
 |------|------|------|
@@ -187,7 +187,6 @@ AI 会按这个顺序回应：
 | VirtualXposed | 免 root 的 Xposed（虚拟容器） | https://github.com/android-hacker/VirtualXposed |
 | TaiChi（太极） | 免 root / 免解锁的 Xposed | https://github.com/taichi-framework |
 
-###
 
 | 项目 | 用途 | 仓库 |
 |------|------|------|
@@ -198,7 +197,6 @@ AI 会按这个顺序回应：
 | KCP | 可靠 UDP 传输 | https://github.com/skywind3000/kcp |
 | zlib | 数据压缩 | https://github.com/madler/zlib |
 
-###
 
 | 项目 | 用途 | 仓库 |
 |------|------|------|
@@ -210,7 +208,6 @@ AI 会按这个顺序回应：
 | Docker | 容器化部署 | https://github.com/docker |
 | systemd | Linux 服务常驻 | https://github.com/systemd/systemd |
 
-###
 
 | 项目 | 语言 | 仓库 |
 |------|------|------|
@@ -234,7 +231,7 @@ AI 会按这个顺序回应：
 
 > 使用本资料即表示你已阅读、理解并同意以下全部条款；若不同意，请立即停止使用。
 
-1. **用途限定**：本学习skill资料仅供**学习、研究与技术交流**，以及针对**自研、已获授权或离线单机**游戏的互操作性研究与本地化部署。这是一份**方法论文档**，不是服务端开发教程，不针对任何特定游戏。
+1. **用途限定**：本 skill 资料仅供**学习、研究与技术交流**，以及针对**自研、已获授权或离线单机**游戏的互操作性研究与本地化部署。这是一份**方法论文档**，不是服务端开发教程，不针对任何特定游戏。
 
 2. **禁止非法用途**：严禁将本资料用于任何**未经授权**的入侵、攻击、破坏、篡改、绕过安全机制、窃取数据，或侵犯他人知识产权、违反目标游戏服务条款及所在地法律法规的行为。
 
@@ -252,13 +249,13 @@ AI 会按这个顺序回应：
 
 9. **条款变更**：本免责声明可能随时更新，更新后自发布之日起生效，恕不另行通知。
 
-### 关于复活已停止运营的网络游戏说明：
+### 关于复活已停止运营的网络游戏的说明
 
 本资料常被用于**已停止运营（停服 / 官方终止在线服务）**的网络游戏的存档保存、历史研究与本地化重开。就此类用途，特别声明如下：
 
 - **「已停服」不等于「进入公有领域」**。该类游戏的代码、美术、商标、剧情、音频等知识产权仍归**原权利人**所有；停服**不等于**权利人放弃权利，也不构成对第三方运营的授权。
 - 本资料仅支持**面向既有玩家社区或个人的非商业性研究、存档与延续**用途。**严禁**将其用于冒充官方、商业化牟利、发行收费服务，或损害原权利人及原玩家社区利益的行为。
-- ai生成所复活、部署与运营所引发的一切**法律、经济与声誉风险，由使用者自行承担**；作者不参与项目、不提供背书、不承担任何责任。
+- AI 生成内容所涉及的复活、部署与运营所引发的一切**法律、经济与声誉风险，由使用者自行承担**；作者不参与项目、不提供背书、不承担任何责任。
 - 若原权利人或其权利继承方提出异议，作者将**配合删除本仓库**相关资料。
 
 ---
