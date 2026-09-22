@@ -167,12 +167,7 @@ This material is often used to archive, study, and locally revive **discontinued
 
 ## License
 
-This project is released under the **GNU AGPL-3.0** (see [LICENSE](./LICENSE)):
-
-- **Copyleft**: anyone who modifies, derives from, or redistributes this project **must open-source their version under the same AGPL-3.0 license**.
-- **Additional restriction**: this project is **non-commercial only** — commercial operation, paid services, or profiting from it are prohibited; see the Disclaimer above.
-
-> Note: AGPL itself **allows** commercial use; the non-commercial restriction is an additional term imposed by this project.
+Released under the GNU AGPL-3.0 ([LICENSE](./LICENSE))
 
 ---
 
