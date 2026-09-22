@@ -132,7 +132,7 @@ YYYY-MM-DD  模块  状态变化
 2026-09-13  知识库新增  —        references/closure-verification.md（闭环 6 类假阳性 + 检查表）
 2026-09-13  知识库新增  —        references/case-il2cpp-ecdh.md（项目A 真实案例：帧格式/ECDH/已证伪项）
 2026-09-13  方法论升级  —        SKILL.md §0.1 三条铁律 → 四条（新增"不把能跑当跑通"）
-2026-09-13  项目A-登录服    [~] → [~]  （修 step2 未定义变量 + 会话清理；派生值与业务响应仍缺）
+2026-09-13  参考项目A（https://github.com/Nanako660/peach-haven）-登录服    [~] → [~]  （修 step2 未定义变量 + 会话清理；派生值与业务响应仍缺）
 2026-09-13  知识库新增  —        references/engineering-practices.md（实机跑通范式：fixture 回放/完成点/证据分档）
 2026-09-13  模板新增    —        templates/adr-template.md、templates/e2e-evidence-template.md
 2026-09-13  方法论升级  —        SKILL §0.6「启动阶段两把钥匙」；§13.1 强制产物 6 → 8 项
@@ -141,9 +141,9 @@ YYYY-MM-DD  模块  状态变化
 2026-09-13  知识库新增  —        references/verification-and-status.md（三轴状态 + 可达性五分类 + 测试分组门禁 + fail closed）
 2026-09-13  知识库新增  —        references/release-and-ops.md（监听VS对外地址 / 端口族 / 启动期冻结配置 / CDN 版本策略 / 备份 / 变更语义）
 2026-09-13  模板新增    —        templates/AGENTS.md（工作区 AI 协作契约）、templates/status-matrix.md（三轴状态矩阵）
-2026-09-13  方法论升级  —        SKILL §0.1 四条铁律 → 五条（新增"三件事分开记"）；§13.1 强制产物 8 → 10 项
-2026-09-13  知识库新增  —        references/reading-path.md（最小必读路径：按任务类型分派 3~5 个文件；开读前/收工前检查；5 个反模式）
-2026-09-13  入口优化    —        SKILL 顶部 + README 顶部 增加"先读这个，不要一次读完"引导块
+2026-09-14  方法论升级  —        SKILL §0.1 四条铁律 → 五条（新增"三件事分开记"）；§13.1 强制产物 8 → 10 项
+2026-09-14  知识库新增  —        references/reading-path.md（最小必读路径：按任务类型分派 3~5 个文件；开读前/收工前检查；5 个反模式）
+2026-09-14  入口优化    —        SKILL 顶部 + README 顶部 增加"先读这个，不要一次读完"引导块
 2026-09-15  知识库新增  —        references/inline-server.md（内联服务端：门面三类入口 / 回调投递纪律 / 延迟派发 / 双通路 / 验收与假阳性）
 2026-09-15  知识库新增  —        references/runtime-object-synthesis.md（对象级 schema 自举 + 字段发现循环 + 填值纪律 + 对象级→wire 级切换）
 2026-09-15  知识库新增  —        references/platform-sdk-and-admission.md（平台 SDK 登录态复用 + 目录服→区服两段准入 + 卡点定位）
@@ -158,7 +158,7 @@ YYYY-MM-DD  模块  状态变化
 2026-09-22  知识库新增  —        references/phases-detail.md（§1~§10 反推主流程详细版：命令/工具/判断/坑）
 2026-09-22  知识库新增  —        references/ai-contract.md（AI 行为契约完整版：强制产物/禁止/终点/回滚）
 2026-09-22  模板新增    —        templates/login-chain.md、templates/function-checklist.md
-2026-09-22  模板新增    —        templates/register-site/（注册网站：邀请码 / QQ群 / 白名单 三选一）
+2026-09-22  模板新增    —        templates/register-site/
 2026-09-22  模板新增    —        templates/frida-redirect.js、templates/xposed-redirect/（客户端重定向：native / Java）
 2026-09-22  方法论升级  —        methods.md M8 增「现成实现速查 + 复活/私服项目合集」；protocol-spec.md 增「人类可读协议文档格式」
 2026-09-22  结构合规    —        skill 目录重命名为 game-client-to-server-reverse（frontmatter name == 父目录名）
