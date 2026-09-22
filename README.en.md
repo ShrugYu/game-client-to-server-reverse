@@ -176,6 +176,19 @@ This material is often used to archive, study, and locally revive **discontinued
 
 ---
 
+## Legal Risk Notice (Important)
+
+This repository provides only **general reverse-engineering methodology**. It contains **no** specific game server implementation, cracking tool, or technical-protection bypass. Before use, you must understand:
+
+1. **Private servers / unauthorized operation**: Copying, hosting, and operating a game server without the copyright holder's permission may constitute **copyright infringement / criminal copyright offenses**, and can trigger **both criminal and civil liability**.
+2. **Providing tools / technical support**: Supplying programs, tools, or technical support for the above may constitute **aiding cybercrime** or **providing tools for unauthorized intrusion / control of computer systems**.
+3. **Anti-circumvention**: Circumventing, or providing ways to circumvent, copyright technological protection measures may be unlawful under **U.S. DMCA §1201** and can result in a **DMCA takedown** of this repository (GitHub has a dedicated review process for circumvention claims).
+4. **Platform rules**: Rights holders may file DMCA takedowns; GitHub may also act on violations of its Acceptable Use Policies.
+
+**This repository therefore expressly prohibits** any use for **unauthorized** game-server hosting / operation / profiteering, creating or distributing cracking tools, or circumventing or defeating others' technological protection measures / integrity checks. All consequences are borne by the user.
+
+---
+
 ## License
 
 Released under the GNU AGPL-3.0 ([LICENSE](./LICENSE))
