@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse"><img alt="GitHub stars" src="https://shieldcn.dev/github/stars/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
+  <a href="https://github.com/ShrugYu/game-client-to-server-reverse/blob/main/LICENSE"><img alt="License" src="https://shieldcn.dev/github/license/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/commits/main"><img alt="Last commit" src="https://shieldcn.dev/github/last-commit/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/graphs/contributors"><img alt="Contributors" src="https://shieldcn.dev/github/contributors/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/forks"><img alt="Forks" src="https://shieldcn.dev/github/forks/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
@@ -163,6 +164,17 @@ AI 会按这个顺序回应：
 - 本资料仅支持**面向既有玩家社区或个人的非商业性研究、存档与延续**用途。**严禁**将其用于冒充官方、商业化牟利、发行收费服务，或损害原权利人及原玩家社区利益的行为。
 - 复活、私服部署与运营所引发的一切**法律、经济与声誉风险，由使用者自行承担**；作者不参与具体项目、不提供背书、不承担任何责任。
 - 若原权利人或其权利继承方提出异议，作者将**配合及时删除**相关资料。
+
+---
+
+## 开源协议
+
+本项目以 **GNU AGPL-3.0** 发布（全文见 [LICENSE](./LICENSE)）：
+
+- **传染性（copyleft）**：任何人基于本项目的修改、衍生或再分发，**必须以同样的 AGPL-3.0 协议开源**，不得闭源。
+- **附加限制**：本项目**仅限非商业用途**——禁止商业化运营、收费服务或以本项目牟利；详见上文「免责声明」。
+
+> 注：AGPL 本身**允许**商业使用；"非商业"是本项目在原协议之外附加的限制。
 
 ---
 

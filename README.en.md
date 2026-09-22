@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse"><img alt="GitHub stars" src="https://shieldcn.dev/github/stars/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
+  <a href="https://github.com/ShrugYu/game-client-to-server-reverse/blob/main/LICENSE"><img alt="License" src="https://shieldcn.dev/github/license/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/commits/main"><img alt="Last commit" src="https://shieldcn.dev/github/last-commit/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/graphs/contributors"><img alt="Contributors" src="https://shieldcn.dev/github/contributors/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/forks"><img alt="Forks" src="https://shieldcn.dev/github/forks/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
@@ -161,6 +162,17 @@ This material is often used to archive, study, and locally revive **discontinued
 - This material supports **non-commercial research, archiving, and continuation for existing player communities or individuals**. Using it to impersonate the official operator, commercialize for profit, run paid services, or harm the rights holder or the original player community is **strictly prohibited**.
 - All **legal, financial, and reputational risks** from reviving, private-server deployment, and operation are **borne solely by the user**; the authors do not participate, endorse, or assume any responsibility.
 - If the original rights holder or their successor raises objections, the authors will **cooperate in removing** the relevant material promptly.
+
+---
+
+## License
+
+This project is released under the **GNU AGPL-3.0** (see [LICENSE](./LICENSE)):
+
+- **Copyleft**: anyone who modifies, derives from, or redistributes this project **must open-source their version under the same AGPL-3.0 license**.
+- **Additional restriction**: this project is **non-commercial only** — commercial operation, paid services, or profiting from it are prohibited; see the Disclaimer above.
+
+> Note: AGPL itself **allows** commercial use; the non-commercial restriction is an additional term imposed by this project.
 
 ---
 
