@@ -248,8 +248,8 @@ This material is often used to archive, study, and locally revive **discontinued
 
 - **"Discontinued" does not mean "public domain".** The code, art, trademarks, story, and audio of such games remain the property of the **original rights holders**; shutdown **does not** mean the holder waives its rights, nor does it authorize third-party operation.
 - This material supports **non-commercial research, archiving, and continuation for existing player communities or individuals**. Using it to impersonate the official operator, commercialize for profit, run paid services, or harm the rights holder or the original player community is **strictly prohibited**.
-- All **legal, financial, and reputational risks** from reviving, private-server deployment, and operation are **borne solely by the user**; the authors do not participate, endorse, or assume any responsibility.
-- If the original rights holder or their successor raises objections, the authors will **cooperate in removing** the relevant material promptly.
+- All **legal, financial, and reputational risks** arising from AI-generated reviving, deployment, and operation are **borne solely by the user**; the authors do not participate in, endorse, or assume any responsibility.
+- If the original rights holder or their successor raises objections, the authors will **cooperate in removing this repository** and the relevant material.
 
 ---
 
