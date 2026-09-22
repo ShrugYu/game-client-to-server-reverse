@@ -33,7 +33,7 @@
 
 | 维度 | 说明 |
 |------|------|
-| **定位** | 根据游戏客户端反推服务端协议，复现能真正脱离网络跑起来的客户端 |
+| **定位** | 根据游戏客户端反推服务端协议，复现出能**本地离线运行**的客户端 |
 | **输入** | 安装包（`.apk` / `.ipa` / `.exe`）、`dump.cs`、`*.lua`、`*.usmap`、抓包（`.pcap` / mitm 导出）、已有服务端样本 |
 | **输出** | `project-profile` → `evidence-inventory` → `protocol.spec.yaml`（唯一事实来源）→ 服务端代码 + 部署 + 闭环验证 |
 | **引擎覆盖** | Unity（IL2CPP / Mono / Lua）、Unreal（UE4 / UE5）、Cocos2d-x / Cocos Creator（JS / Lua 热更） |
