@@ -13,7 +13,7 @@
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse"><img alt="GitHub stars" src="https://shieldcn.dev/github/stars/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/commits/main"><img alt="Last commit" src="https://shieldcn.dev/github/last-commit/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/graphs/contributors"><img alt="Contributors" src="https://shieldcn.dev/github/contributors/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
-  <a href="https://github.com/ShrugYu/game-client-to-server-reverse"><img alt="Skills installs" src="https://shieldcn.dev/skills/installs/ShrugYu/game-client-to-server-reverse/game-client-to-server-reverse.svg?variant=secondary"></a>
+  <a href="https://github.com/ShrugYu/game-client-to-server-reverse/forks"><img alt="Forks" src="https://shieldcn.dev/github/forks/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
 </p>
 
 # Game Client → Server Protocol Reverse Engineering Skill
