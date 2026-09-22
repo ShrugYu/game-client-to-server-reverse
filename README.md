@@ -6,11 +6,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/OWNER/game-client-to-server-reverse"><img alt="GitHub stars" src="https://shieldcn.dev/github/stars/OWNER/game-client-to-server-reverse.svg?variant=secondary"></a>
-  <a href="https://github.com/OWNER/game-client-to-server-reverse/blob/main/LICENSE"><img alt="License" src="https://shieldcn.dev/github/license/OWNER/game-client-to-server-reverse.svg?variant=secondary"></a>
-  <a href="https://github.com/OWNER/game-client-to-server-reverse/commits/main"><img alt="Last commit" src="https://shieldcn.dev/github/last-commit/OWNER/game-client-to-server-reverse.svg?variant=secondary"></a>
-  <a href="https://github.com/OWNER/game-client-to-server-reverse/graphs/contributors"><img alt="Contributors" src="https://shieldcn.dev/github/contributors/OWNER/game-client-to-server-reverse.svg?variant=secondary"></a>
-  <a href="https://github.com/OWNER/game-client-to-server-reverse"><img alt="Skills installs" src="https://shieldcn.dev/skills/installs/OWNER/game-client-to-server-reverse/game-client-to-server-reverse.svg?variant=secondary"></a>
+  <a href="https://github.com/ShrugYu/game-client-to-server-reverse"><img alt="GitHub stars" src="https://shieldcn.dev/github/stars/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
+  <a href="https://github.com/ShrugYu/game-client-to-server-reverse/blob/main/LICENSE"><img alt="License" src="https://shieldcn.dev/github/license/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
+  <a href="https://github.com/ShrugYu/game-client-to-server-reverse/commits/main"><img alt="Last commit" src="https://shieldcn.dev/github/last-commit/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
+  <a href="https://github.com/ShrugYu/game-client-to-server-reverse/graphs/contributors"><img alt="Contributors" src="https://shieldcn.dev/github/contributors/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
+  <a href="https://github.com/ShrugYu/game-client-to-server-reverse"><img alt="Skills installs" src="https://shieldcn.dev/skills/installs/ShrugYu/game-client-to-server-reverse/game-client-to-server-reverse.svg?variant=secondary"></a>
 </p>
 
 # 游戏客户端 → 服务端协议反推 Skill
@@ -58,14 +58,14 @@
 ### 作为 Skill 安装（推荐）
 
 ```bash
-npx skills add OWNER/game-client-to-server-reverse
+npx skills add ShrugYu/game-client-to-server-reverse
 ```
 
 安装到当前项目、全局、或指定 agent：
 
 ```bash
-npx skills add OWNER/game-client-to-server-reverse --global
-npx skills add OWNER/game-client-to-server-reverse --agent AGENT_NAME
+npx skills add ShrugYu/game-client-to-server-reverse --global
+npx skills add ShrugYu/game-client-to-server-reverse --agent AGENT_NAME
 ```
 
 ### 手动安装
