@@ -17,11 +17,9 @@
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/forks"><img alt="Forks" src="https://shieldcn.dev/github/forks/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
 </p>
 
-# Game Client → Server Protocol Reverse Engineering Skill
+# Game Client → Offline Localization Skill
 
-> Reconstruct the **server protocol** and a **working self-hosted server** from a "client-only" game, and get the **original client to connect successfully**.
->
-> An **AI-oriented reverse-engineering playbook**: not a server-development tutorial, but "how to reverse a server out of a client".
+> Reconstruct the **server protocol** and a **working server** from a "client-only" game, and make the **original client run successfully offline, locally**.
 
 A skill package following the [Agent Skills](https://agentskills.io) spec. The core skill is `game-client-to-server-reverse`: a navigation doc `SKILL.md` + 37 `references/` docs + `templates/` + `tools/` + a runnable `server/` reference implementation.
 
@@ -31,7 +29,7 @@ A skill package following the [Agent Skills](https://agentskills.io) spec. The c
 
 | Aspect | Description |
 |------|------|
-| **Purpose** | Reverse the server protocol from a game client and reproduce a server that actually runs (reverse-engineering perspective) |
+| **Purpose** | Reverse the server protocol from a game client and reproduce a client that truly runs offline (without network) |
 | **Inputs** | Installers (`.apk` / `.ipa` / `.exe`), `dump.cs`, `*.lua`, `*.usmap`, captures (`.pcap` / mitm exports), existing server samples |
 | **Outputs** | `project-profile` → `evidence-inventory` → `protocol.spec.yaml` (single source of truth) → server code + deploy + closure verification |
 | **Engines** | Unity (IL2CPP / Mono / Lua), Unreal (UE4 / UE5), Cocos2d-x / Cocos Creator (JS / Lua hot-update) |
@@ -110,7 +108,7 @@ The AI responds in this order:
 4. server code + deploy + verification   <- derived from the spec
 ```
 
-### Reading order (for the AI)
+### AI Reading order
 
 ```
 1. references/reading-path.md   <- pick 3-5 files by task type
@@ -149,7 +147,7 @@ Before finishing: reading-path.md §2 "pre-wrap-up checklist"
 
 This skill's methodology and toolchain reference / build on the following open-source projects. Thanks to their authors and maintainers (**only projects with a public repository are listed**):
 
-### Decompilation / Reverse engineering
+###
 
 | Project | Purpose | Repository |
 |------|------|------|
@@ -174,7 +172,7 @@ This skill's methodology and toolchain reference / build on the following open-s
 | UnrealMappingsDumper | Generate .usmap mappings | https://github.com/TheNaeem/UnrealMappingsDumper |
 | AESKeyFinder | Locate UE AES keys | https://github.com/GHFear/AESKeyFinder-By-GHFear |
 
-### Dynamic instrumentation / injection / root-free frameworks
+###
 
 | Project | Purpose | Repository |
 |------|------|------|
@@ -186,7 +184,7 @@ This skill's methodology and toolchain reference / build on the following open-s
 | VirtualXposed | Root-free Xposed (virtual container) | https://github.com/android-hacker/VirtualXposed |
 | TaiChi | Root/unlock-free Xposed | https://github.com/taichi-framework |
 
-### Packet capture / protocols
+###
 
 | Project | Purpose | Repository |
 |------|------|------|
@@ -197,7 +195,7 @@ This skill's methodology and toolchain reference / build on the following open-s
 | KCP | Reliable UDP transport | https://github.com/skywind3000/kcp |
 | zlib | Compression | https://github.com/madler/zlib |
 
-### Server / runtime
+###
 
 | Project | Purpose | Repository |
 |------|------|------|
@@ -209,7 +207,7 @@ This skill's methodology and toolchain reference / build on the following open-s
 | Docker | Containerized deploy | https://github.com/docker |
 | systemd | Linux service supervision | https://github.com/systemd/systemd |
 
-### Server architecture references
+###
 
 | Project | Language | Repository |
 |------|------|------|
@@ -226,7 +224,7 @@ This skill's methodology and toolchain reference / build on the following open-s
 
 > By using this material you confirm that you have read, understood, and agreed to all clauses below. If you disagree, stop using it immediately.
 
-1. **Scope of use**: This material is for **study, research, and technical exchange**, and for interoperability research and local deployment of **self-developed, authorized, or offline single-player** games. It is a **reverse-engineering methodology document**, not a server-development tutorial, and it targets no specific game.
+1. **Scope of use**: This learning-skill material is for **study, research, and technical exchange**, and for interoperability research and local deployment of **self-developed, authorized, or offline single-player** games. It is a **methodology document**, not a server-development tutorial, and it targets no specific game.
 
 2. **No illegal use**: Using this material for any **unauthorized** intrusion, attack, destruction, tampering, bypassing of security mechanisms, data theft, or any act that infringes intellectual property or violates a game's terms of service or applicable law is strictly prohibited.
 
@@ -240,11 +238,11 @@ This skill's methodology and toolchain reference / build on the following open-s
 
 7. **Rights claims**: If you are a rights holder and believe this material infringes your rights, contact us via a repository Issue; the authors will **correct or remove** it promptly after verification.
 
-8. **Platform rules**: Rights holders may file a DMCA takedown of this Skill; GitHub may act on violations of its Acceptable Use Policies.
+8. **Platform rules**: Rights holders may file a DMCA takedown; GitHub may act on violations of its Acceptable Use Policies.
 
 9. **Changes**: This disclaimer may be updated at any time and takes effect upon publication, without further notice.
 
-### On reviving discontinued online games
+### Note on reviving discontinued online games
 
 This material is often used to archive, study, and locally revive **discontinued (shut-down / end-of-online-service)** online games. For such use, the following applies in particular:
 
@@ -278,4 +276,4 @@ Released under the GNU AGPL-3.0 ([LICENSE](./LICENSE))
 ## Changelog
 
 See the top of [`game-client-to-server-reverse/README.md`](./game-client-to-server-reverse/README.md) for the full history.
-Current version **v2.0**: foundations + four-phase roadmap + server swap (redirection) + inline-server route.
+Current version **v2.0**: foundations + four-phase roadmap + redirection + inline-server route.
