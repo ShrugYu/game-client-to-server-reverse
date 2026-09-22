@@ -17,11 +17,10 @@
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/forks"><img alt="Forks" src="https://shieldcn.dev/github/forks/ShrugYu/game-client-to-server-reverse.svg?variant=secondary&v=2"></a>
 </p>
 
-# 游戏客户端 → 服务端协议反推 Skill
+# 游戏客户端 → 离线本地化 Skill
 
-> 把「只有客户端」的游戏，还原出「服务端协议 + 可用服务端」，并让**原版客户端成功连上自建服务端**。
->
-> 一份给 AI 用的**逆向操作手册**：不是服务端开发教程，而是「怎么从客户端反推出服务端」。
+> 把「只有客户端」的游戏，还原出「服务端协议 + 可用服务端」，并让**原版客户端成功本地离线运行**。
+
 
 这是一个遵循 [Agent Skills](https://agentskills.io) 规范的 skill 包。核心 skill 名为 `game-client-to-server-reverse`，
 由一份导航主文档 `SKILL.md` + 37 篇 `references/` 正文 + `templates/` 模板 + `tools/` 脚本 + 可运行的 `server/` 参考实现组成。
@@ -32,7 +31,7 @@
 
 | 维度 | 说明 |
 |------|------|
-| **定位** | 根据游戏客户端反推服务端协议，复现出一个能真正跑起来的服务端（逆向视角） |
+| **定位** | 根据游戏客户端反推服务端协议，复现能真正脱离网络跑起来的客户端 |
 | **输入** | 安装包（`.apk` / `.ipa` / `.exe`）、`dump.cs`、`*.lua`、`*.usmap`、抓包（`.pcap` / mitm 导出）、已有服务端样本 |
 | **输出** | `project-profile` → `evidence-inventory` → `protocol.spec.yaml`（唯一事实来源）→ 服务端代码 + 部署 + 闭环验证 |
 | **引擎覆盖** | Unity（IL2CPP / Mono / Lua）、Unreal（UE4 / UE5）、Cocos2d-x / Cocos Creator（JS / Lua 热更） |
@@ -112,7 +111,7 @@ AI 会按这个顺序回应：
 4. 服务端代码 + 部署 + 验证 ← 由 Spec 派生
 ```
 
-### 阅读顺序（给 AI）
+### Ai阅读顺序
 
 ```
 1. references/reading-path.md   ← 按任务类型拿到 3~5 个文件的阅读路径
@@ -151,7 +150,7 @@ AI 会按这个顺序回应：
 
 本 skill 的方法论与工具链参考 / 使用了以下开源项目。感谢各自的作者与维护者（**仅列有公开仓库者**）：
 
-### 反编译 / 逆向 / 反汇编
+###
 
 | 项目 | 用途 | 仓库 |
 |------|------|------|
@@ -176,7 +175,7 @@ AI 会按这个顺序回应：
 | UnrealMappingsDumper | 生成 .usmap 映射 | https://github.com/TheNaeem/UnrealMappingsDumper |
 | AESKeyFinder | 定位 UE AES 密钥 | https://github.com/GHFear/AESKeyFinder-By-GHFear |
 
-### 动态调试 / 注入 / 免 root 框架
+###
 
 | 项目 | 用途 | 仓库 |
 |------|------|------|
@@ -188,7 +187,7 @@ AI 会按这个顺序回应：
 | VirtualXposed | 免 root 的 Xposed（虚拟容器） | https://github.com/android-hacker/VirtualXposed |
 | TaiChi（太极） | 免 root / 免解锁的 Xposed | https://github.com/taichi-framework |
 
-### 抓包 / 协议
+###
 
 | 项目 | 用途 | 仓库 |
 |------|------|------|
@@ -199,7 +198,7 @@ AI 会按这个顺序回应：
 | KCP | 可靠 UDP 传输 | https://github.com/skywind3000/kcp |
 | zlib | 数据压缩 | https://github.com/madler/zlib |
 
-### 服务端 / 运行环境
+###
 
 | 项目 | 用途 | 仓库 |
 |------|------|------|
@@ -211,7 +210,7 @@ AI 会按这个顺序回应：
 | Docker | 容器化部署 | https://github.com/docker |
 | systemd | Linux 服务常驻 | https://github.com/systemd/systemd |
 
-### 服务端架构参考
+###
 
 | 项目 | 语言 | 仓库 |
 |------|------|------|
@@ -228,7 +227,7 @@ AI 会按这个顺序回应：
 
 > 使用本资料即表示你已阅读、理解并同意以下全部条款；若不同意，请立即停止使用。
 
-1. **用途限定**：本资料仅供**学习、研究与技术交流**，以及针对**自研、已获授权或离线单机**游戏的互操作性研究与本地化部署。它是一份**逆向方法论文档**，不是服务端开发教程，也不针对任何特定游戏。
+1. **用途限定**：本学习skill资料仅供**学习、研究与技术交流**，以及针对**自研、已获授权或离线单机**游戏的互操作性研究与本地化部署。这是一份**方法论文档**，不是服务端开发教程，不针对任何特定游戏。
 
 2. **禁止非法用途**：严禁将本资料用于任何**未经授权**的入侵、攻击、破坏、篡改、绕过安全机制、窃取数据，或侵犯他人知识产权、违反目标游戏服务条款及所在地法律法规的行为。
 
@@ -242,11 +241,11 @@ AI 会按这个顺序回应：
 
 7. **权利主张**：若你是某作品的权利人，并认为本资料侵犯了你的合法权益，请通过仓库 Issue 联系，作者将在核实后**及时更正或删除**。
 
-8. **平台规则**：权利人可发起 DMCA 下架本 Skill；GitHub 会因违反可接受使用政策处理本仓库。
+8. **平台规则**：权利人可发起 DMCA 下架；GitHub 会因违反可接受使用政策处理本仓库。
 
 9. **条款变更**：本免责声明可能随时更新，更新后自发布之日起生效，恕不另行通知。
 
-### 关于复活已停止运营的网络游戏
+### 关于复活已停止运营的网络游戏说明：
 
 本资料常被用于**已停止运营（停服 / 官方终止在线服务）**的网络游戏的存档保存、历史研究与本地化重开。就此类用途，特别声明如下：
 
@@ -280,4 +279,4 @@ AI 会按这个顺序回应：
 ## 更新日志
 
 完整变更历史见 [`game-client-to-server-reverse/README.md`](./game-client-to-server-reverse/README.md) 顶部。
-当前版本 **v2.0**：原理层 + 四阶段路线 + 换服务端（重定向）+ 内联服务端路线。
+当前版本 **v2.0**：原理层 + 四阶段路线 + 重定向 + 内联路线。
