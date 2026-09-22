@@ -216,6 +216,13 @@ This skill's methodology and toolchain reference / build on the following open-s
 | KBEngine | C++ | https://github.com/kbengine/kbengine |
 | NoahGameFrame | C++ | https://github.com/ketoo/NoahGameFrame |
 
+### Server reference implementations
+
+| Project | Description | Repository |
+|------|------|------|
+| peach-haven | Local compatibility server + client-patch toolkit (Python: HTTP SDK + AsyncIO TCP); the implementation reference for this skill's `server/` | https://github.com/Nanako660/peach-haven |
+| BlueRebirth | Local offline restoration of a discontinued mobile game (C#/.NET local server + Mod environment) | https://github.com/LunarConcerto/BlueRebirth |
+
 > Note: the above are open-source projects mentioned/referenced in the methodology; this repository **does not bundle or distribute** them. Follow each project's own license when using them.
 
 ---
