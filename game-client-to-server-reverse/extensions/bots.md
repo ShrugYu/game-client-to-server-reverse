@@ -143,7 +143,7 @@ difficulty:
   hard:   {reaction_ms: [150, 300], mistake_rate: 0.05, strategy: "激进/最优"}
 ```
 
-- 难度应**可配置**（运营/GM 可改），并且可按房间设置。
+- 难度应**可配置**（可配置），并且可按房间设置。
 - 避免"完美 Bot"：会让玩家觉得不公平。
 
 ---
@@ -212,7 +212,6 @@ difficulty:
 | `logic/state.py` | Bot 状态并入同一状态容器 |
 | `logic/handlers/*` | Bot 复用同一套逻辑函数 |
 | 房间/匹配 | Bot 由匹配触发，房间结束回收 |
-| `gm/console.py` | 加 GM 命令：增减 Bot、改难度 |
 | Spec | 在 `protocol.spec.yaml` 里登记 `bots` 段 |
 
 ---

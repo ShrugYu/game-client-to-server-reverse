@@ -5,7 +5,7 @@
 > 必须按 `../schema/protocol.spec.yaml` 重新填。详见 `../templates/README.md`。
 >
 > 已实测：`python -m app.main` 启动 → 客户端跑通 握手→登录→建角→选角→进场景→移动→心跳，
-> 并验证 XOR 加密 + zlib 压缩 + GM 控制台 + 充值/邮件发放。
+> 并验证 XOR 加密 + zlib 压缩 + 充值/邮件发放。
 
 ## 目录
 
@@ -31,7 +31,6 @@ server/
 │   ├── store/
 │   │   ├── db.py          数据库（aiosqlite，可换 MySQL）
 │   │   └── models.py      表结构 + 游戏配置表 + 充值商品表
-│   └── gm/console.py      GM 运维控制台
 ├── config/config.yaml     协议+业务配置（改这里适配目标）
 ├── client_test.py         联调测试客户端
 ├── test_pay_mail.py       充值+邮件联调测试
@@ -53,7 +52,7 @@ python3 -m venv venv && ./venv/bin/pip install -r requirements.txt
 ./venv/bin/python -m app.main -c ./config/config.yaml
 ```
 
-启动后监听 `0.0.0.0:8888`，GM 控制台 `127.0.0.1:9900`。
+启动后监听 `0.0.0.0:8888`， `127.0.0.1:9900`。
 
 ## 联调测试
 
@@ -64,7 +63,7 @@ python3 -m venv venv && ./venv/bin/pip install -r requirements.txt
 
 输出应包含 `[+] full flow OK`。
 
-## GM 控制台
+## 
 
 ```bash
 python3 -c "import socket;s=socket.create_connection(('127.0.0.1',9900));print(s.recv(999))"
@@ -89,7 +88,6 @@ journalctl -u gsrv -f
 
 ### 端口 / 防火墙
 - 游戏端口：8888/tcp（用 KCP 则同时放行 8888/udp）
-- GM 端口：9900 **仅本机**，不要对外暴露
 
 ## 适配你的目标游戏（核心 4 步）
 
@@ -116,7 +114,6 @@ journalctl -u gsrv -f
 - **私服支付**：`game.pay_auto_success: true` → 点击购买直接成功（不接真实渠道）
 - **商品表**：`app/store/models.py` 的 `PAY_PRODUCTS`，键 = 客户端真实 `product_id`
 - **幂等**：`recharge_order.order_no` 唯一，重复回调只发一次
-- **GM 直发**：`give <cid> <gold|diamond> <n>` / `mail <cid> <title> <text> <type> <count>`
 
 联调测试：
 ```bash

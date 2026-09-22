@@ -5,7 +5,6 @@
 
 ---
 
-## 一、快速上手（注册站 + GM 后台 + 首个超管 + 用邀请码注册）
 
 ```bash
 # 0) 依赖
@@ -16,13 +15,8 @@ cd templates/register-site
 GAME_DB=../../server/data/game.db PWD_SALT=你的盐 VERIFY_MODE=invite ACCOUNT_PREFIX=svr_ \
   python3 server.py            # http://127.0.0.1:8080/
 
-# 2) 起「GM 后台」（建首个超级管理员，其余操作员在页面里维护）
-cd ../gm-admin
 GAME_DB=../../server/data/game.db PWD_SALT=你的盐 \
-  GM_ROOT_USER=admin GM_ROOT_PASS=一个强口令 \
-  GM_HOST=127.0.0.1 GM_PORT=9900 python3 server.py   # http://127.0.0.1:8090/
 
-# 3) 打开 GM 后台 → 登录(操作员) → 「邀请码」页生成一个码
 # 4) 打开注册站 → 用该邀请码注册账号 → 客户端即可用该账号登录
 
 # 5) 客户端“换服”可选：把请求重定向到自建服务端
@@ -30,7 +24,6 @@ GAME_DB=../../server/data/game.db PWD_SALT=你的盐 \
 #    native/il2cpp 客户端 → templates/frida-redirect.js
 ```
 
-> 详细用法看各自目录里的 `README.md`：`register-site/README.md`、`gm-admin/README.md`。
 
 ---
 
@@ -48,7 +41,6 @@ GAME_DB=../../server/data/game.db PWD_SALT=你的盐 \
 | 目录 | 是什么 | 用法 |
 |------|--------|------|
 | `register-site/` | **注册网站**（响应式，自包含） | 账号注册/登录，支持**邀请码 / QQ群 / 白名单 三选一**（`VERIFY_MODE`） |
-| `gm-admin/` | **GM 后台**（响应式，自包含） | 操作员/玩家登录 + 角色权限 + 审计；发奖励 / 公告 / GM命令 / 在线 / 邀请码 / 操作员管理 |
 | `xposed-redirect/` | **LSPosed 模块骨架**（Java/OkHttp） | 改写 URL 换服；无 root 用 LSPatch/NPatch |
 
 ### 文档模板
@@ -101,7 +93,6 @@ GAME_DB=../../server/data/game.db PWD_SALT=你的盐 \
 
 - 长连接二进制协议参考：`../server/`（Python/asyncio，已实测）
 - 桩 / 脚本：`mock_server.py`、`frida_bypass_ssl.js`、`frida-redirect.js`、`kcp_sniff.py`
-- 界面：`register-site/`、`gm-admin/`
 - 重定向：`xposed-redirect/`、`frida-redirect.js`
 - 文档模板：`AGENTS.md`、`adr-template.md`、`e2e-evidence-template.md`、`status-matrix.md`、`login-chain.md`、`function-checklist.md`
 

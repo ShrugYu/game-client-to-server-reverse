@@ -118,9 +118,8 @@ python3 tools/extract_interfaces.py <源码目录> --out out/interfaces.md --jso
 ## 7. 阶段六：服务端建模与实现
 
 1. **建模**：建 opcode 配对表（`请求 → 响应` + 触发条件）；画状态机（`连接/握手 → 登录 → 选角 → 进场景 → 战斗 → 结算`，标每步 opcode 与前置状态）；标注长连接依赖（心跳、重连、序列号、时间戳）。
-2. **工程化实现**：本 skill 自带可运行服务端 `server/`（已实测跑通 握手→登录→建角→选角→进场景→移动→心跳 + XOR + zlib + GM）。**分层架构 / "适配目标游戏只改 4 处" / 必备能力清单** → 详见 `server/README.md`；由 Spec 派生的映射 → `protocol-spec.md §D`。
+2. **工程化实现**：本 skill 自带可运行服务端 `server/`（已实测跑通 握手→登录→建角→选角→进场景→移动→心跳 + XOR + zlib）。**分层架构 / "适配目标游戏只改 4 处" / 必备能力清单** → 详见 `server/README.md`；由 Spec 派生的映射 → `protocol-spec.md §D`。
 
-> **必备能力**（缺一个客户端可能掉线，按游戏实际取舍）：长度前缀+opcode 拆包(LE/BE) · 加密&压缩 1:1 复现 · 心跳应答/超时踢下线 · 账号→角色→场景状态机 · 掉线重连&顶号 · 服务端权威校验 · 落库 · GM 后台 · 限流/单 IP/版本校验。
 
 **产出**：`server/`、`docs/statemachine.md`、`docs/protocol.md`。
 
@@ -139,7 +138,7 @@ python3 tools/extract_interfaces.py <源码目录> --out out/interfaces.md --jso
 | systemd | `sudo bash server/deploy/deploy.sh` | 自动建用户/venv/服务；`journalctl -u gsrv -f` |
 | Docker | `cd server/deploy && docker compose up -d --build` | — |
 
-- **端口**：游戏 `8888/tcp`（KCP 再放行 `udp`）；GM `9900` **只绑 127.0.0.1**；云上需放行安全组。
+- **端口**：游戏 `8888/tcp`（KCP 再放行 `udp`）；云上需放行安全组。
 - **数据库**：默认 SQLite（`data/game.db`）→ 生产改 MySQL（`database.url`）。
 - **端游/手游运行环境差异**（Termux 保活 / Windows NSSM）→ `references/termux.md`、`references/windows.md`；**发布/端口族/配置冻结/备份** → `references/release-and-ops.md`。
 

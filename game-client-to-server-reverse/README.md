@@ -4,7 +4,7 @@
 从客户端反推协议 → 复现服务端 → 部署 → 让原版客户端成功连上。
 
 > [x] 本包自带的服务端已**实测跑通**：握手 → 登录 → 建角 → 选角 → 进场景 → 移动 → 心跳，
-> 并验证 XOR 加密 + zlib 压缩 + GM 控制台 + 充值/邮件发放。
+> 并验证 XOR 加密 + zlib 压缩 + 充值/邮件发放。
 >
 >  **2026-09-22 更新（v2.0）** —— 本版主题：原理层 + 四阶段路线 + **换服务端（重定向）**：
 > ⓪ **版本升至 2.0**：整合 1.x 全部成果 + 以下 ①~⑪；
@@ -26,24 +26,7 @@
 >    （第三方代理模块实测范例，免 root）；`methods.md` M8 加"**多人/联机复活项目**"检索入口；
 > ⑫ **签名绕过**：`repack-rename.md §8` 加入 **LSPatch Signature Bypass（等级 2）机制** / 独立签名破解
 >    （`ApkSignatureKiller` / 核心破解） / 真正不改签名的虚拟容器（VirtualXposed / 太极）；§7 落点表述改为"按代价从低到高"；
-> ⑬ **配套界面模板**：`templates/register-site/`（注册网站）+ `templates/gm-admin/`（GM 后台），各含 `index.html` + 最小 Flask 后端；
 >    接入点：`account.md §6`、`release-and-ops.md §7`、`SKILL §16`；
-> ⑭ **GM 后台对齐真实面板**：按实测的"某 Unity IL2CPP 手游"GM 面板（AES-GCM 签名表单 + CDK 激活 + 发货到邮件）
->    重写 `templates/gm-admin/`（选服→账号查角色→角色列表→激活/发货/物品/记录），动作名对齐 `api.php`；知识已记入 `release-and-ops.md §7`；
-> ⑮ **邀请码 / 三选一校验**：注册站支持 **邀请码 / QQ群验证 / 白名单** 三选一（`VERIFY_MODE`）；
->    GM 后台新增"**邀请码**"页（任一已注册用户可生成 / 列表 / 撤销），注册站按邀请码核销；两模板共享同一 DB 的 `invite_code` 表；
-> ⑯ **GM 后台鉴权改造**：**移除 CDK 激活**；发奖励前须输入**该账号注册时的密码**（服务端校验哈希）；
->    发放支持**货币 / 物品 / 奖励邮件**并写 `gm_send_log` 可查；
-> ⑰ **GM 后台补齐通用模块**：新增 **公告广播 / GM 命令台 / 在线列表**；全局操作用**操作员口令**
->    （`GM_ADMIN_TOKEN`）。模块对照开源 GM 后台（gamekeeper 的服务器监控/玩家查询/后台命令等）取长补短；
-> ⑱ **GM 后台登录 + 权限 + 安全**：加**操作员登录**（独立账号体系，PBKDF2）与**玩家登录**（游戏账号）；
->    **角色权限分离**（player/viewer/support/admin/super，前后端双重校验）；**全程审计**（`gm_audit` 记操作员/动作/IP）；
->    安全加固（仅绑 127.0.0.1、失败限流、会话 token + `X-GM-Token` 头、常量时间比较、无默认口令）；
-> ⑲ **登录页 + Tab 合并**：未登录只显示**独立登录页**；原"公告 + GM命令"合并为**服务器管理**，
->    仅服务器管理员（admin/super）可访问使用；
-> ⑳ **操作员管理页（仅 super）**：增删操作员 / 改角色 / 启停 / 重置密码（PBKDF2 重存），
->    权限体系闭环（首个超管由环境变量创建，其余在此维护）；
-> ㉑ **收尾**：重写 `templates/README.md`（分类总览 + **快速上手 5 步**）；`release-and-ops.md §7`、`account.md §6` 更新模板指引。
 >
 >  **2026-09-15 实战沉淀（v1.8 新增）**：
 > ⑬ **内联服务端**：不起外部服务端，在客户端**进程内**拦截网络门面合成响应
@@ -62,7 +45,7 @@
 > ⑨ **实现层核心**：不依赖 protobuf 运行时的 **wire 级定点改写**（帧 codec + 字段遍历 + splice 替换 + 空子消息必须保留）→ `references/wire-level-patching.md`
 > ⑩ **客户端地址来源清查**（六类来源 + 落点优先级 + 重签后果 + 阶段验收）→ `references/client-address-sources.md`
 > ⑪ **三轴状态与验收体系**（实现 / 自动测试 / 客户端验收 + 可达性五分类 + 提交门禁）→ `references/verification-and-status.md`
-> ⑫ **发布、部署与运营**（监听 vs 对外地址 / 端口族 / 启动期冻结配置 / CDN 版本策略 / 后台 / 备份）→ `references/release-and-ops.md`
+> ⑫ **发布、部署与运营**（监听 vs 对外地址 / 端口族 / 启动期冻结配置 / CDN 版本策略 / 备份）→ `references/release-and-ops.md`
 
 ---
 
@@ -222,7 +205,7 @@ docs/status/support-matrix ← 三轴状态：实现 / 自动测试 / 客户端�
 │   ├── wire-level-patching.md  实现层核心：不依赖 pb runtime 的 wire 级定点改写
 │   ├── client-address-sources.md  客户端地址来源清查 + 落点策略
 │   ├── verification-and-status.md  三轴状态 + 可达性分类 + 测试门禁
-│   ├── release-and-ops.md   发布 / 部署 / 运营 / CDN / 后台 / 备份
+│   ├── release-and-ops.md   发布 / 部署 / 运营 / CDN / 备份
 │   ├── case-il2cpp-ecdh.md  真实案例：IL2CPP + ECDH 登录服 + 卡点复核
 │   ├── inline-server.md     内联服务端：进程内合成响应（与外部服务端并列的第二条路）
 │   ├── runtime-object-synthesis.md  运行时对象合成与字段发现（对象级 schema 自举）
@@ -256,7 +239,6 @@ docs/status/support-matrix ← 三轴状态：实现 / 自动测试 / 客户端�
 │   ├── frida-redirect.js   客户端重定向：hook getaddrinfo/connect（native/il2cpp）
 │   ├── xposed-redirect/    LSPosed 模块骨架：改写 URL（Java/OkHttp 客户端）
 │   ├── register-site/      注册网站（index.html + 最小 Flask 后端）
-│   ├── gm-admin/           GM 后台（index.html + 最小 Flask 后端）
 │   ├── AGENTS.md            工作区 AI 协作契约（放在项目根）
 │   ├── adr-template.md      架构决策记录（含「当前不做的事情」+ 回滚）
 │   ├── e2e-evidence-template.md  实机端到端证据（帧序表 + 差异解释 + 重连快照）
@@ -303,7 +285,6 @@ Python 只是本仓库的参考实现。真实案例里：**Go**（某 Unity 手
 - `game.pay_grant_mode`: `direct`（直接进背包）/ `mail`（发邮件领取）
 - `game.pay_auto_success: true` → 点击购买直接成功
 - 商品表 `PAY_PRODUCTS` 键 = 客户端真实 `product_id`
-- GM 直发：`give` / `mail` / `pay`
 
 ##  后续拓展（可选，不影响核心运行）
 
@@ -321,7 +302,6 @@ Python 只是本仓库的参考实现。真实案例里：**Go**（某 Unity 手
 服务端本身能跑**，不影响「连上/登录/进游戏」。
 
 - 参考骨架：`server/app/logic/bots.py`（**只是骨架**，默认 `auto_fill: 0` 不生成假玩家）
-- 调试：GM 命令 `bots spawn / bots clear / bots difficulty`
 - 联调：`python server/test_bots.py`
 
 > 注意: 拓展**不参与**核心验收。没做拓展 ≠ 交付不完整。
@@ -332,7 +312,7 @@ Python 只是本仓库的参考实现。真实案例里：**Go**（某 Unity 手
 |---|---|---|
 | 用途 | 抓包后快速验证协议结论 | 真正部署、长期运营 |
 | 规模 | 单文件 | 分层工程 |
-| 能力 | 帧收发 + opcode 桩 | 数据库/状态机/客户端保护/GM/部署 |
+| 能力 | 帧收发 + opcode 桩 | 数据库/状态机/客户端保护/部署 |
 | 何时用 | 逆向中期试探 | 逆向完成、要跑起来 |
 
 ## 最快上手

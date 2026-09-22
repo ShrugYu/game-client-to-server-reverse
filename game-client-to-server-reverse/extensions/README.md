@@ -46,7 +46,7 @@
 3. 若必须：
    a. 读 bot-reverse.md → 从客户端反推人机机制 → 写进 Spec
    b. 读 bots.md → 按方法论实现
-   c. 用 GM 命令调试： bots spawn / bots clear / bots difficulty
+   c. 用调试命令： bots spawn / bots clear / bots difficulty
 4. 验收：原版客户端里人机表现正常
 ```
 
@@ -57,7 +57,6 @@
 | 拓展 | 说明 |
 |------|------|
 | 客户端保护 / 服务端权威校验 | 已有基础（`server_authoritative`），可加强 |
-| 运营后台 | 参考案例 A 的运营台、案例 B 的 React `/admin/` |
 | 多区服 / 负载均衡 | 网关与逻辑分离 |
 | 排行榜 / 活动系统 | 业务拓展 |
 | 资源 CDN 化 | 把资源从服务端剥离到 CDN |

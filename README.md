@@ -53,7 +53,7 @@
 - **wire 级定点改写**（`references/wire-level-patching.md`）：不依赖 protobuf 运行时，直接在字节层读写字段。
 - **闭环验证 6 类假阳性**（`references/closure-verification.md`）：端口在听 ≠ 服务可用，自环 ≠ 客户端兼容。
 - **参考实现**（`server/`）：长连接二进制协议服务端（Python），实测跑通握手 → 登录 → 建角 → 选角 → 进场景 → 移动 → 心跳。
-- **配套界面模板**：`templates/register-site/`（注册网站）、`templates/gm-admin/`（GM 后台，含权限 / 审计 / 邀请码）。
+- **配套界面模板**：`templates/register-site/`（注册网站）。
 
 ---
 
@@ -138,7 +138,7 @@ AI 会按这个顺序回应：
     ├── TRACKER.md                   进度与接口清单
     ├── references/                  37 篇按需加载的正文
     ├── schema/                      project-profile.yaml / protocol.spec.yaml 模板
-    ├── templates/                   文档与代码模板（注册站、GM 后台、ADR、e2e 证据…）
+    ├── templates/                   文档与代码模板（注册站、ADR、e2e 证据…）
     ├── tools/                       extract_interfaces.py / make_stub_so.py / repack_zip.py
     ├── examples/                    不同游戏类型的推演示例
     ├── extensions/                  可选拓展（服务端人机 / 反推人机机制）

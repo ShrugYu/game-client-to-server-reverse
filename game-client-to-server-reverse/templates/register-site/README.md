@@ -16,7 +16,6 @@
 | `whitelist` | 账号 | 命中 `whitelist` 表 |
 | `none` | 无 | 不校验 |
 
-> **邀请码机制**：任一**已注册用户**都能在 GM 后台生成邀请码（见 `templates/gm-admin/` 的"邀请码"页），
 > 新玩家用该码注册。奖励闭环：`注册 → 得码 → 邀请 → 新人注册 → 码 used+1`。
 
 ## 可配置项（页面 `CFG` 一处改完）
@@ -49,7 +48,6 @@ POST /api/login    {username,password}                                    -> {ok
 ## 表（与游戏服同一 DB）
 ```
 account(username, password_hash)
-invite_code(code PK, created_by, quota, used, expire_at, created_at)   # GM 后台生成
 group_members(qq PK, note)                                              # QQ群名单
 whitelist(username PK)                                                  # 白名单
 ```

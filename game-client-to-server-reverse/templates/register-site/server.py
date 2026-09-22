@@ -13,7 +13,6 @@
   whitelist 白名单：username 必须在 whitelist 表内；
   none      不校验。
 
-表（都在同一 DB，GM 后台也会用）：
   account(id, username, password_hash)
   invite_code(code PK, created_by, quota, used, expire_at, created_at)
   group_members(qq PK, note)

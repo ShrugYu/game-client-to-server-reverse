@@ -84,15 +84,9 @@ log:
   rotate_mb: 32
   keep_files: 7
 
-# ---- GM / 运维 ----
-gm:
-  enabled: true
-  host: "127.0.0.1"
-  port: 9900
 
 # ---- 服务端人机（ 后续拓展，可选）----
 # 不影响核心运行；默认 enabled=true 但 auto_fill=0，即不生成任何假玩家。
-# 需要时用 GM 命令生成： bots spawn <scene> <n> [难度]
 # 详见 extensions/bots.md
 bots:
   enabled: true

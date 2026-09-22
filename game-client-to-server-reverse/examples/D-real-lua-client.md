@@ -108,7 +108,7 @@ python3 tools/extract_interfaces.py ./lua_src --out interfaces.md --json interfa
 | **热更** | `CLIENT_HOTFIX` | 1 | 客户端热更 |
 | **客户端存档** | `CLIENT_SAVE_*` | 4 | 设置类 |
 | **心跳** | `NONE` | 1 | 空包保活 |
-| **GM/QA** | `QACMD` | 1 | 服务端执行指令 |
+| **QA** | `QACMD` | 1 | 服务端执行指令 |
 
 ---
 

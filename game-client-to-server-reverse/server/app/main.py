@@ -33,11 +33,6 @@ async def run(cfg):
     server = GameServer(cfg)
     await server.start()
 
-    # GM 控制台（可选）
-    gm_task = None
-    if cfg.get("gm.enabled", False):
-        from .gm.console import start_gm
-        gm_task = asyncio.create_task(start_gm(cfg, server))
 
     stop_event = asyncio.Event()
 
@@ -57,8 +52,6 @@ async def run(cfg):
     except (KeyboardInterrupt, asyncio.CancelledError):
         pass
     finally:
-        if gm_task:
-            gm_task.cancel()
         await server.stop()
         db = get_db()
         await db.close()

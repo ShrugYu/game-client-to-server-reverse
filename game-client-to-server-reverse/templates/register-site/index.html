@@ -158,7 +158,6 @@ const CFG = {
   // 注册校验方式，三选一： "invite"(邀请码) | "group"(QQ群验证) | "whitelist"(白名单) | "none"(不校验)
   verifyMode: "invite",
   verify: {
-    invite:    { label:"邀请码（由已注册玩家在 GM 后台生成）", placeholder:"输入邀请码",     pattern:/^[A-Za-z0-9-]{4,32}$/, hint:"邀请码无效或已被使用", key:"invite" },
     group:     { label:"你的QQ号（须已加入玩家群，用于自动验证）", placeholder:"例如 123456789", pattern:/^\d{5,12}$/, hint:"请填写正确的QQ号", key:"qq" },
     whitelist: { label:"白名单账号（仅名单内可注册）", placeholder:"输入你已被添加的账号", pattern:/^[A-Za-z0-9_]{3,32}$/, hint:"该账号不在白名单内", key:"invite" }
   },

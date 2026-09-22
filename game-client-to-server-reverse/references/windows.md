@@ -74,7 +74,6 @@ New-NetFirewallRule -DisplayName "GameMockServer" -Direction Inbound `
 # 若用 UDP/KCP
 New-NetFirewallRule -DisplayName "GameMockServerUDP" -Direction Inbound `
   -Protocol UDP -LocalPort 8888 -Action Allow
-# GM 端口(9900) 只允许本机，不要对外开放
 ```
 
 ## D. 公网访问
@@ -123,7 +122,6 @@ New-NetFirewallRule -DisplayName "GameMockServerUDP" -Direction Inbound `
 - 用了 Store 版 python 别名 → 建议关掉"应用执行别名"，用官方安装版。
 - NSSM 服务起不来 → 看 `AppStderr` 日志，多半是工作目录/路径含中文空格（用引号包住）。
 - 防火墙没放行 → 局域网客户端连不上。
-- GM 端口暴露公网 → 安全风险，务必只绑 `127.0.0.1`。
 ---
 
 ## I.  逆向工具链在 Windows/Git Bash 的坑（实测）

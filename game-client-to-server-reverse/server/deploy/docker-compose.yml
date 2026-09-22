@@ -11,7 +11,7 @@ services:
     ports:
       - "8888:8888"     # 游戏协议端口 TCP
       # - "8888:8888/udp"  # 若用 KCP/UDP 打开这行
-      - "9900:9900"     # GM 控制台（生产请勿对外暴露）
+      - "9900:9900"     # （生产请勿对外暴露）
     volumes:
       - ../config:/app/config:ro
       - ../data:/app/data

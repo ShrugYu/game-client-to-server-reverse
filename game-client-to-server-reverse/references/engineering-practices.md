@@ -226,7 +226,6 @@ logs            实时日志
 account list / create <u> <p> / credit <u> <n>   账号与虚拟钱包
 ```
 
-> 注意 `account credit` 这种「GM 直发」入口 —— 私服支付**不走真实支付渠道**，
 > 由服务端直接判定成功并入账（与本 skill §15 一致）。
 
 ---

@@ -232,7 +232,7 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 | `references/cases.md` | **两个真实成功的服务端项目**（Go / Node） | 看真实项目的子系统与取舍，校准自己的方案 |
 | `references/client-languages.md` | 各客户端语言的反编译与打补丁 | 先判语言，再选工具 |
 | `references/cocos2d.md` | **Cocos2d-x / Cocos Creator 深潜**（.jsc/.lua 解包 / 自加密 HTTP-RPC / 多端口 / 热更 / 语言表还原 / **§H2 进服后的 Live 运营**：note 双层包裹、客户端本地存档合并、双表版本差异、自愈设计、部署纪律） | 目标是 cocos 客户端时必读（另见 `examples/E-cocos2dx-http-js.md` §8 Live 运营阶段） |
-| `references/live-ops.md` | **Live 运营手册**（进服后 30+ 子系统按投诉频率排序的补全次序 / 契约反推法 / 自愈设计 / 后台即排障工具 / 双表差异处置） | **进服之后**读，与 cocos2d.md §H2 互补、引擎无关 |
+| `references/live-ops.md` | **Live 运营手册**（进服后 30+ 子系统按投诉频率排序的补全次序 / 契约反推法 / 自愈设计 / 双表差异处置） | **进服之后**读，与 cocos2d.md §H2 互补、引擎无关 |
 | `references/from-installer.md` | **零输入自举**：只有安装包怎么自产证据 | 最常见的入口，必读 |
 | `references/reading-path.md` | **最小必读路径**（按任务类型给 3~5 个文件的阅读顺序） | **打开 skill 的第一件事** |
 | `references/methods.md` | **10 种反推方法 + 选择矩阵** | **动手前先看**（§0.0） |
@@ -241,7 +241,7 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 | `references/wire-level-patching.md` | **实现层核心**：不依赖 protobuf 运行时的 wire 级定点改写 | **写服务端之前必读**；决定"先跑起来还是先凑 schema" |
 | `references/client-address-sources.md` | **客户端地址来源清查**（六类来源 + 落点策略 + 重签后果） | **改包/对接客户端之前必读**；解决"改了 URL 还连官方" |
 | `references/verification-and-status.md` | **三轴状态 + 可达性分类 + 测试门禁** | 写 TRACKER / 宣称完成之前必读 |
-| `references/release-and-ops.md` | **发布、部署与运营**（配置冻结 / 端口族 / CDN / 后台 / 备份） | 跑通之后要交付时看 |
+| `references/release-and-ops.md` | **发布、部署与运营**（配置冻结 / 端口族 / CDN / 备份） | 跑通之后要交付时看 |
 | `references/case-il2cpp-ecdh.md` | 真实案例：Unity IL2CPP + ECDH 登录服（进行中） | 看"分层结论怎么写 + 卡点怎么复核" |
 | `references/repack-rename.md` | 改包名 / 重打包 / 签名 / 包名派生密钥 | 想产独立安装包时看 |
 | `references/inline-server.md` | **内联服务端**：在客户端进程内合成响应（门面三类入口 / 回调投递纪律 / 延迟派发 / 双通路 / 内联版验收与假阳性） | **能注入且要单机化时先读这个** —— 它决定你要不要起外部服务端 |
@@ -387,7 +387,6 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 - **两条路径**（`game.pay_grant_mode`）：`direct` 货币直接进角色 ／ `mail` 发附件邮件自助领取；`pay_auto_success:true` 跳过真实校验。
 - **协议**：`PAY_PRODUCT_LIST 0x0501/2`、`PAY 0x0503/4`、`MAIL_{LIST,READ,CLAIM} 0x0401~0x0406`、`MAIL_NEW_NTF 0x0407`。
 - **踩过的坑**：① 邮件推送必须在 PayRes **之后**发（否则被当成充值回包）；② 领取/已读/删除共用结构但**必须用各自 opcode**；③ `order_no UNIQUE` 保**幂等**；④ 发放全在服务端。
-- **GM**：`give <cid> <gold|diamond> <n>` ／ `mail <cid> <title> <text> <type> <n>` ／ `pay <cid> <product_id>`。
 - **边界**：仅自建/离线/已授权；不接真实支付渠道、不伪造凭证。
 
 ---
@@ -396,7 +395,7 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 
 > 目标：**官方客户端**用**我们自己注册的账号**登录我们的服务端。方法论 → `references/account.md`。
 
-- **账号从哪来**：A 客户端内注册 ／ **B 独立注册网站**（写同一 DB，客户端只登录；模板 → `templates/register-site/`）／ C GM 批量建号。
+- **账号从哪来**：A 客户端内注册 ／ **B 独立注册网站**（写同一 DB，客户端只登录；模板 → `templates/register-site/`）／ C 脚本批量建号。
 - **注意: 最大的坑——密码预处理**：客户端常先 `MD5(pwd+salt)` 再发包，**必须复刻其哈希**，否则注册的密码登不上。找法：读登录函数 / 抓两次包看密文是否固定；落 Spec 的 `account.password_hash/salt/client_side_hashing`。
 - **接口替换**：优先**改配置 / hosts**，不动二进制；有服务器列表就返回我们自己的地址（→ §8.6、`client-address-sources.md`）。
 - **典型链路**：`版本/公告 → 登录(账号+密文) → token → 服务器列表 → 带 token 连游戏服(TCP)`。
@@ -456,9 +455,8 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 | **服务端人机（假玩家）** | `extensions/bots.md` | 多人副本凑不齐人时用 AI 自动补位 |
 | **反推人机机制** | `extensions/bot-reverse.md` | 无参考项时从客户端获取信息反推它的人机实现 |
 **人机为什么是拓展**：单人游戏完全不需要；多人缺人只损体验、**服务端本身能跑**；参考实现默认 `auto_fill: 0`（不生成假玩家）。
-**用法**（跑通后再做）：核心链路先通 → 确认是否"必须多人" → `bot-reverse.md` 反推机制写进 Spec → `bots.md` 实现 → GM 调试（`bots spawn/clear/difficulty`）→ 原版客户端验收。
+**用法**（跑通后再做）：核心链路先通 → 确认是否"必须多人" → `bot-reverse.md` 反推机制写进 Spec → `bots.md` 实现 → 调试（`bots spawn/clear/difficulty`）→ 原版客户端验收。
 
-其它预留： 运营后台 / 多区服 / 排行榜 / 资源 CDN / 存档迁移。详见 `extensions/README.md`。
 
 > 注意: 拓展**不参与**核心验收（§13 的强制产物与闭环）。没做拓展 ≠ 交付不完整。
 > 不要因为拓展没做就认为交付不完整；也不要把它塞进核心流程。

@@ -51,7 +51,7 @@ A skill package following the [Agent Skills](https://agentskills.io) spec. The c
 - **Wire-level patching** (`references/wire-level-patching.md`): read/write fields at the byte level without a protobuf runtime.
 - **Closure verification, 6 false-positive classes** (`references/closure-verification.md`): a listening port ≠ a usable service; a self-loop ≠ client compatibility.
 - **Reference implementation** (`server/`): a long-connection binary protocol server (Python), verified end to end: handshake → login → create character → select → enter scene → move → heartbeat.
-- **UI templates**: `templates/register-site/` (registration site), `templates/gm-admin/` (GM panel with roles / audit / invite codes).
+- **UI templates**: `templates/register-site/` (registration site).
 
 ---
 
@@ -136,7 +136,7 @@ Before finishing: reading-path.md §2 "pre-wrap-up checklist"
     ├── TRACKER.md                   progress & interface list
     ├── references/                  37 on-demand docs
     ├── schema/                      project-profile.yaml / protocol.spec.yaml templates
-    ├── templates/                   docs & code templates (register site, GM panel, ADR, e2e evidence, ...)
+    ├── templates/                   docs & code templates (register site, ADR, e2e evidence, ...)
     ├── tools/                       extract_interfaces.py / make_stub_so.py / repack_zip.py
     ├── examples/                    worked examples for different game types
     ├── extensions/                  optional (server bots / reverse-engineer bots)

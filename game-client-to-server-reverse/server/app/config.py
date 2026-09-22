@@ -25,7 +25,6 @@ DEFAULTS: dict[str, Any] = {
              "auto_push_char_list": True},
     "log": {"level": "INFO", "file": "./logs/gsrv.log",
             "rotate_mb": 32, "keep_files": 7},
-    "gm": {"enabled": True, "host": "127.0.0.1", "port": 9900},
     "bots": {"enabled": True, "tick_hz": 5, "auto_fill": 0,
              "default_scene": 1, "difficulty": "normal"},
     "security": {"token_secret": "change_me", "token_ttl": 86400,

@@ -83,7 +83,6 @@ class OP(IntEnum):
 
     # ---- 系统 ----
     ERROR_NTF     = 0x7F01
-    GM_REQ        = 0x7F02
 
 
 # 错误码

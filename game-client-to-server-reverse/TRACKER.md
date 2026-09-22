@@ -66,7 +66,6 @@
 |------|------|------|
 | 客户端保护 / 服务端校验 | [ ] | 服务端侧仍要做权威校验 |
 | 客户端对接（改包名 / 重打包 / 签名） | [ ] | 见 `references/repack-rename.md`；**优先"不改包 + 端口劫持"** |
-| 运营后台 | [ ] | |
 | 资源分发 / CDN | [ ] | |
 | 人机（假玩家） | [-] |  拓展；游戏没有就不做 |
 
@@ -140,7 +139,7 @@ YYYY-MM-DD  模块  状态变化
 2026-09-13  知识库新增  —        references/wire-level-patching.md（实现层核心：帧 codec + pb 字段遍历 + splice 定点改写 + presence 陷阱 + 幂等收据 + fixture 选号）
 2026-09-13  知识库新增  —        references/client-address-sources.md（地址六类来源 + 落点优先级 + 重签后果 + 阶段验收）
 2026-09-13  知识库新增  —        references/verification-and-status.md（三轴状态 + 可达性五分类 + 测试分组门禁 + fail closed）
-2026-09-13  知识库新增  —        references/release-and-ops.md（监听VS对外地址 / 端口族 / 启动期冻结配置 / CDN 版本策略 / 后台 / 备份 / 变更语义）
+2026-09-13  知识库新增  —        references/release-and-ops.md（监听VS对外地址 / 端口族 / 启动期冻结配置 / CDN 版本策略 / 备份 / 变更语义）
 2026-09-13  模板新增    —        templates/AGENTS.md（工作区 AI 协作契约）、templates/status-matrix.md（三轴状态矩阵）
 2026-09-13  方法论升级  —        SKILL §0.1 四条铁律 → 五条（新增"三件事分开记"）；§13.1 强制产物 8 → 10 项
 2026-09-13  知识库新增  —        references/reading-path.md（最小必读路径：按任务类型分派 3~5 个文件；开读前/收工前检查；5 个反模式）
@@ -160,7 +159,6 @@ YYYY-MM-DD  模块  状态变化
 2026-09-22  知识库新增  —        references/ai-contract.md（AI 行为契约完整版：强制产物/禁止/终点/回滚）
 2026-09-22  模板新增    —        templates/login-chain.md、templates/function-checklist.md
 2026-09-22  模板新增    —        templates/register-site/（注册网站：邀请码 / QQ群 / 白名单 三选一）
-2026-09-22  模板新增    —        templates/gm-admin/（GM 后台：操作员/玩家登录 + 角色权限 + 审计 + 发奖励 + 邀请码 + 操作员管理）
 2026-09-22  模板新增    —        templates/frida-redirect.js、templates/xposed-redirect/（客户端重定向：native / Java）
 2026-09-22  方法论升级  —        methods.md M8 增「现成实现速查 + 复活/私服项目合集」；protocol-spec.md 增「人类可读协议文档格式」
 2026-09-22  结构合规    —        skill 目录重命名为 game-client-to-server-reverse（frontmatter name == 父目录名）
