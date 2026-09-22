@@ -1,0 +1,112 @@
+# =========================================================
+# 游戏服务端配置
+# 所有"从客户端逆向出来的协议参数"都集中在这里，改这里即可适配目标
+# =========================================================
+
+server:
+  host: "0.0.0.0"
+  port: 8888
+  transport: "tcp"          # tcp | udp(kcp 需额外依赖) | ws
+  backlog: 128
+  max_connections: 5000
+  # 心跳：服务端多久没收到包就断开（秒）
+  idle_timeout: 30
+  # 单帧最大字节
+  max_frame: 1048576
+
+# ---- 帧封装层（对应 SKILL.md §4 第 [2] 层）----
+frame:
+  length_size: 4            # 长度字段字节数
+  length_endian: "big"      # big | little
+  length_includes_self: false
+  opcode_size: 2            # 消息号字段字节数（0 = 无独立 opcode；本协议表用 16 位）
+  opcode_endian: "little"
+
+# ---- 加密层（第 [3] 层）----
+crypto:
+  enabled: false
+  algorithm: "xor"          # xor | rc4 | aes
+  key: "0x11223344"         # hex 或字符串
+  # 是否对每个连接使用独立密钥（握手协商）
+  per_connection: false
+
+# ---- 压缩层（第 [4] 层）----
+compress:
+  enabled: false
+  algorithm: "zlib"         # zlib | lz4 | gzip
+  min_size: 256             # 小于该值不压缩
+
+# ---- 序列化层（第 [5] 层）----
+serialize:
+  format: "binary"          # binary | json | protobuf | msgpack
+  # binary 模式下：相对 payload 首字节的字段布局定义
+  # name,type,size  type: u8/u16/u32/u64/i*/f32/f64/bytes/str
+  fields: []
+
+# ---- 数据库 ----
+database:
+  url: "sqlite:///./data/game.db"
+  # 生产建议 MySQL: "mysql://user:pass@127.0.0.1:3306/game"
+  echo: false
+  pool_size: 5
+
+# ---- 缓存（可选 Redis）----
+cache:
+  enabled: false
+  url: "redis://127.0.0.1:6379/0"
+
+# ---- 业务开关 ----
+game:
+  name: "MyGame"
+  version: "1.0.0"
+  # 客户端版本校验（逆向得到的期望版本号）
+  require_version: true
+  expected_version: "1.0.0"
+  # 是否开启服务端权威校验（反作弊核心）
+  server_authoritative: true
+  # 登录后是否自动推送角色列表
+  auto_push_char_list: true
+  # 充值发放方式：direct=直接加货币  mail=发邮件领取
+  pay_grant_mode: "direct"
+  # 私服支付：点击购买直接成功（true）／需真实校验（false）
+  pay_auto_success: true
+  # 背包格数上限（满则掉落转邮件）
+  max_bag_slots: 50
+  # 房间默认人数上限
+  room_max_size: 4
+  # 战斗回合上限（超时判负）
+  battle_max_turn: 20
+
+# ---- 日志 ----
+log:
+  level: "INFO"
+  file: "./logs/gsrv.log"
+  rotate_mb: 32
+  keep_files: 7
+
+# ---- GM / 运维 ----
+gm:
+  enabled: true
+  host: "127.0.0.1"
+  port: 9900
+
+# ---- 服务端人机（ 后续拓展，可选）----
+# 不影响核心运行；默认 enabled=true 但 auto_fill=0，即不生成任何假玩家。
+# 需要时用 GM 命令生成： bots spawn <scene> <n> [难度]
+# 详见 extensions/bots.md
+bots:
+  enabled: true
+  tick_hz: 5            # AI 驱动频率（每秒几次）
+  auto_fill: 0          # 启动时自动补多少人机（0 = 不自动）
+  default_scene: 1
+  difficulty: "normal"  # easy | normal | hard
+
+# ---- 安全 ----
+security:
+  # 登录 token 签名密钥
+  token_secret: "change_me_in_production"
+  token_ttl: 86400
+  # 单 IP 最大连接数
+  max_conn_per_ip: 32
+  # 登录失败节流
+  login_rate_limit: 10        # 每分钟

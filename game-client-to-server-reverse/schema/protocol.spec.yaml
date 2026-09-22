@@ -1,0 +1,166 @@
+# =========================================================
+# 协议规格模板（Protocol Spec）
+# 唯一事实来源：所有代码/文档/测试都从这份派生
+# 复制到 out/protocol.spec.yaml 再填
+# 每个结论必须带 evidence(证据编号) 与 confidence(high/medium/low)
+# =========================================================
+
+meta:
+  project_name: "TODO"
+  spec_version: "0.1"
+  updated_at: "TODO"
+
+project:
+  engine: "TODO"
+  platform: "TODO"
+  client_language: "TODO"
+
+# ---- 传输层 ----
+transport:
+  type: "TODO"              # tcp | udp | kcp | quic | ws | http
+  port: 0                   # 若已知
+  tls: false
+  evidence: []
+  confidence: "low"
+
+# ---- 封装层 ----
+frame:
+  mode: "length_prefix"     # length_prefix | delimiter | raw
+  length_size: 0            # 1 | 2 | 4
+  length_endian: "little"   # little | big
+  includes_self: false
+  opcode_size: 0            # 0 = 无独立消息号
+  opcode_endian: "little"
+  delimiter: null           # 若 mode=delimiter，如 "0d0a"
+  evidence: []
+  confidence: "low"
+
+# ---- 加密层 ----
+crypto:
+  enabled: false
+  algorithm: "none"         # none | xor | rc4 | aes | custom
+  key_source: "unknown"     # hardcoded | handshake | login | derived | unknown
+  key: null                 # 已知则填(hex/字符串)
+  iv: null
+  per_connection: false
+  custom_note: ""           # 自定义算法说明
+  evidence: []
+  confidence: "low"
+
+# ---- 压缩层 ----
+compress:
+  enabled: false
+  algorithm: "zlib"         # zlib | gzip | lz4
+  min_size: 0
+  evidence: []
+  confidence: "low"
+
+# ---- 序列化层 ----
+serialize:
+  format: "binary"          # json | protobuf | msgpack | binary | flatbuffers
+  endian: "little"
+  strings: "length_prefixed_u16"   # length_prefixed_u8/u16/u32 | fixed | cstring
+  evidence: []
+  confidence: "low"
+
+# ---- 消息号表 ----
+opcodes:
+  source: "unknown"         # dump.cs | lua | sdk.h | inferred
+  table:
+    # - {value: 0x0001, name: HANDSHAKE_REQ, dir: c2s, msg: HandshakeReq}
+    # - {value: 0x0002, name: HANDSHAKE_RES, dir: s2c, msg: HandshakeRes}
+  evidence: []
+  confidence: "low"
+
+# ---- 消息字段布局 ----
+messages:
+  # LoginReq:
+  #   opcode: 0x0101
+  #   direction: c2s
+  #   fields:
+  #     - {name: username, type: str}
+  #     - {name: password, type: str}
+  #     - {name: client_ver, type: u32}
+  #   evidence: [E01]
+  #   confidence: high
+
+# ---- 状态机 ----
+state_machine:
+  # - {state: CONNECT,   on: [HANDSHAKE_REQ], next: HANDSHAKED}
+  # - {state: HANDSHAKED, on: [LOGIN_REQ],    next: LOGGED_IN}
+  # - {state: LOGGED_IN,  on: [CHAR_SELECT_REQ], next: IN_GAME}
+  evidence: []
+  confidence: "low"
+
+# ---- 业务模块 ----
+modules:
+  account: false            # 账号/登录
+  character: false          # 角色
+  scene: false              # 场景/移动
+  mail: false               # 邮件
+  shop: false               # 商店
+  pay: false                # 充值
+  chat: false               # 聊天
+  guild: false              # 公会
+  notes: ""
+
+# ---- 客户端（语言 + 打补丁方式）----
+client:
+  language: "TODO"          # csharp | il2cpp | as3 | lua | js | java | cpp
+  source_available: false   # 能否反编译出源码
+  decompiler: "TODO"        # dnSpy | jadx | FFDec | unluac | ida
+  patch_method: "TODO"      # config_file | source_rebuild | binary_patch | runtime_hook
+  patch_target: "TODO"
+  skip_login: false
+
+# ---- 通用子系统（别漏）----
+subsystems:
+  account:   {enabled: false, store: "sqlite"}
+  save:      {enabled: false, path: "./data/game.db"}
+  admin:     {enabled: false, bind: "127.0.0.1", port: 0}
+  resources: {enabled: false, mode: "local"}   # local | cdn | hybrid
+  ports:
+    main: 0
+    battle: 0               # 常为 main+1
+    admin: 0                # 常为 main+2
+  client_patch: {method: "config_file"}
+
+# ---- 服务端人机（ 可选拓展，不影响核心运行）----
+# 跑通之后再考虑；不需要就整段留空。
+# 先反推（extensions/bot-reverse.md），再复刻。
+bots:
+  enabled: false            # 是否启用该拓展
+  # —— 反推结论（来自客户端）——
+  needed: false             # 开局是否要求多人
+  ownership: "unknown"      # server | client | hybrid | unsupported
+  supported_by_client: false  # 客户端协议是否支持 AI
+  ai_flag_field: null       # 客户端里的"这是AI"标记字段，如 "is_ai"
+  ai_flag_values: {}        # {human: 0, ai: 1}
+  identity_fields: []       # AI 需要的身份字段 name/level/job/deck/avatar
+  action_opcodes: []        # AI 动作复用哪些 opcode
+  flow_opcodes: []          # 加入/准备/开始/离开
+  min_players: 0            # 开局最少人数
+  evidence: []              # 证据编号
+  # —— 复刻配置 ——
+  mode: "logic"             # puppet | logic | fake_client | external
+  auto_fill: 0              # 缺人时自动补几个
+  difficulty: "normal"      # easy | normal | hard
+  humanize: true            # 拟人化（延迟/抖动/失误）
+  behaviors: []             # 需要的行为，如 wander/follow/use_card
+  recycle: true             # 房间结束回收
+
+# ---- 未确认项 ----
+unresolved:
+  # - item: "crypto.key"
+  #   need: "二进制内 XOR 密钥常量 / 握手包中的 key 字段"
+  #   blocking: true
+  - item: "TODO"
+    need: "TODO"
+    blocking: true
+
+# ---- 参考实现选择 ----
+implementation:
+  language: "python"        # python | go | rust | node | java | cpp
+  reference: "server/"      # 用哪个参考实现作骨架
+  reason: "TODO"
+  impact_matrix: []         # 需要改动的参考实现位置

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0e14">
+<title>账号注册</title>
+<style>
+  :root{--bg:#0b0e14;--bg2:#111725;--card:#151b28;--line:#242c3d;--fg:#e7ebf3;--mut:#8b95a7;
+    --pri:#4f8cff;--pri2:#6ea8ff;--ok:#34d399;--err:#f87171;--warn:#fbbf24;--radius:16px;--shadow:0 10px 40px rgba(0,0,0,.45)}
+  [data-theme="light"]{--bg:#f6f7fb;--bg2:#eef1f8;--card:#fff;--line:#e3e8f0;--fg:#161c28;--mut:#5c6675;
+    --pri:#2f6bff;--pri2:#5b8bff;--shadow:0 10px 40px rgba(30,50,90,.12)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{display:grid;grid-template-columns:1.05fr .95fr;min-height:100dvh}
+  .hero{position:relative;overflow:hidden;background:
+      radial-gradient(900px 500px at 15% 10%,rgba(79,140,255,.35),transparent 60%),
+      radial-gradient(700px 500px at 90% 90%,rgba(52,211,153,.22),transparent 55%),
+      linear-gradient(160deg,var(--bg2),var(--bg));padding:48px;display:flex;flex-direction:column;justify-content:space-between}
+  .hero .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+  .hero .mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--pri),var(--pri2));display:grid;place-items:center;color:#fff;font-weight:800}
+  .hero h1{font-size:34px;line-height:1.25;margin:0 0 12px}
+  .hero p{color:var(--mut);max-width:38ch;margin:0}
+  .hero .tips{margin-top:26px;display:flex;flex-direction:column;gap:10px;color:var(--mut);font-size:13px}
+  .hero .tips i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--pri);margin-right:8px;vertical-align:middle}
+  .panel{display:flex;align-items:center;justify-content:center;padding:32px 20px;background:var(--bg)}
+  .card{width:100%;max-width:430px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .brand{display:flex;align-items:center;gap:8px;font-weight:700}
+  .brand .mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--pri),var(--pri2));display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px}
+  .ghost{border:1px solid var(--line);background:transparent;color:var(--mut);border-radius:10px;padding:6px 10px;font-size:12px;cursor:pointer}
+  h1{font-size:20px;margin:0 0 4px;text-align:center}
+  .sub{text-align:center;font-size:12.5px;color:var(--mut);margin-bottom:14px}
+  .guide{background:var(--bg2);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.9;margin-bottom:16px}
+  .guide b{color:var(--pri)}
+  .tabs{display:flex;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:16px}
+  .tabs button{flex:1;padding:9px;border:0;background:transparent;color:var(--mut);border-radius:9px;cursor:pointer;font-size:14px;font-weight:600}
+  .tabs button.active{background:var(--card);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+  .field{margin-bottom:13px}
+  label{display:block;font-size:12.5px;color:var(--mut);margin-bottom:6px}
+  .ctrl{position:relative}
+  input{width:100%;padding:12px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;color:var(--fg);font-size:15px;transition:.15s}
+  input:focus{outline:none;border-color:var(--pri);box-shadow:0 0 0 3px rgba(79,140,255,.16)}
+  .prefix-wrap{display:flex}
+  .prefix{flex:0 0 auto;display:flex;align-items:center;padding:0 12px;background:var(--bg2);border:1px solid var(--line);border-right:0;border-radius:11px 0 0 11px;font-weight:800;color:var(--pri);font-size:14px}
+  .prefix-wrap input{border-radius:0 11px 11px 0}
+  .eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--mut);cursor:pointer;padding:6px;font-size:12px}
+  .bar{height:6px;border-radius:6px;background:var(--bg2);overflow:hidden;margin-top:8px}
+  .bar>i{display:block;height:100%;width:0;background:var(--err);transition:.25s}
+  .hint{font-size:12px;color:var(--mut);margin-top:6px;min-height:16px}
+  .terms{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--mut);margin:6px 0 12px}
+  .terms input{width:auto;margin-top:3px}
+  .btn{width:100%;padding:13px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;font-size:15px;font-weight:800;cursor:pointer}
+  .btn:disabled{opacity:.6}
+  #result{display:none;margin-top:14px;padding:14px;border-radius:12px;font-size:13.5px;line-height:1.8}
+  #result.ok{display:block;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.4);color:var(--ok)}
+  #result.bad{display:block;background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.4);color:var(--err)}
+  #result .account{display:block;text-align:center;font-size:20px;font-weight:900;color:var(--pri);margin:8px 0;user-select:all;word-break:break-all}
+  .copy{display:block;margin:6px auto 0;padding:7px 14px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);border-radius:9px;cursor:pointer;font-size:12.5px}
+  .note{font-size:11.5px;color:var(--mut);margin-top:12px;line-height:1.8;text-align:center}
+  @media (max-width:900px){.wrap{grid-template-columns:1fr}.hero{display:none}
+    .panel{min-height:100dvh;padding:20px 14px calc(24px + env(safe-area-inset-bottom))}.card{box-shadow:none;border-radius:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside class="hero">
+    <div class="logo"><span class="mark" id="hMark">R</span><span id="hName">账号中心</span></div>
+    <div>
+      <h1 id="hTitle">创建你的游戏账号</h1>
+      <p id="hDesc">注册成功后，即可在原客户端登录，接入我们自建的服务端。</p>
+      <div class="tips"><div><i></i>与游戏服共用一个账号库</div><div><i></i>密码处理方式与客户端一致</div><div><i></i>支持手机 / 电脑访问</div></div>
+    </div>
+    <div style="color:var(--mut);font-size:12px">仅用于自建 / 已授权 / 离线目标</div>
+  </aside>
+
+  <main class="panel">
+    <div class="card">
+      <div class="topbar">
+        <div class="brand"><span class="mark" id="cMark">R</span><span id="cName">账号中心</span></div>
+        <button class="ghost" id="theme" type="button">切换主题</button>
+      </div>
+      <h1 id="pTitle">账号注册</h1>
+      <div class="sub" id="pSub">注册完成后，用该账号密码登录游戏</div>
+
+      <div class="guide" id="guide" style="display:none"></div>
+
+      <div class="tabs">
+        <button id="tabReg" class="active" type="button">注册</button>
+        <button id="tabLogin" type="button">登录</button>
+      </div>
+
+      <form id="formReg" autocomplete="on">
+        <div class="field">
+          <label for="u" id="labelUser">登录账号</label>
+          <div class="prefix-wrap" id="prefixWrap">
+            <span class="prefix" id="prefixText">svr_</span>
+            <input id="u" name="username" minlength="3" maxlength="16" placeholder="例如 zhangsan01" autocomplete="username" required>
+          </div>
+          <div class="hint" id="userHint"></div>
+        </div>
+        <div class="field">
+          <label for="p">密码</label>
+          <div class="ctrl">
+            <input id="p" name="password" type="password" minlength="6" maxlength="64" placeholder="至少 6 位" autocomplete="new-password" required>
+            <button class="eye" type="button" data-for="p">显示</button>
+          </div>
+          <div class="bar"><i id="strength"></i></div>
+          <div class="hint" id="strengthText"></div>
+        </div>
+        <div class="field">
+          <label for="p2">重复密码</label>
+          <div class="ctrl">
+            <input id="p2" name="confirm" type="password" minlength="6" placeholder="再输入一次密码" autocomplete="new-password" required>
+            <button class="eye" type="button" data-for="p2">显示</button>
+          </div>
+        </div>
+        <div class="field" id="verifyField" style="display:none">
+          <label for="verify" id="verifyLabel">校验信息</label>
+          <input id="verify" autocomplete="off">
+          <div class="hint" id="verifyHint"></div>
+        </div>
+        <label class="terms"><input type="checkbox" id="agree" checked> 我已了解：本账号仅用于自建服务端接入</label>
+        <button class="btn" id="btnReg" type="submit">立即注册</button>
+      </form>
+
+      <form id="formLogin" style="display:none" autocomplete="on">
+        <div class="field">
+          <label for="lu">登录账号</label>
+          <div class="prefix-wrap"><span class="prefix" id="prefixText2">svr_</span><input id="lu" placeholder="输入账号" autocomplete="username"></div>
+        </div>
+        <div class="field">
+          <label for="lp">密码</label>
+          <div class="ctrl"><input id="lp" type="password" placeholder="输入密码" autocomplete="current-password"><button class="eye" type="button" data-for="lp">显示</button></div>
+        </div>
+        <button class="btn" id="btnLogin" type="submit">登录</button>
+        <div class="note">登录入口通常由游戏客户端提供</div>
+      </form>
+
+      <div id="result"></div>
+      <div class="note" id="note"></div>
+    </div>
+  </main>
+</div>
+
+<script>
+/* ================= 可配置项 ================= */
+const CFG = {
+  appName: "账号中心", title: "账号注册", sub: "注册完成后，用该账号密码登录游戏",
+  heroTitle: "创建你的游戏账号",
+  heroDesc: "注册成功后，即可在原客户端登录，接入我们自建的服务端。",
+  prefix: "svr_",                          // 账号前缀；不需要设 ""
+  userLabel: "登录账号", userHint: "3-16 位字母 / 数字 / 下划线", userPattern: /^[A-Za-z0-9_]{3,16}$/,
+  guide: ["1. 填写账号 / 密码", "2. 填写校验信息（邀请码 / QQ群 / 白名单）", "3. 提交后即可用该账号登录游戏"],
+  guideTitle: "注册步骤",
+
+  // 注册校验方式，三选一： "invite"(邀请码) | "group"(QQ群验证) | "whitelist"(白名单) | "none"(不校验)
+  verifyMode: "invite",
+  verify: {
+    invite:    { label:"邀请码（由已注册玩家在 GM 后台生成）", placeholder:"输入邀请码",     pattern:/^[A-Za-z0-9-]{4,32}$/, hint:"邀请码无效或已被使用", key:"invite" },
+    group:     { label:"你的QQ号（须已加入玩家群，用于自动验证）", placeholder:"例如 123456789", pattern:/^\d{5,12}$/, hint:"请填写正确的QQ号", key:"qq" },
+    whitelist: { label:"白名单账号（仅名单内可注册）", placeholder:"输入你已被添加的账号", pattern:/^[A-Za-z0-9_]{3,32}$/, hint:"该账号不在白名单内", key:"invite" }
+  },
+
+  notes: ["请牢记账号与密码，忘记密码无法找回。", "启用 QQ群验证时，进群后身份同步可能有延迟，稍等再注册。"],
+  apiRegister: "/api/register", apiLogin: "/api/login"
+};
+/* =========================================== */
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+function show(ok, html){ const b=$("#result"); b.className = ok?"ok":"bad"; b.innerHTML = html; b.scrollIntoView({behavior:"smooth",block:"center"}); }
+
+/* 套用配置 */
+$("#hName").textContent = $("#cName").textContent = CFG.appName;
+$("#hMark").textContent = $("#cMark").textContent = (CFG.appName||"R").slice(0,1);
+$("#hTitle").textContent = CFG.heroTitle; $("#hDesc").textContent = CFG.heroDesc;
+$("#pTitle").textContent = CFG.title; $("#pSub").textContent = CFG.sub;
+$("#labelUser").textContent = CFG.userLabel; $("#userHint").textContent = CFG.userHint;
+if (CFG.prefix) { $("#prefixText").textContent = CFG.prefix; $("#prefixText2").textContent = CFG.prefix; }
+else { $$("#prefixText,#prefixText2").forEach(e=>e.style.display="none"); }
+if (CFG.guide && CFG.guide.length) { $("#guide").style.display="block"; $("#guide").innerHTML = "<b>"+CFG.guideTitle+"：</b><br>"+CFG.guide.join("<br>"); }
+const VSPEC = CFG.verify[CFG.verifyMode];
+if (CFG.verifyMode && CFG.verifyMode !== "none" && VSPEC) {
+  $("#verifyField").style.display = "block";
+  $("#verifyLabel").textContent = VSPEC.label; $("#verify").placeholder = VSPEC.placeholder; $("#verifyHint").textContent = VSPEC.hint;
+}
+$("#note").innerHTML = (CFG.notes||[]).join("<br>");
+
+/* 主题 */
+(function(){ const s=localStorage.getItem("theme"); if(s) document.documentElement.dataset.theme=s;
+  $("#theme").onclick=()=>{ const c=document.documentElement.dataset.theme==="dark"?"light":"dark"; document.documentElement.dataset.theme=c; localStorage.setItem("theme",c); }; })();
+$$(".eye").forEach(b=>b.onclick=()=>{ const i=$("#"+b.dataset.for); i.type=i.type==="password"?"text":"password"; b.textContent=i.type==="password"?"显示":"隐藏"; });
+$("#p").addEventListener("input", e=>{ const v=e.target.value; let s=0;
+  if(v.length>=6)s++; if(v.length>=10)s++; if(/[a-z]/.test(v)&&/[A-Z]/.test(v))s++; if(/\d/.test(v))s++; if(/[^A-Za-z0-9]/.test(v))s++;
+  const pct=[0,25,50,75,100][Math.min(s,4)], col=["#f87171","#fbbf24","#fbbf24","#34d399","#34d399"][Math.min(s,4)];
+  $("#strength").style.width=pct+"%"; $("#strength").style.background=col; $("#strengthText").textContent=v?["弱","弱","中","强","很强"][Math.min(s,4)]:""; });
+
+async function call(path, body){ const r=await fetch(path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  const j=await r.json().catch(()=>({})); return {ok:r.ok&&j.ok, status:r.status, data:j, msg:j.msg||("请求失败("+r.status+")")}; }
+
+$("#formReg").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const esc = CFG.prefix.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  let u = $("#u").value.trim(); if (CFG.prefix) u = u.replace(new RegExp("^"+esc),"");
+  const p=$("#p").value, p2=$("#p2").value, verifyVal=$("#verify").value.trim();
+  if (!CFG.userPattern.test(u)) return show(false, "账号需为 "+CFG.userHint);
+  if (p.length<6 || p.length>64) return show(false, "密码需为 6-64 位");
+  if (p!==p2) return show(false, "两次输入的密码不一致");
+  if (VSPEC && !VSPEC.pattern.test(verifyVal)) return show(false, VSPEC.hint);
+  if (!$("#agree").checked) return show(false, "请先勾选同意");
+  $("#btnReg").disabled=true; $("#btnReg").textContent="注册中…";
+  const payload = {username:u, password:p, confirm:p2, verify_mode:CFG.verifyMode};
+  if (VSPEC) payload[VSPEC.key] = verifyVal;
+  try{
+    const r = await call(CFG.apiRegister, payload);
+    if (r.ok){
+      const acc = r.data.username || (CFG.prefix + u);
+      show(true, "注册成功！<span class='account'>"+acc+"</span>打开游戏 → 登录界面，用该账号登录。<button class='copy' id='cp'>复制账号</button>" + (r.data.msg?"<br>"+r.data.msg:""));
+      const cp=$("#cp"); if(cp) cp.onclick=()=>{ navigator.clipboard?.writeText(acc); cp.textContent="已复制"; };
+      $("#formReg").reset(); $("#strength").style.width="0"; $("#strengthText").textContent="";
+    } else show(false, r.msg);
+  }catch(err){ show(false,"网络错误："+err.message); }
+  finally{ $("#btnReg").disabled=false; $("#btnReg").textContent="立即注册"; }
+});
+$("#formLogin").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const esc = CFG.prefix.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  let u = $("#lu").value.trim(); if (CFG.prefix) u = u.replace(new RegExp("^"+esc),"");
+  const r = await call(CFG.apiLogin, {username:u, password:$("#lp").value});
+  show(r.ok, r.ok?"登录成功":r.msg);
+});
+
+const tR=$("#tabReg"), tL=$("#tabLogin");
+tR.onclick=()=>{ tR.classList.add("active"); tL.classList.remove("active"); $("#formReg").style.display=""; $("#formLogin").style.display="none"; $("#guide").style.display=(CFG.guide&&CFG.guide.length)?"block":"none"; };
+tL.onclick=()=>{ tL.classList.add("active"); tR.classList.remove("active"); $("#formLogin").style.display=""; $("#formReg").style.display="none"; $("#guide").style.display="none"; };
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Local outputs / artifacts
+out/
+*.db
+*.sqlite
+*.log
+
+# Frida / capture artifacts
+*.pcap
+*.pcapng
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  gsrv:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: gsrv:latest
+    container_name: gsrv
+    restart: unless-stopped
+    ports:
+      - "8888:8888"     # 游戏协议端口 TCP
+      # - "8888:8888/udp"  # 若用 KCP/UDP 打开这行
+      - "9900:9900"     # GM 控制台（生产请勿对外暴露）
+    volumes:
+      - ../config:/app/config:ro
+      - ../data:/app/data
+      - ../logs:/app/logs
+    environment:
+      - GSRV_CONFIG=/app/config/config.yaml
+      - GSRV_LOG__LEVEL=INFO
+      - TZ=Asia/Shanghai
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket;socket.create_connection(('127.0.0.1',8888),2)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # 可选：MySQL（把 config.yaml 的 database.url 换成 mysql://...）
+  # mysql:
+  #   image: mysql:8.0
+  #   restart: unless-stopped
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: gamepass
+  #     MYSQL_DATABASE: game
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #   ports:
+  #     - "3306:3306"
+
+  # 可选：Redis
+  # redis:
+  #   image: redis:7-alpine
+  #   restart: unless-stopped
+  #   ports:
+  #     - "6379:6379"
+
+# volumes:
+#   mysql_data:

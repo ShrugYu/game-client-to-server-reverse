@@ -1,0 +1,28 @@
+[Unit]
+Description=Game Mock Server (gsrv)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=gsrv
+Group=gsrv
+WorkingDirectory=/opt/gsrv
+Environment=GSRV_CONFIG=/opt/gsrv/config/config.yaml
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/gsrv/venv/bin/python -m app.main -c /opt/gsrv/config/config.yaml
+Restart=always
+RestartSec=3
+# 优雅退出
+KillSignal=SIGTERM
+TimeoutStopSec=15
+# 资源限制
+LimitNOFILE=65535
+# 安全加固
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/opt/gsrv/data /opt/gsrv/logs
+
+[Install]
+WantedBy=multi-user.target

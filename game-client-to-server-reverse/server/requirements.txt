@@ -1,0 +1,18 @@
+# 游戏服务端工程依赖
+# 核心（必需）
+PyYAML>=6.0
+aiofiles>=23.0
+
+# 数据库
+aiosqlite>=0.19
+
+# 可选：AES / protobuf 按需启用
+# cryptography>=42.0
+# protobuf>=4.25
+# redis>=5.0
+# pymysql>=1.1
+# asyncpg>=0.29
+
+# 测试
+pytest>=8.0
+pytest-asyncio>=0.23

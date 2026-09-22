@@ -1,0 +1,74 @@
+# =========================================================
+# 项目档案模板（Project Profile）
+# AI 读取用户项目后填此文件，作为所有后续决策的输入
+# 复制到 out/project-profile.yaml 再填
+# =========================================================
+
+meta:
+  project_name: "TODO"
+  created_at: "TODO"
+  analyst: "AI"
+
+# ---- 引擎与环境 ----
+project:
+  engine: "TODO"            # unity-il2cpp | unity-mono | unity-lua | unreal | cocos | custom | unknown
+  engine_version: "TODO"    # 如 UE5.3 / Unity2021.3
+  client_language: "TODO"   # csharp | cpp | lua | js | java | unknown
+  platform: "TODO"          # android | ios | windows | web | multiple
+  arch: "TODO"              # arm64 | x86_64 | il2cpp-arm64 ...
+  protection: "TODO"        # none | packer | anti-debug | string-encrypt | ...
+
+# ---- 用户实际提供了什么 ----
+provided_artifacts:
+  # 填实际有的；没有的留空
+  dump_cs: false            # Unity IL2CPP dump
+  global_metadata: false
+  libil2cpp: false
+  assembly_csharp: false    # Unity Mono
+  lua_scripts: false
+  luac: false
+  usmap: false              # UE mapping
+  sdk_dump: false           # UE SDK (.h/.cpp)
+  pak: false                # UE pak/utoc/ucas
+  pcap: false               # 抓包
+  proto_files: false        # .proto
+  config_tables: false      # 游戏配置表(csv/excel/json)
+  screenshots: false
+  other: []
+
+# ---- 还需要什么证据 ----
+needs:
+  - "TODO"                  # 例: 登录后的抓包 / XOR 密钥 / 0x0305 字段布局
+
+# ---- 初判（可留空，由决策树补全）----
+hints:
+  transport_hint: "unknown"   # tcp | udp | kcp | quic | ws | http | unknown
+  serialize_hint: "unknown"   # protobuf | json | msgpack | binary | unknown
+  crypto_hint: "unknown"      # none | xor | rc4 | aes | custom | unknown
+  known_tools_output: []      # 例: [il2cppdumper, fmodel, ue4ss]
+
+# ---- 目标 ----
+goal:
+  primary: "reverse_and_rebuild_server"   # 反推并重建服务端
+  deliverables:
+    - protocol_spec
+    - server
+    - deploy
+    - verification
+  constraints:
+    - "仅自研/已授权/离线目标"
+
+# ---- 反推方法（见 references/methods.md，动手前必填）----
+method:
+  inputs: []                # PKG / CAP / SRC / RUN / DBG / MANIP / REF
+  goal_type: "TODO"         # DOC | FLOW | FULL | PATCH
+  constraints: []
+  picked: "TODO"            # M1..M10 主方法
+  combo: []                 # 组合使用的方法
+  reason: "TODO"            # 为什么选它
+  switches: []              # 中途切换记录：{from, to, why}
+
+# ---- 探测命令（可复现）----
+scan_commands:
+  engine_probe: "find <project> -maxdepth 4 -iname '*.pak' -o -iname 'global-metadata.dat' -o -iname 'libil2cpp.so' -o -iname 'libUE4.so'"
+  lib_probe: "grep -rIl -E 'protobuf|kcp|msgpack|websocket|socket\\.io' <project> | head"

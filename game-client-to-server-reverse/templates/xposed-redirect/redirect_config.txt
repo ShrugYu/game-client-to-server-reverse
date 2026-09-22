@@ -1,0 +1,5 @@
+# 原host=我们的host/IP
+api.example.com=192.168.1.100
+game.example.com=192.168.1.100
+# 可选：全局端口覆盖
+#PORT=8888
