@@ -62,7 +62,7 @@ game:
   # 客户端版本校验（逆向得到的期望版本号）
   require_version: true
   expected_version: "1.0.0"
-  # 是否开启服务端权威校验（反作弊核心）
+  # 是否开启服务端权威校验（服务端权威校验）
   server_authoritative: true
   # 登录后是否自动推送角色列表
   auto_push_char_list: true

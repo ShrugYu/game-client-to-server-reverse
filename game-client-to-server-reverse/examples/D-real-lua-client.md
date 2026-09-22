@@ -14,7 +14,7 @@
 | 源码规模 | 2429 文件 / 2365 个 `.lua` |
 | 协议文件 | `message/Lua_MessageUtil.lua`（**18573 行 / 632KB**） |
 | 配置表 | `config/Cfg*`（92+ 张） |
-| 反作弊 | ACE / FairGuard / 自研 + 文件校验 |
+| 客户端保护 | 保护库 / 自研 + 文件校验 |
 | 热更 | 遍地 `*Hotfix.lua` + HotfixManager |
 
 ---
@@ -105,7 +105,6 @@ python3 tools/extract_interfaces.py ./lua_src --out interfaces.md --json interfa
 | **掉落/奖励** | `QUEST_DROP` / `COMBAT_LOTTERY_*` / `REWARD_*` | ~29 | 掉落与战令 |
 | **任务** | `QUEST_*` | 11 | `QUEST_GET_LIST` / `QUEST_DONE` |
 | **防沉迷** | `ANTI_INDULGE_*` | 3 | 实名 / 绑定手机 |
-| **反作弊** | `ACE_*` / `FG_SEND_ANTI_DATA` / `COMBAT_CLIENT_CHEAT_LOG` | ~10 | 上报 |
 | **热更** | `CLIENT_HOTFIX` | 1 | 客户端热更 |
 | **客户端存档** | `CLIENT_SAVE_*` | 4 | 设置类 |
 | **心跳** | `NONE` | 1 | 空包保活 |
@@ -177,15 +176,6 @@ MATCH_ROOM_INFO / MATCH_ROUND_* / MATCH_SCORE_*
 ```
 → 与 §17「房间」设计的规则（槽位/准备/开始/踢人/房主）**完全吻合**，可互相印证。
 
-### 6.4 反作弊是「独立上报通道」
-
-```
-COMBAT_CLIENT_CHEAT_LOG / ACE_SEND_ANTI_DATA / FG_SEND_ANTI_DATA
-```
-→ 客户端上报，**服务端裁决**。反推服务端时：
-- 这些接口**可以接受上报但不裁决**（我们自己的服务端）
-- 或**直接忽略**（私服不需要）
-
 ### 6.5 热更后门
 
 遍地 `*Hotfix.lua` = 官方线上补丁机制。
@@ -202,7 +192,6 @@ COMBAT_CLIENT_CHEAT_LOG / ACE_SEND_ANTI_DATA / FG_SEND_ANTI_DATA
 | protobuf 信封 | 需要 `.proto` 定义或按 `msg.request.xxx` 还原字段 |
 | 有 `NONE` 心跳 | 必须先实现心跳应答，否则上线秒掉 |
 | 有 `QACMD` | 服务端可保留但**不实现**（或只做调试用） |
-| 有反作弊上报 | 可接收但**不裁决** |
 | 无人机协议 | **不做人机**（游戏本身没有） |
 
 ---

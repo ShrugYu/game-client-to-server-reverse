@@ -104,7 +104,7 @@ journalctl -u gsrv -f
 - 数据库换 MySQL：`database.url = mysql://user:pass@host/db`
 - 密码哈希换 bcrypt/argon2
 - 多进程/多节点：网关与逻辑分离，用 Redis 做共享会话
-- 反作弊：开启 `game.server_authoritative`，所有客户端数值服务端重算
+- 客户端保护：开启 `game.server_authoritative`，所有客户端数值服务端重算
 
 ---
 

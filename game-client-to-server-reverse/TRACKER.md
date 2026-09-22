@@ -64,7 +64,7 @@
 ### 系统 / 拓展
 | 模块 | 状态 | 备注 |
 |------|------|------|
-| 反外挂 / 服务端校验 | [ ] | 客户端侧剥离见 `references/anticheat.md`；服务端侧仍要做权威校验 |
+| 客户端保护 / 服务端校验 | [ ] | 服务端侧仍要做权威校验 |
 | 客户端对接（改包名 / 重打包 / 签名） | [ ] | 见 `references/repack-rename.md`；**优先"不改包 + 端口劫持"** |
 | 运营后台 | [ ] | |
 | 资源分发 / CDN | [ ] | |
@@ -129,7 +129,6 @@ YYYY-MM-DD  模块  状态变化
 ```
 ```
 2026-09-12  账号-登录  [ ] → [x]  （示例：跑通真实客户端登录）
-2026-09-13  知识库新增  —        references/anticheat.md（ACE/TSS/TPRT 诊断 + so 空壳化）
 2026-09-13  知识库新增  —        references/repack-rename.md（改包名全清单 + 签名 + 重打包）
 2026-09-13  知识库新增  —        references/closure-verification.md（闭环 6 类假阳性 + 检查表）
 2026-09-13  知识库新增  —        references/case-il2cpp-ecdh.md（项目A 真实案例：帧格式/ECDH/已证伪项）
@@ -164,7 +163,6 @@ YYYY-MM-DD  模块  状态变化
 2026-09-22  模板新增    —        templates/gm-admin/（GM 后台：操作员/玩家登录 + 角色权限 + 审计 + 发奖励 + 邀请码 + 操作员管理）
 2026-09-22  模板新增    —        templates/frida-redirect.js、templates/xposed-redirect/（客户端重定向：native / Java）
 2026-09-22  方法论升级  —        methods.md M8 增「现成实现速查 + 复活/私服项目合集」；protocol-spec.md 增「人类可读协议文档格式」
-2026-09-22  反作弊框架  —        anticheat.md §0 改为「主动改客户端对接自建服务端」；+ ACE 真实结构 / §10 参考资源
 2026-09-22  结构合规    —        skill 目录重命名为 game-client-to-server-reverse（frontmatter name == 父目录名）
 2026-09-22  元数据合规  —        frontmatter：version/platforms 移入 metadata；补 license / compatibility
 2026-09-22  体量优化    —        SKILL.md 656 → 467 行（§1~§10、§13 下沉到 references，标题/编号保留 + 指针）

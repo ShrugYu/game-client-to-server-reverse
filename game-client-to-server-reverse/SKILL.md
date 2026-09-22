@@ -79,7 +79,7 @@ metadata:
 1. **有什么？** `PKG`(只有安装包) / `CAP`(抓包) / `SRC`(源码或反编译产物) /
    `RUN`(能运行) / `DBG`(能注入) / `MANIP`(能改客户端或代理) / `REF`(有同类实现)
 2. **要什么？** `DOC`(只要文档) / `FLOW`(跑通主流程) / `FULL`(完整服务端) / `PATCH`(改客户端)
-3. **什么约束？** 反作弊 / 时间 / 权限
+3. **什么约束？** 客户端保护 / 时间 / 权限
 
 **十一种方法速览**（详见 `methods.md`）：
 
@@ -243,7 +243,6 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 | `references/verification-and-status.md` | **三轴状态 + 可达性分类 + 测试门禁** | 写 TRACKER / 宣称完成之前必读 |
 | `references/release-and-ops.md` | **发布、部署与运营**（配置冻结 / 端口族 / CDN / 后台 / 备份） | 跑通之后要交付时看 |
 | `references/case-il2cpp-ecdh.md` | 真实案例：Unity IL2CPP + ECDH 登录服（进行中） | 看"分层结论怎么写 + 卡点怎么复核" |
-| `references/anticheat.md` | ACE/TSS/TPRT/FairGuard 诊断与处理 | 改包后秒退/黑屏先看这个 |
 | `references/repack-rename.md` | 改包名 / 重打包 / 签名 / 包名派生密钥 | 想产独立安装包时看 |
 | `references/inline-server.md` | **内联服务端**：在客户端进程内合成响应（门面三类入口 / 回调投递纪律 / 延迟派发 / 双通路 / 内联版验收与假阳性） | **能注入且要单机化时先读这个** —— 它决定你要不要起外部服务端 |
 | `references/runtime-object-synthesis.md` | **运行时对象合成与字段发现**（对象级 schema 自举 / dump 循环 / 填值纪律 / 对象级→wire 级切换） | 走内联路线时必读；也可用来先拿一份可信字段清单 |
@@ -332,7 +331,7 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 
 > **完整清单见 `references/closure-verification.md` §附「高频常见坑速查」**。这里只留最要记住的几条：
 
-- **改包顺序**：先"不改包 + 端口劫持"跑通协议，**最后**才改包（动手前读 `anticheat.md`）。
+- **改包顺序**：先"不改包 + 端口劫持"跑通协议，**最后**才改包（动手前读 ）。
 - **raw deflate ≠ 加密**：先在 `decision-tree.md §4.0` 做 30 秒快筛，别在错误的加密假设上耗数小时。
 - **别把"能跑"当"跑通"**：端口在听 / 自环 OK / 日志打勾都不是闭环证据（铁律 4）。
 - **只跑通登录不算完**：状态机未闭环，客户端进场景即崩。
@@ -353,9 +352,7 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 | 抓包 | mitmproxy / Charles / Wireshark / tcpdump |
 | 协议试解 | protoc --decode_raw / binwalk / ent |
 | **接口清单提取** | `tools/extract_interfaces.py`（本 skill 自带） |
-| **反作弊诊断（黑屏/秒退必用）** | `debuggerd -b <pid>`（主线程 native 栈）、`/data/tombstones/`、`logcat \| grep ApplicationExitInfo` |
 | **so 结构 / 依赖 / 符号** | `readelf -d`（NEEDED）、`readelf --dyn-syms --wide`（**FUNC + OBJECT 都要看**）、`strings -a`（找硬编码常量） |
-| **造空壳 so** | 本机 `gcc -shared -fPIC -o X.so stub.c -Wl,-soname,X.so`（aarch64 设备可直编） |
 | **APK 编辑 / 资源 / 重打包 / 签名** | MT 管理器（含 MCP：`http://127.0.0.1:8787/mcp`，可 dex/资源/构建/签名一条龙）、apktool、apksigner |
 | **ZIP 原样复制重打包** | 本 skill `tools/` 的 repack 脚本（2GB 包秒级，只替换目标条目） |
 | **动态调试 / 内存** | Frida、`/proc/<pid>/maps`（看加载了哪些 so） |

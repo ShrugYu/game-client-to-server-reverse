@@ -226,4 +226,4 @@ self.sessions.pop(peer, None)
 - **模拟器直连官方端口被 RST** → 用户态 NAT 数据面坏 → 上 TCP 中继（client-address-sources §3.0）。
 - **客户端卡在热更** → 官方 OSS 删了版本文件(404) → transparent proxy mock 该文件返回本地版本号即可跳过。
 - **回放帧只 patch 首处** → 帧内数据块常重复 N 份 → 帧内不一致、静默重试（engineering-practices §11.1）；**场景初始化窗口推实体帧** → native crash，广播前查 peer `init_done`（§11.2）。
-- **改包相关**（动手前先读 `anticheat.md`）：顺序是**从代价低的落点往上做、优先把客户端推到能走到下一步**；一上来就改包名 → 触发自校验秒退；批量替换包名会改到 Activity 完整类名 → 闪退（只改 manifest `package` + arsc 包名 + 权限/authorities）；只改 manifest 不改 `resources.arsc` → SDK 反查资源失败；忘了"包名派生密钥"资源 → `BAD_DECRYPT`；直接删保护 so → `JNI FatalError`/SIGABRT（应换**空壳 so**）；空壳 so 漏 OBJECT 符号 → `blr x0` 跳空指针 → SIGSEGV；**只看前 5 秒** → 延迟自校验要观察 60~90 秒。
+- **改包相关**（动手前先读 ）：顺序是**从代价低的落点往上做、优先把客户端推到能走到下一步**；一上来就改包名 → 触发自校验秒退；批量替换包名会改到 Activity 完整类名 → 闪退（只改 manifest `package` + arsc 包名 + 权限/authorities）；只改 manifest 不改 `resources.arsc` → SDK 反查资源失败；忘了"包名派生密钥"资源 → `BAD_DECRYPT`；**只看前 5 秒** → 延迟自校验要观察 60~90 秒。

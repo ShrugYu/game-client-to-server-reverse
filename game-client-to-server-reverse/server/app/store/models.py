@@ -53,7 +53,7 @@ SCHEMA = [
         v TEXT
     )
     """,
-    # 操作日志（反作弊/审计）
+    # 操作日志（服务端权威校验/审计）
     """
     CREATE TABLE IF NOT EXISTS oplog (
         id      INTEGER PRIMARY KEY AUTOINCREMENT,

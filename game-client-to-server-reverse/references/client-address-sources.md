@@ -215,7 +215,7 @@ adb shell "mount -o bind /data/local/tmp/hosts /system/etc/hosts"
 
 - **能做什么**（按游戏分别打补丁，都封装在模块里）：
   - 把登录 / 游戏请求**重定向到指定私服**；
-  - 需要时顺带**禁用该游戏的反作弊 / 校验**（如"碧蓝档案禁反作弊""明日方舟禁 `NetWorkConfig` 校验""原神 RSA Patch""星塔旅人移除 Google 依赖"）。
+  - 需要时顺带**禁用该游戏的完整性校验**（具体做法按目标游戏而定）。
 - **用法**：装模块 → 匹配游戏包名 → 菜单「配置管理」填写我们的服务器地址 →（固定场景）导出配置。
   **静默模式**：把 `agp_config.xml` 放进 APK 的 `assets/`，再用 **LSPatch** 修补 APK → 不弹窗、始终按配置连我们的服。
 - **无 root 可用**：`LSPatch` / `NPatch（推荐）`。

@@ -19,9 +19,7 @@ repack_zip.py —— APK/ZIP「原样复制」重打包（秒级，2GB 包也不
     · 条目数需 < 65535、单条目 < 4GB（普通 APK 都满足）
 
 用法示例：
-    # 把保护库换成空壳
     python3 repack_zip.py game.apk game_stub.apk \\
-        --replace lib/arm64-v8a/libtprt.so=/tmp/libtprt_stub.so
 
     # 塞回原包签名、顺手删掉自己的签名
     python3 repack_zip.py mod.apk mod_origsig.apk \\

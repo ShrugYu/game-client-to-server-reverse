@@ -10,7 +10,7 @@
  *   （有 root：frida-server；无 root：LSPatch + Frida gadget）
  *
  * 注意：这是"换服务端"的注入手法之一，属于 skill 的「第三步 重定向」。
- *       注入可能被反作弊检测（见 references/anticheat.md）；自测目标再用。
+ *       注入可能被客户端保护检测；自测目标再用。
  */
 
 // ===== 配置：原 host  ->  我们的 host/IP =====

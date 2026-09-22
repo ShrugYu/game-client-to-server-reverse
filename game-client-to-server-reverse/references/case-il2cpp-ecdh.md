@@ -4,7 +4,7 @@
 > 「卡点怎么复核」。**不是**答案——各游戏协议不同，请照流程自己推。
 >
 > 状态：服务端能跑、协议分层已实测、客户端对接**未闭环**。
-> 相关：`closure-verification.md`（本案例的教训沉淀）、`anticheat.md`、`repack-rename.md`。
+> 相关：`closure-verification.md`（本案例的教训沉淀）、、`repack-rename.md`。
 
 ---
 

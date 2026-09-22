@@ -22,8 +22,7 @@
 > ⑧ **跨模型阅读优化（GLM / DeepSeek / Claude）**：SKILL 顶部改为**模型无关的显式阅读协议**（"打开哪个文件"写死）；
 >    去掉顶部大段变更历史；给 5 篇 >300 行的 reference 补**章节目录**；`reading-path.md` 顶部声明按它分派；
 > ⑨ **去除 emoji**：全库清理（状态标记转 ASCII、装饰 emoji 删除、箭头保留）；
-> ⑩ **框架修正 + 资源**：`anticheat.md §0` 改为"**主动改客户端对接自建服务端**"（按重定向四层表、优先跑起来）；
->    加 §0.1 ACE 真实结构、§10 参考资源；`methods.md` M8 加"复活/私服项目合集"；
+> ⑩ **框架修正 + 资源**：` §0` 改为"**主动改客户端对接自建服务端**"（按重定向四层表、优先跑起来）；
 > ⑪ **换服务端手法补全（v2.0 新增）**：`client-address-sources.md §3.0b` 加入 **Xposed / LSPatch 模块重定向**
 >    （`AnimeGamesProxy` 实测范例，免 root）；`methods.md` M8 加"**多人/联机复活项目速览**"（FiveM / Project 1999 / Plutonium…）；
 > ⑫ **签名绕过**：`repack-rename.md §8` 加入 **LSPatch Signature Bypass（等级 2）机制** / 独立签名破解
@@ -55,9 +54,7 @@
 > ⑯ 真实案例：Unity IL2CPP + 平台 SDK 的内联服务端 → `references/case-il2cpp-inline.md`
 >
 >  **2026-09-13 实战沉淀（新增）**：
-> ① **反作弊 / 自校验剥离**（ACE / TSS / TPRT / FairGuard …）→ `references/anticheat.md`
 > ② **改包名 / 重打包 / 保留原签名**全清单 → `references/repack-rename.md`
-> ③ 配套脚本：`tools/make_stub_so.py`（把保护库换成空壳 so）、`tools/repack_zip.py`（秒级定点重打包）
 > ④ **闭环验证与 6 类假阳性**（端口在听≠服务可用、自环≠客户端兼容）→ `references/closure-verification.md`
 > ⑤ **真实案例：Unity IL2CPP + ECDH 登录服**（帧格式 / SPKI / 已证伪项）→ `references/case-il2cpp-ecdh.md`
 > ⑥ SKILL 铁律 3 → 4 条：**不把「能跑」当成「跑通」**
@@ -80,7 +77,7 @@
 | `SKILL.md` | `SKILL.md` | 必需：元数据 + 主干（已瘦身到 < 500 行，符合规范建议） |
 | `references/` | `references/` | 按需加载的详细文档（正文下沉于此） |
 | `assets/` | `templates/`、`schema/`、`server/` | 模板 / 中间产物模板 / 可运行参考实现 |
-| `scripts/` | `tools/` | 可执行脚本（`extract_interfaces.py` / `make_stub_so.py` / `repack_zip.py`） |
+| `scripts/` | `tools/` | 可执行脚本（`extract_interfaces.py` / `` / `repack_zip.py`） |
 | — | `examples/`、`extensions/` | 推演示例 / 可选拓展 |
 
 > 阅读顺序：`SKILL.md`（导航+主干）→ `references/reading-path.md`（按任务分派）→ 按需打开具体文件。
@@ -246,7 +243,6 @@ docs/status/support-matrix ← 三轴状态：实现 / 自动测试 / 客户端�
 │   ├── unreal.md           Unreal(UE4/UE5) 深潜
 │   ├── windows.md          端游：Windows 运行服务端
 │   ├── termux.md           手游：Android/Termux 运行服务端
-│   ├── anticheat.md         反作弊/自校验：诊断三件套 + so 空壳化
 │   └── repack-rename.md     改包名/重打包/签名/包名派生密钥
 ├── examples/                推演示例（同 skill，不同项目→不同方案）
 │   ├── A-unity-il2cpp-protobuf.md
@@ -337,7 +333,7 @@ Python 只是本仓库的参考实现。真实案例里：**Go**（某 Unity 手
 |---|---|---|
 | 用途 | 抓包后快速验证协议结论 | 真正部署、长期运营 |
 | 规模 | 单文件 | 分层工程 |
-| 能力 | 帧收发 + opcode 桩 | 数据库/状态机/反作弊/GM/部署 |
+| 能力 | 帧收发 + opcode 桩 | 数据库/状态机/客户端保护/GM/部署 |
 | 何时用 | 逆向中期试探 | 逆向完成、要跑起来 |
 
 ## 最快上手

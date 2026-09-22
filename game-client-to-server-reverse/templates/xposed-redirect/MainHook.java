@@ -23,7 +23,7 @@ import java.util.Map;
  *  - java.net.URL(String)                        （HttpURLConnection 等）
  *  - 若要 native/il2cpp 客户端 → 用 templates/frida-redirect.js（本模块管不到 native）。
  *
- * 说明：这是 skill「第三步 重定向」的落地手法之一；注入可能触发反作弊，见 references/anticheat.md。
+ * 说明：这是 skill「第三步 重定向」的落地手法之一；注入可能触发客户端保护。
  */
 public class MainHook implements IXposedHookLoadPackage {
 

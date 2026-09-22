@@ -155,7 +155,7 @@ SDK login → getServerList → getLastServerList → 选服
 **验收（只判这一件事）**：客户端请求到达你的服务端，且你在日志里**看得见**它。
 
 **对应文档**：`client-address-sources.md`（六类地址来源 + 落点策略）、
-`anticheat.md`（改了就被杀先看这个）、`repack-rename.md`（真要改包名时）
+（改了就被杀先看这个）、`repack-rename.md`（真要改包名时）
 
 ---
 
@@ -222,7 +222,7 @@ SDK login → getServerList → getLastServerList → 选服
 |------|---------|--------|------|
 | 0 静态分析 | M1 / M4 / M9 | `primer.md` `adaptation.md` `from-installer.md` | 有 project-profile + 证据清单 |
 | 1 建工具 + 登录链 | M3（hook 日志） | `client-address-sources.md` `templates/login-chain.md` | 日志分区 + 登录链文档 |
-| 2 重定向 | M5 / 三板斧 | `client-address-sources.md` `anticheat.md` | 请求到达自建服务端 |
+| 2 重定向 | M5 / 三板斧 | `client-address-sources.md`  | 请求到达自建服务端 |
 | 3 补包循环 | M6 / M5 / M2 | `wire-level-patching.md` `closure-verification.md` | 客户端进主场景 |
 | 4 清单迭代 | — | `verification-and-status.md` `live-ops.md` | 功能清单基本完善 |
 

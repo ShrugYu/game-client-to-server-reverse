@@ -13,7 +13,7 @@
 | 2 | `resources.arsc` 的 `ResTable_package.name` | UTF-16LE 等长替换 + 修 local/CD **两处 CRC32** | `getIdentifier(..., getPackageName())` 返回 0 → SDK 初始化失败 |
 | 3 | "包名派生密钥"加密过的资源 | 用新包名**重新加密**（见 §3） | 解密失败 `BadPaddingException: BAD_DECRYPT` |
 | 4 | 权限名 / provider `authorities` | AXML 里含旧包名的字符串 | 安装冲突 / provider 崩溃 |
-| 5 | 签名 | 改包后原签名失效 → 重签，或按 `anticheat.md` §4 保留原签名 | 装不上 / 被自校验杀 |
+| 5 | 签名 | 改包后原签名失效 → 重签，或按  §4 保留原签名 | 装不上 / 被自校验杀 |
 
 > 注意: **坑**：`AndroidManifest.xml` 在 zip 里通常是 **deflate 压缩**的，直接读 ZIP 数据看不到明文。
 > 想**保持文件偏移不变**：解压 → 改 → 重压 → **补齐到原压缩长度**（后面追加空 stored block：`00 00 00 FF FF`）。
@@ -63,7 +63,7 @@ iv   = MD5(S)         # 16B
 
 1. 构建时**不要用自己的签名**（或签完再替换掉）。
 2. 从原包取出 `META-INF/*.RSA`、`*.SF`、`MANIFEST.MF` 塞进新包。
-   > 证书文件名**可能是非标准的**（例子见 `anticheat.md`），别只找 `CERT.RSA`。
+   > 证书文件名**可能是非标准的**（例子见 ），别只找 `CERT.RSA`。
 3. **删掉 APK Signing Block（v2/v3）** —— 否则系统报告的仍是你的新证书。
 4. 前提：目标设备**已禁用签名校验**（否则装不上）。装完立刻用
    `dumpsys package <新包名> | grep -i sig` 或 `MT 的 mt_apk_read_signature` 确认证书摘要是不是原包的。
@@ -79,9 +79,7 @@ iv   = MD5(S)         # 16B
   3. 重写 CD + EOCD（注意 `flg & ~0x8` 清掉 data-descriptor 位，长度按自己写的填）。
 - 参考实现（本 skill 自带）：
 ```bash
-# 把保护库换成空壳
 python3 tools/repack_zip.py game.apk game_stub.apk \
-    --replace lib/arm64-v8a/libtprt.so=libtprt_stub.so
 
 # 塞回原包签名、顺手删掉自己的签名
 python3 tools/repack_zip.py mod.apk mod_origsig.apk \
@@ -98,7 +96,6 @@ python3 tools/repack_zip.py mod.apk mod_origsig.apk \
 
 - [ ] `zipfile.testzip()` 返回 `None`（CRC 全对）
 - [ ] `pm install -r -d <apk>` 成功
-- [ ] 启动后立刻看 `ApplicationExitInfo`（见 `anticheat.md` §2）判断是"能跑/被保护杀/Java 异常"
 - [ ] 装机前先 `pm uninstall` 旧包：避免旧数据/旧 uid 造成误判
 - [ ] **每轮只改一个变量**，并记录：改了什么 → 新症状 → 结论
 
@@ -142,8 +139,8 @@ LSPatch 修补 APK 时会**保存原签名信息**，运行时按等级 hook，�
 ### 8.3 真正"不改签名"：虚拟容器（VirtualApp 系）
 
 - **VirtualXposed / 太极(TaiChi) / 应用转生**：把 App 装进**虚拟空间**运行，**APK 本身不被改动** → 签名不变，模块在容器内注入。
-- 代价：**兼容性有限**（新版 Android / 重 native / 强反作弊的游戏常跑不起来）。
-- 对 Unity/il2cpp + ACE 这类，**通常不如"LSPatch + Signature Bypass"稳**。
+- 代价：**兼容性有限**（新版 Android / 重 native / 强客户端保护的游戏常跑不起来）。
+- 对 Unity/il2cpp 这类，**通常不如"LSPatch + Signature Bypass"稳**。
 
 > **选型**：先试 **LSPatch（Sig Bypass 等级 2）** → 不行再独立签名破解 → 虚拟容器兜底。
 > 判断"是不是还在下载"：看 `files/` 下有没有生成热更目录（如 `lua_src`），以及是否还有到 CDN 的连接。

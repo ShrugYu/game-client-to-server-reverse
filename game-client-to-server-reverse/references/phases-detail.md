@@ -153,10 +153,8 @@ python3 tools/extract_interfaces.py <源码目录> --out out/interfaces.md --jso
 | 版本号校验 | 改 `config.yaml` 的 `game.expected_version` 匹配客户端 |
 | 资源/热更 URL | 重定向到自建 HTTP，提供客户端需要的资源清单 |
 | **改包名 / 重打包 / 签名** | 见 `references/repack-rename.md`（AXML + arsc 等长替换、包名派生密钥资源、保留原签名） |
-| **反作弊 / 自校验（ACE/TSS/TPRT…）** | 见 `references/anticheat.md`（诊断三件套、退出原因解码、so 空壳化） |
 
-> 注意: **动手改包之前，先读 `references/anticheat.md`**。
-> 带 ACE/TSS/TPRT 的包改完必被自校验杀（秒退/黑屏/静默崩溃），不先解决会白白浪费大量时间。
+> 注意: **动手改包之前，先读 **。
 > **推荐顺序：先"不改包 + 端口劫持"把协议跑通，最后再考虑改包。**
 ### 8.7 验证与回归
 1. 启动服务端 → 启动原版客户端 → 观察到「成功握手 / 进入登录界面 / 进入游戏」。
