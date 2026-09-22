@@ -147,7 +147,7 @@ Before finishing: reading-path.md §2 "pre-wrap-up checklist"
 
 ## Dependencies & Credits
 
-This skill's methodology and toolchain reference / build on the following open-source projects. Thanks to their authors and maintainers (**only projects with a public repository are listed**; IDA Pro, Hopper, Charles, MT Manager, NSSM, umodel, etc. are closed-source or have no public repo, so they are omitted):
+This skill's methodology and toolchain reference / build on the following open-source projects. Thanks to their authors and maintainers (**only projects with a public repository are listed**):
 
 ### Decompilation / Reverse engineering
 
