@@ -164,6 +164,20 @@ This material is often used to archive, study, and locally revive **discontinued
 
 ---
 
+## Contributors
+
+<p>
+  <a href="https://github.com/ShrugYu"><img src="https://github.com/ShrugYu.png?size=120" width="56" height="56" alt="ShrugYu" title="ShrugYu"></a>
+  <a href="https://github.com/Qslzy"><img src="https://github.com/Qslzy.png?size=120" width="56" height="56" alt="Qslzy" title="Qslzy"></a>
+  <a href="https://github.com/SakuraZuk"><img src="https://github.com/SakuraZuk.png?size=120" width="56" height="56" alt="SakuraZuk" title="SakuraZuk"></a>
+</p>
+
+- **ShrugYu** — maintainer
+- **Qslzy** — contributor
+- **SakuraZuk** — contributor
+
+---
+
 ## Changelog
 
 See the top of [`game-client-to-server-reverse/README.md`](./game-client-to-server-reverse/README.md) for the full history.

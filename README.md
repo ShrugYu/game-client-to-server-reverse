@@ -166,6 +166,20 @@ AI 会按这个顺序回应：
 
 ---
 
+## 贡献者
+
+<p>
+  <a href="https://github.com/ShrugYu"><img src="https://github.com/ShrugYu.png?size=120" width="56" height="56" alt="ShrugYu" title="ShrugYu"></a>
+  <a href="https://github.com/Qslzy"><img src="https://github.com/Qslzy.png?size=120" width="56" height="56" alt="Qslzy" title="Qslzy"></a>
+  <a href="https://github.com/SakuraZuk"><img src="https://github.com/SakuraZuk.png?size=120" width="56" height="56" alt="SakuraZuk" title="SakuraZuk"></a>
+</p>
+
+- **ShrugYu** — 维护者
+- **Qslzy** — 贡献者
+- **SakuraZuk** — 贡献者
+
+---
+
 ## 更新日志
 
 完整变更历史见 [`game-client-to-server-reverse/README.md`](./game-client-to-server-reverse/README.md) 顶部。
