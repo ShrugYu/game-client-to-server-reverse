@@ -7,7 +7,6 @@
 
 <p align="center">
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse"><img alt="GitHub stars" src="https://shieldcn.dev/github/stars/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
-  <a href="https://github.com/ShrugYu/game-client-to-server-reverse/blob/main/LICENSE"><img alt="License" src="https://shieldcn.dev/github/license/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/commits/main"><img alt="Last commit" src="https://shieldcn.dev/github/last-commit/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse/graphs/contributors"><img alt="Contributors" src="https://shieldcn.dev/github/contributors/ShrugYu/game-client-to-server-reverse.svg?variant=secondary"></a>
   <a href="https://github.com/ShrugYu/game-client-to-server-reverse"><img alt="Skills installs" src="https://shieldcn.dev/skills/installs/ShrugYu/game-client-to-server-reverse/game-client-to-server-reverse.svg?variant=secondary"></a>
@@ -131,13 +130,25 @@ AI 会按这个顺序回应：
 
 ---
 
-## 边界与许可
+## 免责声明
 
-- 仅用于**自研 / 已授权 / 离线单机**目标的互操作性研究、本地化部署与学习。
-- 不用于未授权破坏性测试，不用于商业化他人资产。
-- 使用本包引用的第三方项目 / 代码前，请先查看其各自许可证。
+> 使用本资料即表示你已阅读、理解并同意以下全部条款；若不同意，请立即停止使用。
 
-详见 [LICENSE](./LICENSE)。
+1. **用途限定**：本资料仅供**学习、研究与技术交流**，以及针对**自研、已获授权或离线单机**游戏的互操作性研究与本地化部署。它是一份**逆向方法论文档**，不是服务端开发教程，也不针对任何特定游戏。
+
+2. **禁止非法用途**：严禁将本资料用于任何**未经授权**的入侵、攻击、破坏、篡改、绕过安全机制、窃取数据，或侵犯他人知识产权、违反目标游戏服务条款及所在地法律法规的行为。
+
+3. **无担保**：本资料按"**现状**（as-is）"提供，不附带任何明示或暗示的担保，包括但不限于适销性、特定用途适用性与不侵权担保。作者不保证其准确性、完整性或可用性。
+
+4. **责任限制**：在适用法律允许的最大范围内，作者及贡献者**不对因使用或无法使用本资料而产生的任何直接、间接、附带、特殊、惩戒性或后果性损失承担责任**（包括但不限于数据丢失、设备损坏、账号封禁及法律纠纷）。
+
+5. **使用者自负其责**：使用者须**自行确保**其使用行为合法合规（含取得必要授权），并**独立承担由此产生的全部法律责任与后果**。
+
+6. **第三方内容**：本资料引用或链接的第三方项目、代码、工具、文档及服务，其版权与许可归各自所有者所有；使用前请自行查阅并遵守其各自条款。作者不对第三方内容及其后果负责。
+
+7. **权利主张**：若你是某作品的权利人，并认为本资料侵犯了你的合法权益，请通过仓库 Issue 联系，作者将在核实后**及时更正或删除**。
+
+8. **条款变更**：本免责声明可能随时更新，更新后自发布之日起生效，恕不另行通知。
 
 ---
 
