@@ -244,7 +244,9 @@ This skill's methodology and toolchain reference and build on the following open
 
 8. **Platform rules**: Rights holders may file a DMCA takedown; GitHub may act on violations of its Acceptable Use Policies.
 
-9. **Changes**: This disclaimer may be updated at any time and takes effect upon publication, without further notice.
+9. **AI-platform safety notices & account responsibility**: This skill involves reverse engineering / protocol analysis, content that **may trigger AI-platform safety rules**. When you use this skill, the AI service you connect to (e.g. GPT / Codex / Claude, etc.) **may issue safety notices, restrict responses, or even lead to your AI account being limited or banned** because of the nature of the content. **The author is not responsible for any action any AI platform takes against your account**, including but not limited to warnings, downgrades, restrictions, or bans. Before use, fully review your AI platform's terms of service and safety policies, and bear the associated risk yourself.
+
+10. **Changes**: This disclaimer may be updated at any time and takes effect upon publication, without further notice.
 
 ### Note on reviving discontinued online games
 
