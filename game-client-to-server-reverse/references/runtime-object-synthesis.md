@@ -5,7 +5,7 @@
 > 这份知识**不用猜** —— 客户端自己的类型系统就是 schema。
 >
 > 与 `wire-level-patching.md` 互补：那篇对付「字节」，本篇对付「对象」。
-> 实测来源见 `case-kihan-inline.md`。
+> 实测来源见 `case-il2cpp-inline.md`。
 
 ---
 

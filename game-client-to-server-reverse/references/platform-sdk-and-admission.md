@@ -4,7 +4,7 @@
 > 而是**平台 SDK → 目录服 → 区服**三段。自建 / 内联服务端时，
 > 最常见的误解是「把版本检查糊弄过去就能进」——实际会卡在第二段，且**看不出原因**。
 >
-> 实测来源见 `case-kihan-inline.md`。
+> 实测来源见 `case-il2cpp-inline.md`。
 
 ---
 
@@ -107,5 +107,5 @@
 [ ] 凭据没有进日志 / 文件？
 ```
 
-> 相关：`account.md`（账号接口还原）、`case-kihan-inline.md`（本案例）、
+> 相关：`account.md`（账号接口还原）、`case-il2cpp-inline.md`（本案例）、
 > `release-and-ops.md`（地址与端口策略）。

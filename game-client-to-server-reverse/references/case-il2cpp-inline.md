@@ -1,10 +1,10 @@
 # 真实案例：Unity IL2CPP + 平台 SDK 的「内联服务端」
 
-> 目标：腾讯系 Unity IL2CPP 手游（`com.tencent.KiHan`，arm64）。
+> 目标：平台系 Unity IL2CPP 手游（`com.tencent.KiHan`，arm64）。
 > 做法：**不改协议、不起外部服务端**，在客户端进程内拦截网络门面合成响应，
 > 让客户端在本地模式下走完登录 → 进场景 → 局内。
 >
-> 规则同 `case-ninja3-ecdh.md`：**没在真实客户端上确认过的，一律不写 [x]**。
+> 规则同 `case-il2cpp-ecdh.md`：**没在真实客户端上确认过的，一律不写 [x]**。
 
 ---
 
@@ -61,7 +61,7 @@ KH.Network.NetworkManager.*        ← 实测活的是这一份，两份都装
 
 见 `platform-sdk-and-admission.md` §2。实测形态：
 
-- 动态建 `OfficialNinjaBridge` GameObject，挂客户端自己的 `ConnectorComponent`
+- 动态建 `OfficialBridge` GameObject，挂客户端自己的 `ConnectorComponent`
 - 逐字段复制官方实例的 `DH` / `Uin` / `Password` / `Url` / `VersionServerUrl` /
   `EncryptMethod` / `KeyMaking`，**只改 `ZoneUrl`**
 - 调用官方 `Connect`（非默认 connId），用 `ApolloConnection.IsConnected` 判就绪

@@ -85,7 +85,7 @@ Il2CppDumper.exe libil2cpp.so global-metadata.dat out/   # -> dump.cs
 
 ## 2. ActionScript3 / Flash 客户端
 
-> 案例：`startpoint-cn`（世界弹射物语 CN）就是 AS3 客户端。
+> 案例：`项目C`（某 Cocos 手游 CN）就是 AS3 客户端。
 
 ### 2.1 反编译
 ```bash
@@ -95,7 +95,7 @@ Il2CppDumper.exe libil2cpp.so global-metadata.dat out/   # -> dump.cs
 - 导出后可读 `.as` 源码 → 找 `URLRequest` / `URLLoader` / `Socket` / `NetConnection`。
 - 配置类常见命名：`DevConfig`、`Config`、`ServerConfig`。
 
-### 2.2 典型改动（参考 startpoint 的做法）
+### 2.2 典型改动（参考 项目C 的做法）
 ```as
 // pinball/config/core/DevConfig.as —— 启用 SDK Dummy，跳过官方登录
 // pinball/config/gbits/DevConfig_gf_android.as —— 改 API 地址

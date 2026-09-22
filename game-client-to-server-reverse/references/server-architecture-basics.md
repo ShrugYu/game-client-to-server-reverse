@@ -6,7 +6,7 @@
 >
 > **一句话**：把"服务端架构知识"翻译成**逆向时的线索清单**。
 >
-> **知识来源**（真实项目/一手）：腾讯云《游戏服务器的架构演进》、`jzyong/GameDevAndOps` MMORPG 架构、
+> **知识来源**（真实项目/一手）：平台云《游戏服务器的架构演进》、`jzyong/GameDevAndOps` MMORPG 架构、
 > KCP 官方文档、Protocol Buffers 官方 Encoding 文档、Skynet / Pomelo / KBEngine / NoahGameFrame。
 > **反向用法**：它们的架构 = 你反推时的"地图"。
 

@@ -2,13 +2,13 @@
 
 > 两个**公开的、成功的**第三方服务端实现。用于理解「通用 skill 落到真实项目」的形态。
 > 本文件只做**事实性归纳**与**方法论提炼**，不复制其代码。请遵守各自许可证：
-> `kairisei-ma-ch` = PolyForm Noncommercial 1.0.0；`startpoint-cn` = GPL-3.0。
+> `项目B` = PolyForm Noncommercial 1.0.0；`项目C` = GPL-3.0。
 
 ---
 
-## 案例 A：kairisei-ma-ch（乖离性百万亚瑟王 CN）
+## 案例 A：项目B（某 Unity 手游 CN）
 
-- 仓库：https://github.com/kuuhaku1314/kairisei-ma-ch
+- 仓库：https://github.com/kuuhaku1314/项目B
 - 客户端：Unity（Android APK，网易，`com.netease.ma.netease`）
 - 服务端语言：**Go**（含 Windows C# WinForms 启动器）
 - 资源：`resource-set/` 本地目录，或 Cloudflare R2 / S3 兼容 CDN
@@ -38,9 +38,9 @@
 
 ---
 
-## 案例 B：startpoint-cn（世界弹射物语 CN）
+## 案例 B：项目C（某 Cocos 手游 CN）
 
-- 仓库：https://github.com/DontBeAlarmed/startpoint-cn
+- 仓库：https://github.com/DontBeAlarmed/项目C
 - 客户端：**ActionScript3 / Flash**（`pinball/config/.../DevConfig.as`）
 - 服务端语言：**TypeScript / Node.js**（>= 20.12）
 - 存储：SQLite（`.database/`）

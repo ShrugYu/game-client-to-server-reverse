@@ -242,13 +242,13 @@ M1/M4（有源码就抄）→ M2+M3（拿明文）→ M6（定字段）→ M9（
 | `references/client-address-sources.md` | **客户端地址来源清查**（六类来源 + 落点策略 + 重签后果） | **改包/对接客户端之前必读**；解决"改了 URL 还连官方" |
 | `references/verification-and-status.md` | **三轴状态 + 可达性分类 + 测试门禁** | 写 TRACKER / 宣称完成之前必读 |
 | `references/release-and-ops.md` | **发布、部署与运营**（配置冻结 / 端口族 / CDN / 后台 / 备份） | 跑通之后要交付时看 |
-| `references/case-ninja3-ecdh.md` | 真实案例：Unity IL2CPP + ECDH 登录服（进行中） | 看"分层结论怎么写 + 卡点怎么复核" |
+| `references/case-il2cpp-ecdh.md` | 真实案例：Unity IL2CPP + ECDH 登录服（进行中） | 看"分层结论怎么写 + 卡点怎么复核" |
 | `references/anticheat.md` | ACE/TSS/TPRT/FairGuard 诊断与处理 | 改包后秒退/黑屏先看这个 |
 | `references/repack-rename.md` | 改包名 / 重打包 / 签名 / 包名派生密钥 | 想产独立安装包时看 |
 | `references/inline-server.md` | **内联服务端**：在客户端进程内合成响应（门面三类入口 / 回调投递纪律 / 延迟派发 / 双通路 / 内联版验收与假阳性） | **能注入且要单机化时先读这个** —— 它决定你要不要起外部服务端 |
 | `references/runtime-object-synthesis.md` | **运行时对象合成与字段发现**（对象级 schema 自举 / dump 循环 / 填值纪律 / 对象级→wire 级切换） | 走内联路线时必读；也可用来先拿一份可信字段清单 |
 | `references/platform-sdk-and-admission.md` | **平台 SDK 登录态复用 + 目录服→区服两段准入** | 大厂手游（MSDK / 微信登录 / GCloud）登录卡点时读 |
-| `references/case-kihan-inline.md` | 真实案例：Unity IL2CPP + 平台 SDK 的内联服务端 | 看「不起服务端」这条路怎么走、哪些结论已被证伪 |
+| `references/case-il2cpp-inline.md` | 真实案例：Unity IL2CPP + 平台 SDK 的内联服务端 | 看「不起服务端」这条路怎么走、哪些结论已被证伪 |
 | `schema/*.yaml` | 规格/档案模板 | 直接复制填，作为 AI 的中间产物 |
 | `extensions/` | **后续拓展（可选）**，不影响核心运行 | 跑通之后再考虑，见 §19 |
 

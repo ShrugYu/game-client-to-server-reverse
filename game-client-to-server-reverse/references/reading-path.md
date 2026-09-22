@@ -51,7 +51,7 @@ references/live-ops.md           进服后的运营手册(子系统次序/契约
 references/inline-server.md      内联服务端(进程内合成响应)第二条路线
 references/runtime-object-synthesis.md 运行时对象合成与字段发现
 references/platform-sdk-and-admission.md 平台 SDK 登录态复用+两段准入
-references/case-kihan-inline.md  真实案例:内联服务端
+references/case-il2cpp-inline.md  真实案例:内联服务端
 references/windows.md / termux.md 端游 / 手游运行环境
 references/decision-tree.md      逐层决策树（拿不定主意时）
 references/phases-detail.md      §1~§10 反推主流程详细版（命令/工具/判断/坑）
@@ -133,7 +133,7 @@ closure-verification.md   ←  第一条
 inline-server.md              ←  先读这个（先判断该不该走这条路）
 → runtime-object-synthesis.md（响应对象怎么造）
 → platform-sdk-and-admission.md（账号与准入怎么借官方）
-→ case-kihan-inline.md（完整案例）
+→ case-il2cpp-inline.md（完整案例）
 ```
 产出：拦截清单 + 合成响应总表 + 内联版验收完成点。
 

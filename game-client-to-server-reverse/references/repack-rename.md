@@ -86,8 +86,8 @@ python3 tools/repack_zip.py game.apk game_stub.apk \
 # 塞回原包签名、顺手删掉自己的签名
 python3 tools/repack_zip.py mod.apk mod_origsig.apk \
     --delete META-INF/ANDROID.RSA --delete META-INF/ANDROID.SF --delete META-INF/MANIFEST.MF \
-    --add-from orig.apk META-INF/NINJAMUS.RSA \
-    --add-from orig.apk META-INF/NINJAMUS.SF \
+    --add-from orig.apk META-INF/APP.RSA \
+    --add-from orig.apk META-INF/APP.SF \
     --add-from orig.apk META-INF/MANIFEST.MF
 # 结束后它会打印 testzip（None 才对）和"是否含 Signing Block"
 ```

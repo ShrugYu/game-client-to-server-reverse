@@ -5,7 +5,7 @@
 > 取走请求、**就地合成响应对象**。客户端永远不会真的发出去，
 > 传输 / 封包 / 加密 / 序列化这几层**根本不用还原**。
 >
-> 实测来源：Unity IL2CPP + 腾讯 MSDK/GCloud 手游（见 `case-kihan-inline.md`）。
+> 实测来源：Unity IL2CPP + 平台 MSDK/GCloud 手游（见 `case-il2cpp-inline.md`）。
 > 与 `wire-level-patching.md` 是同一问题的两条路：那篇管「外部服务端怎么少猜字段」，
 > 这篇管「干脆不起外部服务端」。
 
@@ -234,5 +234,5 @@ src/
 [ ] 追踪日志在发布构建被编译掉？
 ```
 
-> 相关：`runtime-object-synthesis.md`（对象怎么造）、`case-kihan-inline.md`（完整案例）、
+> 相关：`runtime-object-synthesis.md`（对象怎么造）、`case-il2cpp-inline.md`（完整案例）、
 > `platform-sdk-and-admission.md`（账号与准入）、`closure-verification.md`（通用假阳性）。

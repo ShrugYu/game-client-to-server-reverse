@@ -1,4 +1,8 @@
 <p align="center">
+  <b>简体中文</b> · <a href="./README.en.md">English</a>
+</p>
+
+<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Server+Reverse&subtitle=From+a+client-only+game+to+a+running+self-hosted+server&mode=dark&align=center">
     <img alt="Game Client → Server Reverse" src="https://shieldcn.dev/header/grid.svg?title=Game+Client+%E2%86%92+Server+Reverse&subtitle=From+a+client-only+game+to+a+running+self-hosted+server&mode=light&align=center">
@@ -113,7 +117,8 @@ AI 会按这个顺序回应：
 
 ```
 .
-├── README.md                        本文件
+├── README.md                        本文件（简体中文）
+├── README.en.md                     English README
 ├── AGENTS.md                        工作区维护契约（skill 维护者用）
 └── game-client-to-server-reverse/    skill 本体（文件夹名 = skill name）
     ├── SKILL.md                     导航主文档（< 500 行）

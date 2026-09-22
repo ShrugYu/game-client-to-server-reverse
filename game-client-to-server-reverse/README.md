@@ -15,7 +15,7 @@
 > ④ SKILL §0 开头新增**阅读地图（三条主线）**；
 > ⑤ **反推对象地图** `references/server-architecture-basics.md`（逆向视角）：你在还原哪几类服、
 >   网关留下的隐藏层（合并/加解密/压缩 flag）、从包里认 Protobuf/KCP、同步模型决定"要还原多少逻辑"
->   （来源：腾讯云架构演进、GameDevAndOps、KCP/protobuf 官方、Skynet/Pomelo/KBEngine/NF）；
+>   （来源：平台云架构演进、GameDevAndOps、KCP/protobuf 官方、Skynet/Pomelo/KBEngine/NF）；
 > ⑥ **取长补短（折进现有文件）**：`methods.md` M8 补入**现成实现速查**（AzerothCore/EQEmu/L2J/ModernUO/
 >   Grasscutter/Shittim-Server/OpenMir2…）+ "先查别人做过没" + **先锁版本**；`protocol-spec.md` 补入人类可读协议文档格式；
 > ⑦ **SKILL.md 瘦身**：与 references 重复的 §1~§8、§11、§14~§19 压成"要点+指针"（1122 → ~650 行）；§11 常见坑并入 `closure-verification.md §附`；
@@ -30,7 +30,7 @@
 >    （`ApkSignatureKiller` / 核心破解） / 真正不改签名的虚拟容器（VirtualXposed / 太极）；§7 落点表述改为"按代价从低到高"；
 > ⑬ **配套界面模板**：`templates/register-site/`（注册网站）+ `templates/gm-admin/`（GM 后台），各含 `index.html` + 最小 Flask 后端；
 >    接入点：`account.md §6`、`release-and-ops.md §7`、`SKILL §16`；
-> ⑭ **GM 后台对齐真实面板**：按实测的"忍者必须死3"GM 面板（AES-GCM 签名表单 + CDK 激活 + 发货到邮件）
+> ⑭ **GM 后台对齐真实面板**：按实测的"某 Unity IL2CPP 手游"GM 面板（AES-GCM 签名表单 + CDK 激活 + 发货到邮件）
 >    重写 `templates/gm-admin/`（选服→账号查角色→角色列表→激活/发货/物品/记录），动作名对齐 `api.php`；知识已记入 `release-and-ops.md §7`；
 > ⑮ **邀请码 / 三选一校验**：注册站支持 **邀请码 / QQ群验证 / 白名单** 三选一（`VERIFY_MODE`）；
 >    GM 后台新增"**邀请码**"页（任一已注册用户可生成 / 列表 / 撤销），注册站按邀请码核销；两模板共享同一 DB 的 `invite_code` 表；
@@ -52,14 +52,14 @@
 >   （三类入口 / 回调投递纪律 / 延迟派发 / 双通路 / 内联版验收与假阳性）→ `references/inline-server.md`
 > ⑭ **运行时对象合成与字段发现**：用客户端自己的类型系统当 schema，先 dump 再合成 → `references/runtime-object-synthesis.md`
 > ⑮ **平台 SDK 登录态复用 + 目录服→区服两段准入** → `references/platform-sdk-and-admission.md`
-> ⑯ 真实案例：Unity IL2CPP + 平台 SDK 的内联服务端 → `references/case-kihan-inline.md`
+> ⑯ 真实案例：Unity IL2CPP + 平台 SDK 的内联服务端 → `references/case-il2cpp-inline.md`
 >
 >  **2026-09-13 实战沉淀（新增）**：
 > ① **反作弊 / 自校验剥离**（ACE / TSS / TPRT / FairGuard …）→ `references/anticheat.md`
 > ② **改包名 / 重打包 / 保留原签名**全清单 → `references/repack-rename.md`
 > ③ 配套脚本：`tools/make_stub_so.py`（把保护库换成空壳 so）、`tools/repack_zip.py`（秒级定点重打包）
 > ④ **闭环验证与 6 类假阳性**（端口在听≠服务可用、自环≠客户端兼容）→ `references/closure-verification.md`
-> ⑤ **真实案例：Unity IL2CPP + ECDH 登录服**（帧格式 / SPKI / 已证伪项）→ `references/case-ninja3-ecdh.md`
+> ⑤ **真实案例：Unity IL2CPP + ECDH 登录服**（帧格式 / SPKI / 已证伪项）→ `references/case-il2cpp-ecdh.md`
 > ⑥ SKILL 铁律 3 → 4 条：**不把「能跑」当成「跑通」**
 > ⑦ **工程范式**（实机跑通项目的做法：fixture 回放 / 具名完成点 / 证据分档 / ADR）→ `references/engineering-practices.md`
 > ⑧ 文档模板：`templates/adr-template.md`、`templates/e2e-evidence-template.md`
@@ -227,11 +227,11 @@ docs/status/support-matrix ← 三轴状态：实现 / 自动测试 / 客户端�
 │   ├── client-address-sources.md  客户端地址来源清查 + 落点策略
 │   ├── verification-and-status.md  三轴状态 + 可达性分类 + 测试门禁
 │   ├── release-and-ops.md   发布 / 部署 / 运营 / CDN / 后台 / 备份
-│   ├── case-ninja3-ecdh.md  真实案例：IL2CPP + ECDH 登录服 + 卡点复核
+│   ├── case-il2cpp-ecdh.md  真实案例：IL2CPP + ECDH 登录服 + 卡点复核
 │   ├── inline-server.md     内联服务端：进程内合成响应（与外部服务端并列的第二条路）
 │   ├── runtime-object-synthesis.md  运行时对象合成与字段发现（对象级 schema 自举）
 │   ├── platform-sdk-and-admission.md  平台 SDK 登录态复用 + 目录服→区服两段准入
-│   ├── case-kihan-inline.md  真实案例：IL2CPP + 平台 SDK 的内联服务端
+│   ├── case-il2cpp-inline.md  真实案例：IL2CPP + 平台 SDK 的内联服务端
 │   ├── account.md           账号体系与接口还原（登录/注册/接口替换）
 │   ├── combat.md            房间与战斗（局内、同步模型、服务端权威）
 │   ├── drops.md             掉落与物资（掉落表、掷骰、背包满转邮件）
@@ -301,7 +301,7 @@ docs/status/support-matrix ← 三轴状态：实现 / 自动测试 / 客户端�
 
 ## 服务端语言也不固定
 
-Python 只是本仓库的参考实现。真实案例里：**Go**（乖离性百万亚瑟王）、**Node/TS**（世界弹射物语）。
+Python 只是本仓库的参考实现。真实案例里：**Go**（某 Unity 手游）、**Node/TS**（某 Cocos 手游）。
 选型见 `references/codegen.md`，由 Spec 决定，不是照抄。
 
 ## 充值 / 发放（私服支付）

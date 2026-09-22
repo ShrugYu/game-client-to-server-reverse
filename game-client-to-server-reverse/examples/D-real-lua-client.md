@@ -25,12 +25,12 @@
 msg = GetMessage("LOGIN_INFO")      -- 1) 按 opCode 建信封
 msg.request = { ... }               -- 2) 填请求体（字段随 opCode 而变）
 SendMessage(msg, callback)          -- 3)
-    ├─ protobuf.encode("NinjaMessage.Message", msg)   -- protobuf 序列化
+    ├─ protobuf.encode("GameMessage.Message", msg)   -- protobuf 序列化
     └─ NetworkingManager:SendMessage(bytes, msg.opCode, callback)  -- opCode 随帧发送
 ```
 
 **特征总结**：
-- **信封统一**：`NinjaMessage.Message`
+- **信封统一**：`GameMessage.Message`
 - **opCode 是字符串**（`"LOGIN_INFO"` / `"COMBAT_START"`），不是数字
 - **序列化 protobuf**（`pbc/protobuf.lua`）
 - 另有 `json` / `msgpack` 库备用
@@ -56,7 +56,7 @@ SendMessage(msg, callback)          -- 3)
    → 本项目: 1794 个 opCode
 
 4. 按前缀聚类 → 得到子系统划分
-   EVENT(207) FAMILY(119) WORKSHOP(102) NINJA(67) PVP(58) TEAM(55) MATCH(44) …
+   EVENT(207) FAMILY(119) WORKSHOP(102) CHAR(67) PVP(58) TEAM(55) MATCH(44) …
 
 5. 抽取请求字段（payload schema）
    看每个 Send 函数里 msg.request.xxx = 的赋值 → 得到该 opCode 的字段
@@ -86,7 +86,7 @@ python3 tools/extract_interfaces.py ./lua_src --out interfaces.md --json interfa
 | **活动** | `EVENT_*` | 207 | `EVENT_BAGHERO_*` / `EVENT_BOSSRUSH_*` |
 | **家族** | `FAMILY_*` | 119 | 家族 BOSS / 联赛 / 祭坛 |
 | **工坊/自制** | `WORKSHOP_*` | 102 | `PUGC` 玩家自制关卡 |
-| **忍者/角色** | `NINJA_*` | 67 | 培养 / 皮肤 / 天赋 |
+| **角色** | `CHAR_*` | 67 | 培养 / 皮肤 / 天赋 |
 | **PVP** | `PVP_*` | 58 | 排位 / 赛季 |
 | **队伍** | `TEAM_*` | 55 | `TEAM_MATCH_*` 招募与匹配 |
 | **匹配** | `MATCH_*` | 44 | `MATCH_ROOM_INFO` / `MATCH_ROUND_*` / `MATCH_SCORE_*` |

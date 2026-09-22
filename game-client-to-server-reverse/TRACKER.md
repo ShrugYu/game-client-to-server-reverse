@@ -72,9 +72,9 @@
 
 ---
 
-## 实战项目进度：R3（忍者必须死3 官服 2.0.109）
+## 实战项目进度：项目A（某 Unity IL2CPP 手游 官服 2.0.109）
 
-> 案例细节见 `references/case-ninja3-ecdh.md`。规则：**没在真实客户端上确认的，一律不写 [x]**。
+> 案例细节见 `references/case-il2cpp-ecdh.md`。规则：**没在真实客户端上确认的，一律不写 [x]**。
 
 | 模块 | 状态 | 备注 |
 |------|------|------|
@@ -88,9 +88,9 @@
 | 原版客户端连自建服 | [?] | 未完成 |
 | `:8081` TUP/WUP | [-] | **已证伪**，非本游戏（APK 0 命中 + uid 无连接） |
 
-## 实战项目进度：KiHan（腾讯 Unity IL2CPP 手游，内联服务端路线）
+## 实战项目进度：KiHan（平台 Unity IL2CPP 手游，内联服务端路线）
 
-> 案例细节见 `references/case-kihan-inline.md`。
+> 案例细节见 `references/case-il2cpp-inline.md`。
 > 规则同样：**没在真实客户端上确认的，一律不写 [x]**。
 
 | 模块 | 状态 | 备注 |
@@ -132,9 +132,9 @@ YYYY-MM-DD  模块  状态变化
 2026-09-13  知识库新增  —        references/anticheat.md（ACE/TSS/TPRT 诊断 + so 空壳化）
 2026-09-13  知识库新增  —        references/repack-rename.md（改包名全清单 + 签名 + 重打包）
 2026-09-13  知识库新增  —        references/closure-verification.md（闭环 6 类假阳性 + 检查表）
-2026-09-13  知识库新增  —        references/case-ninja3-ecdh.md（R3 真实案例：帧格式/ECDH/已证伪项）
+2026-09-13  知识库新增  —        references/case-il2cpp-ecdh.md（项目A 真实案例：帧格式/ECDH/已证伪项）
 2026-09-13  方法论升级  —        SKILL.md §0.1 三条铁律 → 四条（新增"不把能跑当跑通"）
-2026-09-13  R3-登录服    [~] → [~]  （修 step2 未定义变量 + 会话清理；派生值与业务响应仍缺）
+2026-09-13  项目A-登录服    [~] → [~]  （修 step2 未定义变量 + 会话清理；派生值与业务响应仍缺）
 2026-09-13  知识库新增  —        references/engineering-practices.md（实机跑通范式：fixture 回放/完成点/证据分档）
 2026-09-13  模板新增    —        templates/adr-template.md、templates/e2e-evidence-template.md
 2026-09-13  方法论升级  —        SKILL §0.6「启动阶段两把钥匙」；§13.1 强制产物 6 → 8 项
@@ -149,7 +149,7 @@ YYYY-MM-DD  模块  状态变化
 2026-09-15  知识库新增  —        references/inline-server.md（内联服务端：门面三类入口 / 回调投递纪律 / 延迟派发 / 双通路 / 验收与假阳性）
 2026-09-15  知识库新增  —        references/runtime-object-synthesis.md（对象级 schema 自举 + 字段发现循环 + 填值纪律 + 对象级→wire 级切换）
 2026-09-15  知识库新增  —        references/platform-sdk-and-admission.md（平台 SDK 登录态复用 + 目录服→区服两段准入 + 卡点定位）
-2026-09-15  知识库新增  —        references/case-kihan-inline.md（真实案例：Unity IL2CPP + 平台 SDK 内联服务端）
+2026-09-15  知识库新增  —        references/case-il2cpp-inline.md（真实案例：Unity IL2CPP + 平台 SDK 内联服务端）
 2026-09-15  方法论升级  —        SKILL §0.0 方法表 10 → 11 种（新增 M11 内联服务端法）、§0.4 主干加分叉、§0.5 参考表 +4、铁律 4 增内联判据
 2026-09-15  方法论升级  —        methods.md 10 → 11 种、decision-tree 顶部增加「外部 vs 内联」路径分叉、reading-path 增加任务类型 ⑧
 2026-09-15  版本        —        1.7 → 1.8

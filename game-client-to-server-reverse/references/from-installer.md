@@ -227,7 +227,7 @@ Interceptor.attach(Module.findExportByName(null, "XXTEA_Decrypt"), {
 
 ## 7. 加壳 / 加固怎么办
 
-原生 Android 游戏常见加固（360/腾讯乐固/梆梆/爱加密）：
+原生 Android 游戏常见加固（360/平台乐固/梆梆/爱加密）：
 
 1. 判断是否加固：看 `assets/` 是否有 `libjiagu*.so` / 壳特征 / dex 异常小。
 2. 脱壳思路：

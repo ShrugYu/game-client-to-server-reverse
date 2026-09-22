@@ -9,7 +9,7 @@
   1) 字符串 opCode：GetMessage("LOGIN_INFO") / opCode = "LOGIN_INFO"
   2) 数字 opCode  ：case 0x101: / MSG_ID = 1001 / const int LOGIN = 0x101
   3) HTTP 路由    ："/api/login" / $http.post('/login')
-  4) protobuf 信封：protobuf.encode("NinjaMessage.Message", msg)
+  4) protobuf 信封：protobuf.encode("GameMessage.Message", msg)
   5) 类/方法式    ：C2S_Login / SendLoginReq（按前缀聚类）
 
 用法：

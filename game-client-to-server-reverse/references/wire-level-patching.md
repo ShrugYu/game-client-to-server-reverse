@@ -322,4 +322,4 @@ def _patch_nested_uid(body, outer_field, inner_field, game_uid) -> bytes:
 | `engineering-practices.md` | 范式层：怎么组织工作、怎么验收、怎么写文档 |
 | `closure-verification.md` | 验证层：怎么证明真的通了 |
 | `protocol-spec.md` | 规格层：确认下来的字段要落进 Spec |
-| `case-ninja3-ecdh.md` | 反例参照：卡在「必须先把算法解出来」的思路里 |
+| `case-il2cpp-ecdh.md` | 反例参照：卡在「必须先把算法解出来」的思路里 |

@@ -26,8 +26,8 @@ repack_zip.py —— APK/ZIP「原样复制」重打包（秒级，2GB 包也不
     # 塞回原包签名、顺手删掉自己的签名
     python3 repack_zip.py mod.apk mod_origsig.apk \\
         --delete META-INF/ANDROID.RSA --delete META-INF/ANDROID.SF --delete META-INF/MANIFEST.MF \\
-        --add-from orig.apk META-INF/NINJAMUS.RSA \\
-        --add-from orig.apk META-INF/NINJAMUS.SF \\
+        --add-from orig.apk META-INF/APP.RSA \\
+        --add-from orig.apk META-INF/APP.SF \\
         --add-from orig.apk META-INF/MANIFEST.MF
 """
 import os

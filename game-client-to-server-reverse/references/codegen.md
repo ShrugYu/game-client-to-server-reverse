@@ -10,8 +10,8 @@
 | 目标特征 | 推荐栈 | 现实参考 |
 |---------|--------|---------|
 | 快速验证 / 脚本化 | Python (asyncio) | 本仓库 `server/` |
-| 高并发长连接 / 要发布二进制 | Go | **案例 A**（乖离性百万亚瑟王，Go 服务端 + 预编译三端） |
-| HTTP + 内容分发 / 前后端同栈 | Node.js / TypeScript | **案例 B**（世界弹射物语，Node/TS + React 后台） |
+| 高并发长连接 / 要发布二进制 | Go | **案例 A**（某 Unity 手游，Go 服务端 + 预编译三端） |
+| HTTP + 内容分发 / 前后端同栈 | Node.js / TypeScript | **案例 B**（某 Cocos 手游，Node/TS + React 后台） |
 | 极致性能 / 二进制协议复杂 | Rust / C++ | 与 UE/C++ 客户端语义贴近 |
 | 客户端是 Java 生态 | Java/Kotlin (Netty) | 复用客户端协议库 |
 | 已有 C# 资产 / 桌面启动器 | C# (.NET) | 案例 A 的 WinForms 启动器即 C# |

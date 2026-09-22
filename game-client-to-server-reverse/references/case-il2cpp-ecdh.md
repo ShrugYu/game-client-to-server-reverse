@@ -1,4 +1,4 @@
-# 案例：Unity IL2CPP + ECDH 登录服（R3 / 忍者必须死3 官服）
+# 案例：Unity IL2CPP + ECDH 登录服（项目A / 某 Unity IL2CPP 手游 官服）
 
 > **这是什么**：一个**真实进行中**的项目档案，用来演示「分层结论长什么样」与
 > 「卡点怎么复核」。**不是**答案——各游戏协议不同，请照流程自己推。
@@ -30,7 +30,7 @@
 [2] 封装   u32BE 长度前缀切帧；心跳 opCode = "NONE"（空包）
 [3] 加密   AES-128-ECB + HMAC-SHA1（NetCrypter）；登录走 OpenSSL 变体
 [4] 压缩   资源服 payload 为 gzip
-[5] 序列化 protobuf，信封 NinjaMessage.Message（opCode 为 string）
+[5] 序列化 protobuf，信封 GameMessage.Message（opCode 为 string）
 ```
 
 **帧格式（真机 tcpdump，u32BE 切帧成功率 100%）**：
