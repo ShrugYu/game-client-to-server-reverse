@@ -6,7 +6,7 @@
 > [x] 本包自带的服务端已**实测跑通**：握手 → 登录 → 建角 → 选角 → 进场景 → 移动 → 心跳，
 > 并验证 XOR 加密 + zlib 压缩 + 充值/邮件发放。
 >
-> 服务端参考实现（GitHub）：https://github.com/ShrugYu/game-client-to-server-reverse/tree/main/game-client-to-server-reverse/server
+> 服务端参考实现原Github地址：https://github.com/Nanako660/peach-haven
 >
 >  **2026-09-22 更新（v2.0）** —— 本版主题：原理层 + 四阶段路线 + **换服务端（重定向）**：
 > ⓪ **版本升至 2.0**：整合 1.x 全部成果 + 以下 ①~⑪；
