@@ -22,7 +22,7 @@
 > ⑧ **跨模型阅读优化（GLM / DeepSeek / Claude）**：SKILL 顶部改为**模型无关的显式阅读协议**（"打开哪个文件"写死）；
 >    去掉顶部大段变更历史；给 5 篇 >300 行的 reference 补**章节目录**；`reading-path.md` 顶部声明按它分派；
 > ⑨ **去除 emoji**：全库清理（状态标记转 ASCII、装饰 emoji 删除、箭头保留）；
-> ⑩ **反作弊框架修正 + 资源**：`anticheat.md §0` 改为"**主动改客户端对接自建服务端**"（按重定向四层表、优先跑起来）；
+> ⑩ **框架修正 + 资源**：`anticheat.md §0` 改为"**主动改客户端对接自建服务端**"（按重定向四层表、优先跑起来）；
 >    加 §0.1 ACE 真实结构、§10 参考资源；`methods.md` M8 加"复活/私服项目合集"；
 > ⑪ **换服务端手法补全（v2.0 新增）**：`client-address-sources.md §3.0b` 加入 **Xposed / LSPatch 模块重定向**
 >    （`AnimeGamesProxy` 实测范例，免 root）；`methods.md` M8 加"**多人/联机复活项目速览**"（FiveM / Project 1999 / Plutonium…）；
