@@ -136,7 +136,7 @@ SDK login → getServerList → getLastServerList → 选服
 |---|---|---|---|
 | **DNS / 寻址** | 对取地址函数做注入，域名 → `127.0.0.1`；端口可覆盖 | 地址来自**域名** | **最低** |
 | **传输 / TLS** | HTTPS 降级 HTTP、阻断客户端证书校验；本地 CA 注入、TLS 代理 | 原协议是 TLS **且无本地证书** | 中 |
-| **SDK / 平台** | inline hook 登录函数，伪造成功回调 | 平台登录**无法离线**（微信/MSDK） | 中高 |
+| **SDK / 平台** | inline hook 登录函数，伪造成功回调 | 平台登录**无法离线**（第三方账号 SDK） | 中高 |
 | **业务协议** | 服务端按**真实 wire format** 应答 | **始终需要** | 高（但必须） |
 
 > 详细落点与实战三板斧（iptables DNAT / TCP 中继 / bind-mount hosts）

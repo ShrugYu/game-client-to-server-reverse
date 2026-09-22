@@ -125,41 +125,24 @@
 >  **动手前先花 10 分钟查"有没有人做过"**——别人反推出来的 opcode/包结构，
 > 等于**已经替你逆向完的成果**。同引擎 / 同厂商 / 同世代的姐妹项目优先。
 
-**现成实现速查（按原游戏）**：
+**现成实现速查（按类型，不点名具体游戏）**：
 
-| 原游戏 | 项目 | 语言 |
-|--------|------|------|
-| 魔兽世界 | AzerothCore / TrinityCore | C++ |
-| EverQuest / EQ2 | EQEmu / EQ2Emu | C++ |
-| 天堂2 | L2J | Java |
-| 网络创世纪 UO | ModernUO / UOX3 | C#/C++ |
-| EVE Online | EVESharp | C# |
-| 城市英雄 | SEGs | C++（**唯一非 TCP**，UDP） |
-| 原神 | Grasscutter | Java |
-| Blue Archive | Shittim-Server | C#（官方登录 + MX 协议加解密） |
-| 传奇 Mir2 | OpenMir2 | C# |
-| 仙境传说 RO | OpenKore | Perl |
+| 类型 | 是否有成熟开源服务端 | 常见实现语言 |
+|------|----------------------|--------------|
+| 经典 PC 端 MMORPG（大世界 / 多人） | 有，社区维护多年 | C++ / Java / C# |
+| 老式回合制 / 2D 客户端网游 | 有 | C# / Java |
+| 部分手游（卡牌 / 动作） | 有社区实现（版本绑定强） | Java / C# |
+| 单机游戏的多人模式 | 有自建客户端 / 联机框架 | C++ |
 
->  两条经验：① 这些 MMO **基本只用 TCP**（→ 假设包有序）；② **客户端版本↔服务端版本强绑定**，
-> 反推前**先锁版本**（Grasscutter 明确警告"不能混用"）。有现成 → 抄；部分 → 拼装；没有 → 纯逆向。
+>  两条经验：① 这类 MMO **基本只用 TCP**（→ 假设包有序）；② **客户端版本↔服务端版本强绑定**，
+> 反推前**先锁版本**。有现成 → 抄；部分 → 拼装；没有 → 纯逆向。
 
-**复活 / 私服项目合集（找同类项目的入口）**：
-- `patricklarose/awesome-game-revivals` —— 社区项目/移植/重制/**私服**合集（**最对口**）
-- `heaven-hm/awesome-reverse-engineered-games` —— 逆向/反编译/重建的游戏
-- `radek-sprta/awesome-game-remakes`、`VelocityRa/awesome-game-file-format-reversing`
-- `dsasmblr/game-hacking`、`ReversingID/Awesome-Reversing`、`RetroReversing/retroReversing`
-- `Xuoos/AnimeGamesProxy` —— Xposed 模块，把游戏请求**重定向到私服**（换服务端范例）
-- 实战文档：`eknight-eutopia.github.io`（崩坏3 私服搭建：mitmproxy + nginx，含踩坑）
+**找同类项目的入口**：
 
-**"多人/联机复活"类项目速览**（来自 awesome-game-revivals，**换服务端/自建服**的重点参考）：
-| 类型 | 项目 | 说明 |
-|------|------|------|
-| 自建服务端 | `Project 1999` | 经典 EverQuest 服务器 |
-| 联机框架 | `FiveM` | GTA V 多人框架（自建服务器） |
-| 自建客户端 | `Plutonium` / `Venice Unleashed` / `Project Rome` | CoD / 战地3 / 战地BC2 的自建客户端+服务端 |
-| 联机 mod | `THUG Pro` / `reTHAWed` | 托尼霍克滑板系列的社区联机 |
-| 引擎重写 | `OpenMW` / `Meridian 59` | Morrowind / Meridian 59 开源引擎（含服务器） |
-> 共同点：**都是"客户端 + 自建服务端"能跑起来**的成品，可参考它们的重定向/协议/服务端取舍。
+- 在 GitHub 搜 `awesome-game-revivals`、`awesome-reverse-engineered-games`、`awesome-game-remakes`、
+  `game file format reversing`、`game hacking` 等 **awesome 合集**，按目标类型找同类「客户端 + 自建服务端」项目。
+
+> 共同点：**都是"客户端 + 自建服务端"能跑起来**的成品，可参考它们的重定向 / 协议 / 服务端取舍。
 
 ### M9 自环法（Self-loop）
 

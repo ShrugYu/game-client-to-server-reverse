@@ -16,15 +16,14 @@
 > ⑤ **反推对象地图** `references/server-architecture-basics.md`（逆向视角）：你在还原哪几类服、
 >   网关留下的隐藏层（合并/加解密/压缩 flag）、从包里认 Protobuf/KCP、同步模型决定"要还原多少逻辑"
 >   （来源：平台云架构演进、GameDevAndOps、KCP/protobuf 官方、Skynet/Pomelo/KBEngine/NF）；
-> ⑥ **取长补短（折进现有文件）**：`methods.md` M8 补入**现成实现速查**（AzerothCore/EQEmu/L2J/ModernUO/
->   Grasscutter/Shittim-Server/OpenMir2…）+ "先查别人做过没" + **先锁版本**；`protocol-spec.md` 补入人类可读协议文档格式；
+> ⑥ **取长补短（折进现有文件）**：`methods.md` M8 补入**现成实现速查（按类型）** + "先查别人做过没" + **先锁版本**；`protocol-spec.md` 补入人类可读协议文档格式；
 > ⑦ **SKILL.md 瘦身**：与 references 重复的 §1~§8、§11、§14~§19 压成"要点+指针"（1122 → ~650 行）；§11 常见坑并入 `closure-verification.md §附`；
 > ⑧ **跨模型阅读优化（GLM / DeepSeek / Claude）**：SKILL 顶部改为**模型无关的显式阅读协议**（"打开哪个文件"写死）；
 >    去掉顶部大段变更历史；给 5 篇 >300 行的 reference 补**章节目录**；`reading-path.md` 顶部声明按它分派；
 > ⑨ **去除 emoji**：全库清理（状态标记转 ASCII、装饰 emoji 删除、箭头保留）；
 > ⑩ **框架修正 + 资源**：` §0` 改为"**主动改客户端对接自建服务端**"（按重定向四层表、优先跑起来）；
 > ⑪ **换服务端手法补全（v2.0 新增）**：`client-address-sources.md §3.0b` 加入 **Xposed / LSPatch 模块重定向**
->    （`AnimeGamesProxy` 实测范例，免 root）；`methods.md` M8 加"**多人/联机复活项目速览**"（FiveM / Project 1999 / Plutonium…）；
+>    （第三方代理模块实测范例，免 root）；`methods.md` M8 加"**多人/联机复活项目**"检索入口；
 > ⑫ **签名绕过**：`repack-rename.md §8` 加入 **LSPatch Signature Bypass（等级 2）机制** / 独立签名破解
 >    （`ApkSignatureKiller` / 核心破解） / 真正不改签名的虚拟容器（VirtualXposed / 太极）；§7 落点表述改为"按代价从低到高"；
 > ⑬ **配套界面模板**：`templates/register-site/`（注册网站）+ `templates/gm-admin/`（GM 后台），各含 `index.html` + 最小 Flask 后端；

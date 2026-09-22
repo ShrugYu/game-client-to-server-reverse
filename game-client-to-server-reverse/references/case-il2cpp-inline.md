@@ -17,7 +17,7 @@
 | 注入方式 | 原生注入 + **Dobby** 内联 hook（非 Frida） |
 | 业务命名空间 | `KH`、`KH.Network`、`KH.Remote`、`KHSceneConnectHelper` 等 |
 | 协议形态 | 强类型协议类（对象级读写）+ **Lua 通道**（字节 / 表） |
-| 账号体系 | 平台 SDK（MSDK 系）→ 目录服 → 区服 |
+| 账号体系 | 第三方平台账号 SDK→ 目录服 → 区服 |
 
 ---
 

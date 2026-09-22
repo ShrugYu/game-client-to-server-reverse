@@ -8,8 +8,8 @@
 
 ## 案例 A：项目B（某 Unity 手游 CN）
 
-- 仓库：https://github.com/kuuhaku1314/项目B
-- 客户端：Unity（Android APK，网易，`com.netease.ma.netease`）
+- 仓库：（社区开源实现，按目标游戏检索）
+- 客户端：Unity（Android APK，某大厂，`com.<vendor>.<game>`）
 - 服务端语言：**Go**（含 Windows C# WinForms 启动器）
 - 资源：`resource-set/` 本地目录，或 Cloudflare R2 / S3 兼容 CDN
 
@@ -20,8 +20,8 @@
 | 服务端语言 | **Go**（不是 Python） |
 | 启动器 | **C# WinForms** GUI，选"模拟器/局域网"，填地址后一键启停 |
 | 端口约定 | 主 `TCP 26020`；战斗 `26021`(=主+1)；后台 `26022`(=主+2，仅本机) |
-| 客户端对接 | **改配置文件**：`Android/data/com.netease.ma.netease/files/local_server.txt` 写 `IP:PORT` |
-| 存档 | `_local/data/cn602-save-state.sqlite3` |
+| 客户端对接 | **改配置文件**：`Android/data/<package>/files/local_server.txt` 写 `IP:PORT` |
+| 存档 | `_local/data/<game>-save-state.sqlite3` |
 | 后台 | HTTP `127.0.0.1:26022`，运营台可配卡池/活动/掉落/商店/发礼/账号绑定 |
 | 资源分发 | 本地 `resource-set/` 或自建 CDN（`cdn-sync.json` → `cdn.json`） |
 | 发布形态 | 预编译三端（Win x64 / Linux x64 / ARM64），**用户无需装 Go/Python/Unity** |
@@ -40,7 +40,7 @@
 
 ## 案例 B：项目C（某 Cocos 手游 CN）
 
-- 仓库：https://github.com/DontBeAlarmed/项目C
+- 仓库：（社区开源实现，按目标游戏检索）
 - 客户端：**ActionScript3 / Flash**（`pinball/config/.../DevConfig.as`）
 - 服务端语言：**TypeScript / Node.js**（>= 20.12）
 - 存储：SQLite（`.database/`）

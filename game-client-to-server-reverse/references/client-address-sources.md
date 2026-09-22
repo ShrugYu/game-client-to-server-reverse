@@ -94,7 +94,7 @@ ls assets/bin/Data/Managed/  assets/**/DLL/*.bytes 2>/dev/null
 | 优先级 | 落点 | 做法 | 代价 |
 |---|---|---|---|
 | **1（先做）** | 网络层重定向 | 见 §3.0 三板斧 | 要 root；不能与官服双开 |
-| **1.5** | **Xposed / LSPatch 模块重定向** | 注入模块改请求目标（见 §3.0b；如 `AnimeGamesProxy`） | 需框架；不改包，无 root 配 `LSPatch`/`NPatch` |
+| **1.5** | **Xposed / LSPatch 模块重定向** | 注入模块改请求目标（见 §3.0b） | 需框架；不改包，无 root 配 `LSPatch`/`NPatch` |
 | **2** | **应用私有目录的地址文件** | 见 §3.1 | 需先让客户端生成目录 |
 | **3** | 明文配置 / 脚本 / AS3 源码 | 直接改文本（注意包名连带） | 要重打包+重签 |
 | **4** | smali / 托管程序集 | 改字节码 | 重签；可能被缓存/热更覆盖 |
@@ -211,7 +211,7 @@ adb shell "mount -o bind /data/local/tmp/hosts /system/etc/hosts"
 ### 3.0b Xposed / LSPatch 模块重定向（不改包，免 root 也能用）
 
 > 在 Zygote 层 hook 目标游戏的网络层，把请求目标改到我们的服务端。
-> 代表项目：`Xuoos/AnimeGamesProxy`（面向动漫手游的代理模块）。
+> 代表项目：面向手游的代理模块（面向动漫手游的代理模块）。
 
 - **能做什么**（按游戏分别打补丁，都封装在模块里）：
   - 把登录 / 游戏请求**重定向到指定私服**；
@@ -222,7 +222,7 @@ adb shell "mount -o bind /data/local/tmp/hosts /system/etc/hosts"
 - 注意：**不支持 PC 模拟器**；部分功能在模拟器会失效。
 
 > 适用：想"让客户端像连官方一样连我们服务端"、又不想反编译改 so 时，这是**最贴近目标**的一类手法。
-> （AnimeGamesProxy 已内置多款游戏的禁用校验补丁 —— 说明这条路是**业界已验证**的。）
+> （第三方代理模块 已内置多款游戏的禁用校验补丁 —— 说明这条路是**业界已验证**的。）
 
 > **可直接用的模板**（本 skill 自带）：
 > - `templates/xposed-redirect/` —— LSPosed 模块骨架（**Java / OkHttp 客户端**：hook `okhttp3.Request$Builder.url` / `java.net.URL`），
