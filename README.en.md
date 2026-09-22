@@ -55,7 +55,7 @@ A skill package following the [Agent Skills](https://agentskills.io) spec. The c
 
 ---
 
-## Install
+## Distribution / Install
 
 ### As a Skill (recommended)
 
@@ -75,6 +75,17 @@ npx skills add ShrugYu/game-client-to-server-reverse --agent AGENT_NAME
 Copy the whole `game-client-to-server-reverse/` folder into your skills directory
 (e.g. Operit: `/storage/emulated/0/Download/Operit/skills/`).
 The folder name must match the `name` field in `SKILL.md`'s frontmatter.
+
+### Channels
+
+| Channel | Link |
+|------|------|
+| **GitHub repo** | https://github.com/ShrugYu/game-client-to-server-reverse |
+| **skills CLI** | `npx skills add ShrugYu/game-client-to-server-reverse` |
+| **SkillsMP**（auto-indexed） | https://skillsmp.com |
+| **skills.sh** | https://skills.sh |
+
+Works with Claude Code, Cursor, Codex, GitHub Copilot, Windsurf, Gemini, Cline, etc.
 
 ---
 

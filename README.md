@@ -57,7 +57,7 @@
 
 ---
 
-## 安装
+## 分发 / 安装
 
 ### 作为 Skill 安装（推荐）
 
@@ -77,6 +77,17 @@ npx skills add ShrugYu/game-client-to-server-reverse --agent AGENT_NAME
 把 `game-client-to-server-reverse/` 整个文件夹复制到你的 skill 目录即可
 （例如 Operit：`/storage/emulated/0/Download/Operit/skills/`）。
 文件夹名必须与 `SKILL.md` frontmatter 里的 `name` 保持一致。
+
+### 分发渠道
+
+| 渠道 | 链接 |
+|------|------|
+| **GitHub 仓库** | https://github.com/ShrugYu/game-client-to-server-reverse |
+| **skills CLI** | `npx skills add ShrugYu/game-client-to-server-reverse` |
+| **SkillsMP**（自动索引） | https://skillsmp.com |
+| **skills.sh** | https://skills.sh |
+
+支持 Claude Code / Cursor / Codex / GitHub Copilot / Windsurf / Gemini / Cline 等 agent。
 
 ---
 
