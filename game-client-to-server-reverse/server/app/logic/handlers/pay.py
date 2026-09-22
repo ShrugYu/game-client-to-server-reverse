@@ -1,4 +1,4 @@
-"""app.logic.handlers.pay —— 充值 / 支付（私服模式：点击购买直接成功）
+"""app.logic.handlers.pay —— 充值 / 支付（自托管模式：点击购买直接成功）
 
 设计要点：
   * 客户端连的是我们自己的服务端，真实的第三方支付 SDK 在本服务端里不存在。
@@ -98,7 +98,7 @@ async def on_pay(session, codec, body):
     amount = int(product.get("amount", 0))
     price = int(product.get("price", 0))
 
-    # === 私服支付判定：点击购买直接成功 ===
+    # === 自托管支付判定：点击购买直接成功 ===
     auto = bool(_cfg("game.pay_auto_success", True))
     if not auto:
         # 若要接真实校验，在这里验证第三方回调凭证（本模板不带）

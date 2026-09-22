@@ -160,7 +160,7 @@ YYYY-MM-DD  模块  状态变化
 2026-09-22  模板新增    —        templates/login-chain.md、templates/function-checklist.md
 2026-09-22  模板新增    —        templates/register-site/
 2026-09-22  模板新增    —        templates/frida-redirect.js、templates/xposed-redirect/（客户端重定向：native / Java）
-2026-09-22  方法论升级  —        methods.md M8 增「现成实现速查 + 复活/私服项目合集」；protocol-spec.md 增「人类可读协议文档格式」
+2026-09-22  方法论升级  —        methods.md M8 增「现成实现速查 + 复活 / 本地离线项目合集」；protocol-spec.md 增「人类可读协议文档格式」
 2026-09-22  结构合规    —        skill 目录重命名为 game-client-to-server-reverse（frontmatter name == 父目录名）
 2026-09-22  元数据合规  —        frontmatter：version/platforms 移入 metadata；补 license / compatibility
 2026-09-22  体量优化    —        SKILL.md 656 → 467 行（§1~§10、§13 下沉到 references，标题/编号保留 + 指针）

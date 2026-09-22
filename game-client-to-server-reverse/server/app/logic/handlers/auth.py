@@ -79,7 +79,7 @@ async def on_login(session, codec, body):
 
     acc = await db.get_account(req.username)
     if acc is None:
-        # 首次登录自动注册（私服常见便利行为；生产可关）
+        # 首次登录自动注册（自托管常见便利行为；生产可关）
         uid = await db.create_account(req.username, hash_password(req.password))
         acc = await db.get_account(req.username)
     elif not verify_password(req.password, acc["password_hash"]):

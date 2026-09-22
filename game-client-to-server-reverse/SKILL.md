@@ -17,7 +17,7 @@ metadata:
 
 > **版本 v2.0**（完整变更历史见 `README.md`）。2.0 较 1.x 新增：**原理层** `primer.md`、**四阶段路线图**
 > `workflow-roadmap.md`、**反推对象地图** `server-architecture-basics.md`、**重定向落点（含 Xposed/LSPatch 模块）**、
-> 复活/私服项目合集、登录链/功能清单模板、全库去除 emoji、跨模型阅读优化，并对 SKILL.md 大幅瘦身。
+> 复活 / 本地离线项目合集、登录链/功能清单模板、全库去除 emoji、跨模型阅读优化，并对 SKILL.md 大幅瘦身。
 
 ---
 

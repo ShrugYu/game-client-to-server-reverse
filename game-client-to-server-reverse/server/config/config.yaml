@@ -68,7 +68,7 @@ game:
   auto_push_char_list: true
   # 充值发放方式：direct=直接加货币  mail=发邮件领取
   pay_grant_mode: "direct"
-  # 私服支付：点击购买直接成功（true）／需真实校验（false）
+  # 自托管支付：点击购买直接成功（true）／需真实校验（false）
   pay_auto_success: true
   # 背包格数上限（满则掉落转邮件）
   max_bag_slots: 50

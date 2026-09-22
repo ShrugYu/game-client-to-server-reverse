@@ -117,7 +117,7 @@ DEFAULT_CONFIG = {
     "battle_max_turn": 20,        # 战斗回合上限（超时判负）
     # 充值发放方式：direct=直接加货币  mail=发邮件领取
     "pay_grant_mode": "direct",
-    # 是否模拟支付成功（私服：跳过真实支付渠道，点击即成功）
+    # 是否模拟支付成功（自托管：跳过真实支付渠道，点击即成功）
     "pay_auto_success": True,
 }
 
