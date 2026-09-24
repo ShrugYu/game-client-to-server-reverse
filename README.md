@@ -224,6 +224,9 @@ AI 会按这个顺序回应：
 | BlueRebirth | 已停运手游的本地离线复原工程（C#/.NET 本地服务端 + Mod 环境） | https://github.com/LunarConcerto/BlueRebirth |
 | enigma | 卡牌游戏的服务端（Rust） | https://github.com/yoncodes/enigma |
 | MikuSB | 本地协议与网络实验的开源 C#/.NET 服务端模拟器 | https://github.com/MikuLeaks/MikuSB |
+| kairisei-ma-ch | 某已停服卡牌手游国服的社区保存与本地运行项目（Go：自托管服务端 + 协议适配 + 客户端构建） | https://github.com/kuuhaku1314/kairisei-ma-ch |
+| kamihama-server | 卡牌游戏的服务端（Rust） | https://github.com/rayshift/kamihama-server |
+| startpoint-cn | 某弹射手游国服的非官方服务端实现（Node.js：API / 联机 / CDN 归档） | https://github.com/DontBeAlarmed/startpoint-cn |
 
 > 说明：以上为方法论中提及 / 参考的开源项目；本仓库**不打包、不分发**它们，使用请遵循各自许可证。
 

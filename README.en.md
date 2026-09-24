@@ -221,6 +221,9 @@ This skill's methodology and toolchain reference and build on the following open
 | BlueRebirth | Local offline restoration of a discontinued mobile game (C#/.NET local server + Mod environment) | https://github.com/LunarConcerto/BlueRebirth |
 | enigma | Server for that one card game (Rust) | https://github.com/yoncodes/enigma |
 | MikuSB | Open-source C#/.NET research server emulator for local protocol & networking experimentation | https://github.com/MikuLeaks/MikuSB |
+| kairisei-ma-ch | Community preservation & local-run project for a discontinued card-game CN server (Go: self-hosted server + protocol adaptation + client build) | https://github.com/kuuhaku1314/kairisei-ma-ch |
+| kamihama-server | Card-game server code (Rust) | https://github.com/rayshift/kamihama-server |
+| startpoint-cn | Unofficial server implementation for a pinball-game CN client (Node.js: API / multiplayer / CDN archive) | https://github.com/DontBeAlarmed/startpoint-cn |
 
 > Note: the above are open-source projects mentioned/referenced in the methodology; this repository **does not bundle or distribute** them. Follow each project's own license when using them.
 
