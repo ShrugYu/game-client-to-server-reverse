@@ -21,7 +21,7 @@
 
 > 把「只有客户端」的游戏，还原出「服务端协议 + 可用服务端」，并让**原版客户端成功本地离线运行**。
 >
-> 说明：本 skill **暂无实战测试**，内容系根据开源的 GitHub 相关项目与现有知识库提炼、结合而成。
+> 说明：本 skill **暂无完整实战测试**，内容系根据开源的 GitHub 相关项目与现有知识库提炼、结合而成。
 
 
 这是一个遵循 [Agent Skills](https://agentskills.io) 规范的 skill 包。核心 skill 名为 `game-client-to-server-reverse`，
